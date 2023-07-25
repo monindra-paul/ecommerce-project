@@ -8,10 +8,10 @@
         <div class="container-fluid my-2">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Sub Categories</h1>
+                    <h1>Brands</h1>
                 </div>
                 <div class="col-sm-6 text-right">
-                    <a href="{{ url('admin/sub-categories/create') }}" class="btn btn-primary">New Sub Category</a>
+                    <a href="{{ url('admin/brands/create') }}" class="btn btn-primary">New Brands</a>
                 </div>
             </div>
         </div>
@@ -47,22 +47,20 @@
                                 <th width="60">ID</th>
                                 <th>Name</th>
                                 <th>Slug</th>
-                                <th>Category</th>
                                 <th width="100">Status</th>
                                 <th width="100">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @if($subCategories->isNotEmpty())
+                            @if($brands->isNotEmpty())
 
-                            @foreach($subCategories as $subCategory)
+                            @foreach($brands as $brand)
                             <tr>
-                                <td>{{ $subCategory -> id }}</td>
-                                <td>{{ $subCategory -> name }}</td>
-                                <td>{{ $subCategory -> slug }}</td>
-                                <td>{{ $subCategory -> categoryName }}</td>
+                                <td>{{ $brand -> id }}</td>
+                                <td>{{ $brand -> name }}</td>
+                                <td>{{ $brand -> slug }}</td>
                                 <td>
-                                    @if($subCategory->status == 1)
+                                    @if($brand->status == 1)
                                     <svg class="text-success-500 h-6 w-6 text-success"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="2" stroke="currentColor" aria-hidden="true">
@@ -79,7 +77,7 @@
                                 </svg>
                                 @endif
                                 <td>
-                                    <a href="{{ route('sub-categories.edit', $subCategory->id) }}">
+                                    <a href="{{ route('brands.edit', $brand->id) }}">
                                         <svg class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                             <path
@@ -88,7 +86,7 @@
                                         </svg>
                                     </a>
 
-                                    <a href="#" onclick = "deleteSubCategory({{$subCategory->id}})"
+                                    <a href="#" onclick = "deleteBrand({{$brand->id}})"
                                         class="text-danger w-4 h-4 mr-1">
                                         <svg wire:loading.remove.delay="" wire:target=""
                                             class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +109,7 @@
                     </table>
                 </div>
                 <div class="card-footer clearfix">
-                    {{ $subCategories->links() }}
+                    {{ $brands->links() }}
                 </div>
             </div>
         </div>
@@ -131,8 +129,8 @@
 @section('customJs')
 
 <script>
-    function deleteSubCategory(id) {
-        var url = '{{ route("sub-categories.delete","ID") }}';
+    function deleteBrand(id) {
+        var url = '{{ route("brands.delete","ID") }}';
         var newUrl = url.replace("ID",id);
 
         if (confirm("Are You Sure to Delete ")) {
@@ -149,7 +147,7 @@
 
                     if (response["status"]) {
 
-                        window.location.href = "{{ route('sub-categories.index') }}"
+                        window.location.href = "{{ route('brands.index') }}"
 
                     }
                 }
