@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Category;
 use App\Models\TempImage;
 use Illuminate\Support\Facades\File;
-use Image;
+Use Image;
 
 
 
@@ -61,20 +61,19 @@ class CategoryController extends Controller
 
                 $newImageName = $category->id . '.' . $ext;
 
-                $sPath = public_path() . '/temp/' . $tempImage->name;
-                $dPath = public_path() . '/uploads/category/' . $newImageName;
+                $sPath = public_path() .'/temp/'.$tempImage->name;
+                $dPath = public_path() .'/uploads/category/'.$newImageName;
                 File::copy($sPath, $dPath);
 
                 //resize
 
-                $dPath = public_path() . '/uploads/category/thumb/' . $newImageName;
+                $dPath = public_path() .'/uploads/category/thumb/'.$newImageName;
                 $img = Image::make($sPath);
                 // $img->resize(300, 200);
                 $img->fit(300, 200, function ($constraint) {
                     $constraint->upsize();
                 });
                 $img->save($dPath);
-
 
 
                 $category->image = $newImageName;
