@@ -9,7 +9,8 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\TempImagesController;
 use App\Http\Controllers\Admin\BrandController;
-
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductSubCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,6 +73,13 @@ Route::group(['prefix'=>'admin'],function(){
         Route::delete('/brands/{brand}',[BrandController::class, 'destroy'])->name('brands.delete');
 
 
+
+        //product routes
+        Route::get('/products/create',[ProductController::class,'create'])->name('products.create');
+        Route::post('/products',[ProductController::class, 'store'])->name('products.store');
+        
+
+        Route::get('/product-subcategories',[ProductSubCategoryController::class,'index'])->name('product-subcategories.index');
 
 
 
