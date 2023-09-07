@@ -34,7 +34,7 @@
                                             <label for="title">Title</label>
                                             <input type="text" name="title" id="title" class="form-control"
                                                 placeholder="Title">
-                                                <p class="error"></p>
+                                            <p class="error"></p>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -42,7 +42,7 @@
                                             <label for="slug">Slug</label>
                                             <input type="text" name="slug" id="slug" class="form-control"
                                                 placeholder="Slug" readonly>
-                                                <p class="error"></p>
+                                            <p class="error"></p>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -65,6 +65,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row" id="product-gallery">
+
+                        </div>
                         <div class="card mb-3">
                             <div class="card-body">
                                 <h2 class="h4 mb-3">Pricing</h2>
@@ -74,7 +77,7 @@
                                             <label for="price">Price</label>
                                             <input type="text" name="price" id="price" class="form-control"
                                                 placeholder="Price">
-                                                <p class="error"></p>
+                                            <p class="error"></p>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -100,7 +103,7 @@
                                             <label for="sku">SKU (Stock Keeping Unit)</label>
                                             <input type="text" name="sku" id="sku" class="form-control"
                                                 placeholder="sku">
-                                                <p class="error"></p>
+                                            <p class="error"></p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -118,13 +121,13 @@
                                                     name="track_qty" value="Yes" checked>
                                                 <label for="track_qty" class="custom-control-label">Track
                                                     Quantity</label>
-                                                    <p class="error"></p>
+                                                <p class="error"></p>
                                             </div>
                                         </div>
                                         <div class="mb-3">
                                             <input type="number" min="0" name="qty" id="qty" class="form-control"
                                                 placeholder="Qty">
-                                                <p class="error"></p>
+                                            <p class="error"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -151,9 +154,9 @@
                                     <select name="category" id="category" class="form-control">
                                         <option value="">Select a Category</option>
                                         @if ($categories->isNotEmpty())
-                                            @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                            @endforeach
+                                        @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
                                         @endif
                                     </select>
                                     <p class="error"></p>
@@ -162,7 +165,7 @@
                                     <label for="sub_category">Sub category</label>
                                     <select name="sub_category" id="sub_category" class="form-control">
                                         <option value="">Select a Sub Category</option>
-                                        
+
                                     </select>
                                 </div>
                             </div>
@@ -241,7 +244,7 @@
         event.preventDefault();
         var formArray = $(this).serializeArray();
 
-        $("button[type=submit]").prop('disabled',true);
+        $("button[type=submit]").prop('disabled', true);
 
         $.ajax({
             url: '{{route("products.store")}}',
@@ -249,11 +252,16 @@
             data: formArray,
             dataType: 'json',
             success: function (response) {
-                $("button[type=submit]").prop('disabled',false);
-                if(response['status'] == true){
+                $("button[type=submit]").prop('disabled', false);
+                if (response['status'] == true) {
+
+                    $(".error").removeClass('invalid-feedback').html('');
+                    $("input[type='text'], select, input[type='number']").removeClass('is-invalid');
+
+                    window.location.href="{{route('products.index')}}";
 
                 }
-                else{
+                else {
                     var errors = response['errors'];
 
                     // if(errors['title']){
@@ -272,12 +280,12 @@
                     $(".error").removeClass('invalid-feedback').html('');
                     $("input[type='text'], select, input[type='number']").removeClass('is-invalid');
 
-                    $.each(errors,function(key,value){
+                    $.each(errors, function (key, value) {
 
                         $(`#${key}`).addClass('is-invalid')
-                        .siblings('p')
-                        .addClass('invalid-feedback')
-                        .html(value);
+                            .siblings('p')
+                            .addClass('invalid-feedback')
+                            .html(value);
 
                     });
 
@@ -300,7 +308,7 @@
             dataType: 'json',
             success: function (response) {
                 $("#sub_category").find("option").not(":first").remove();
-                $.each(response["subCategories"],function(key,item){
+                $.each(response["subCategories"], function (key, item) {
 
                     $("#sub_category").append(`<option value = '${item.id}'>${item.name}</option>`)
 
@@ -313,6 +321,51 @@
         });
     });
 
+
+
+    Dropzone.autoDiscover = false;
+    const dropzone = $("#image").dropzone({
+        // init: function () {
+        //     this.on('addedfile', function (file) {
+        //         if (this.files.length > 1) {
+        //             this.removeFile(this.files[0]);
+        //         }
+        //     });
+        // },
+        url: "{{ route('temp-images.create') }}",
+        maxFiles: 5,
+        paramName: 'image',
+        addRemoveLinks: true,
+        acceptedFiles: "image/jpeg,image/png,image/gif",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }, success: function (file, response) {
+            // $("#image_id").val(response.image_id);
+            //console.log(response)
+
+
+            var html = ` <div class="col-md-3" id = "image-row-${response.image_id}">
+                            <div class="card">
+                                <input type="hidden" name ="image_array[]" value="${response.image_id}">
+                                <img src="${response.ImagePath}" class="card-img-top" alt="">
+                                    <div class="card-body">                       
+                                        <a href="javascript:void(0)" onclick="deleteImage(${response.image_id})" class="btn btn-danger">Delete</a>
+                                    </div>
+                            </div>
+                        </div> `;
+
+            $("#product-gallery").append(html);
+
+        },
+        complete:function(file){
+            this.removeFile(file);
+        }
+    });
+
+
+    function deleteImage(id){
+        $("#image-row-"+id).remove();
+    }
 
 </script>
 
