@@ -15,9 +15,18 @@ use Image;
 class ProductController extends Controller
 {
 
-    public function index() {
+    public function index(Request $request) {
+      
+        $products = Product::latest('id')->with('product_images');
+
+        if (!empty($request->get('keyword'))) {
+            $products =  $products->where('title', 'like', '%' . $request->get('keyword') . '%');
+        }
         
-        
+        $products = $products->paginate();
+        $data['products'] = $products;
+        return view('admin.products.list', $data);
+        // dd($products);
     }
 
     public function create(){
@@ -99,7 +108,7 @@ class ProductController extends Controller
 
                 // Large Image
                 $sourcePath = public_path().'/temp/'.$tempImageInfo->name;
-                $destPath = public_path().'/uploads/product/large/'.$tempImageInfo->name;
+                $destPath = public_path().'/uploads/product/large/'.$imageName;
                 $image = Image::make($sourcePath);
                 $image->resize(1400, null, function ($constraint) {
                     $constraint->aspectRatio();
@@ -109,7 +118,7 @@ class ProductController extends Controller
 
                 // small image 
 
-                $destPath = public_path().'/uploads/product/small/'.$tempImageInfo->name;
+                $destPath = public_path().'/uploads/product/small/'.$imageName;
                 $image = Image::make($sourcePath);
                 $image->fit(300, 300);
                 $image->save($destPath);
