@@ -82,14 +82,17 @@
 
                                         <td>
                                             @if(!empty($productImage->image))
-                                                <img src="{{asset('uploads/product/small/'.$productImage->image)}}" class="img-thumbnail" width="50" alt="product">
+                                               <a href="{{route('products.edit',$product->id)}}">
+                                                    <img src="{{asset('uploads/product/small/'.$productImage->image)}}" class="img-thumbnail" width="50" alt="product">
+                                                </a>
                                                 @else
-                                                <img src="{{asset('admin/img/product-1.jpg')}}" class="img-thumbnail" width="50" alt="product">
-
+                                                <a href="{{route('products.edit',$product->id)}}">
+                                                    <img src="{{asset('admin/img/product-1.jpg')}}" class="img-thumbnail" width="50" alt="product">
+                                                </a>
                                             @endif
 
                                         </td>
-                                        <td><a href="#">{{$product->title}}</a></td>
+                                        <td><a href="{{route('products.edit',$product->id)}}">{{$product->title}}</a></td>
                                         <td>₹ {{$product->price}}</td>
                                         <td><span style="color: rgb(252, 0, 0);">{{$product->qty}}</span> left in Stock</td>
                                         <td>{{$product->sku}}</td>
@@ -111,7 +114,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="#">
+                                            <a href="{{route('products.edit',$product->id)}}">
                                                 <svg class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path
