@@ -13,6 +13,10 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductImageController;
 use App\Http\Controllers\Admin\ProductSubCategoryController;
 
+
+
+use App\Http\Controllers\Fronend\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,14 +28,14 @@ use App\Http\Controllers\Admin\ProductSubCategoryController;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
   
-    return view('welcome');
+//     return view('welcome');
    
-});
+// });
 
 
-
+//admin routes
 Route::group(['prefix'=>'admin'],function(){
 
     Route::group(['middleware' => 'admin.guest'],function(){
@@ -112,3 +116,8 @@ Route::group(['prefix'=>'admin'],function(){
 
 
 });
+
+
+// frontend routes
+
+Route::get('/',[HomeController::class,'index'])->name('front.home');
