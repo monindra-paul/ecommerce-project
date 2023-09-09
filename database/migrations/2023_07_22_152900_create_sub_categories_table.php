@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('slug')->nullable();
             $table->integer('status')->default(1);
+            $table->enum('showHome',['Yes','No'])->default('No');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

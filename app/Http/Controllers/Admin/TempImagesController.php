@@ -11,8 +11,8 @@ class TempImagesController extends Controller
 {
     public function create(Request $request){
         
+        $image = $request->image;
         if(!empty($image)){
-            $image = $request->image;
             $ext = $image->getClientOriginalExtension();
             $newName = time(). '.' .$ext;
 
@@ -21,7 +21,7 @@ class TempImagesController extends Controller
             $tempImage->name = $newName;
             $tempImage->save();
 
-            $image -> move (public_path(). '/temp', $newName);
+            $image -> move(public_path(). '/temp', $newName);
 
 
             // gerenerate thumb image
