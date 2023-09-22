@@ -41,7 +41,7 @@ class ProductImageController extends Controller
 
         $destPath = public_path().'/uploads/product/small/'.$imageName;
         $image = Image::make($sourcePath);
-        $image->fit(300, 300);
+        $image->fit(300, 400);
         $image->save($destPath);
       
 

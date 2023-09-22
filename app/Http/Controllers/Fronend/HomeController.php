@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Fronend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -29,5 +30,12 @@ class HomeController extends Controller
 
 
         return view('frontend.home.index',$data);
+    }
+
+
+    public function category(){
+        
+        $categories = Category::withCount('products')->get();
+         return view('frontend.home.index', compact('categories'));
     }
 }

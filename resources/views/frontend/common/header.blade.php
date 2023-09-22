@@ -1,801 +1,449 @@
-<body class="theme-color3 light ltr">
+<!doctype html>
+<html class="no-js" lang="zxx">
 
-    <!-- header start -->
-    <header id="home">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Apex Bags - Ecommerce Website</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <div class="main-header navbar-searchbar">
-            <div class="container-fluid-lg">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="main-menu">
-                            <div class="menu-left">
-                                <div class="brand-logo">
-                                    <a href="index.html">
-                                        <svg class="svg-icon">
-                                            <use class="fill-color"
-                                                xlink:href="{{asset('frontend/assets/svg/icons.svg#logo')}}"></use>
-                                        </svg>
-                                        <img src="{{asset('frontend/assets/images/logo.png')}}"
-                                            class="img-fluid blur-up lazyload" alt="logo">
-                                    </a>
-                                </div>
-                                <div class="category-menu">
-                                    <button type="button"
-                                        class="btn btn-solid-default toggle-category d-sm-block d-none">
-                                        All categories
-                                        <i class="fas fa-chevron-down d-xl-inline-block d-none"></i>
-                                    </button>
-                                    <div class="category-dropdown">
-                                        <div class="close-btn d-xl-none">
-                                            Category List
-                                            <span class="back-category"><i class="fa fa-angle-left"></i>
-                                            </span>
-                                        </div>
-                                        <ul>
-                                            @if(!empty(getCategories()))
-                                                @foreach (getCategories() as $category)
-                                                    <li class="submenu">
-                                                        <a href="javascript:void(0)">{{$category->name}}</a>
-                                                        <ul class="category-mega-menu">
-                                                            <li>
-                                                                <div class="row">
-                                                                    <div class="col-xl-3">
-                                                                        <div class="category-childmenu">
-                                                                            <div class="title-category">
-                                                                                <!-- <h6>{{$category->name}}</h6> -->
-                                                                            </div>
-                                                                            @if($category->sub_category->isNotEmpty())
-                                                                                <ul>
-                                                                                    @foreach($category->sub_category as $subCategory)
-                                                                                    <li>
-                                                                                        <a href="javascript:void(0)">{{$subCategory->name}}</a>
-                                                                                    </li>
-                                                                                    @endforeach                                                                                    
-                                                                                </ul>
-                                                                            @endif
-                                                                        </div>
-                                                                    </div>
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/logo/favicon.png')}}">
 
-                                                                    <!-- <div class="col-xl-3">
-                                                                        <div class="category-banner">
-                                                                            <img src="{{asset('frontend/assets/images/electronics/banner/4.jpg')}}"
-                                                                                class="img-fluid blur-up lazyload" alt="">
-                                                                        </div>
-                                                                    </div> -->
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                @endforeach                                            
-                                            @endif
-                                           
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <nav>
-                                <div class="main-navbar">
-                                    <div id="mainnav">
-                                        <div class="toggle-nav me-3"><i class="fa fa-bars sidebar-bar"></i></div>
-                                        <ul class="nav-menu">
-                                            <li class="back-btn d-xl-none">
-                                                <div class="close-btn">
-                                                    Menu
-                                                    <span class="mobile-back"><i class="fa fa-angle-left"></i>
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <li class="mega-menu dropdown home-menu">
-                                                <a href="javascript:void(0)" class="nav-link menu-title">home</a>
-                                                <div class="mega-menu-container menu-content">
-                                                    <div class="container-fluid">
-                                                        <div class="row">
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="opensubmegamenu">
-                                                                        <ul>
-                                                                            <li>
-                                                                                <a href="index.html"
-                                                                                    class="megamenu-image">
-                                                                                    <img src="{{asset('frontend/assets/images/demo-image/fashion.jpg')}}"
-                                                                                        class="img-fluid blur-up lazyload"
-                                                                                        alt="">
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
+   <!-- CSS here -->
+   <link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/swiper-bundle.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/font-awesome-pro.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/flaticon_shofy.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/spacing.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+</head>
 
-                                                                    <div class="megamenu-image-title pb-0">
-                                                                        <h5 class="mb-0">Fashion Demo</h5>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="opensubmegamenu">
-                                                                        <ul>
-                                                                            <li>
-                                                                                <a href="flower-demo.html"
-                                                                                    class="megamenu-image">
-                                                                                    <img src="{{asset('frontend/assets/images/demo-image/flower.jpg')}}"
-                                                                                        class="img-fluid blur-up lazyload"
-                                                                                        alt="">
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="megamenu-image-title pb-0">
-                                                                        <h5 class="mb-0">Flowers Demo</h5>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="opensubmegamenu">
-                                                                        <ul>
-                                                                            <li>
-                                                                                <a href="furniture-demo.html"
-                                                                                    class="megamenu-image">
-                                                                                    <img src="{{asset('frontend/assets/images/demo-image/furniture.jpg')}}"
-                                                                                        class="img-fluid blur-up lazyload"
-                                                                                        alt="">
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="megamenu-image-title pb-0">
-                                                                        <h5 class="mb-0">Furniture Demo</h5>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="opensubmegamenu">
-                                                                        <ul>
-                                                                            <li>
-                                                                                <a href="electronic-demo.html"
-                                                                                    class="megamenu-image">
-                                                                                    <img src="{{asset('frontend/assets/images/demo-image/electonic.jpg')}}"
-                                                                                        class="img-fluid blur-up lazyload"
-                                                                                        alt="">
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="megamenu-image-title pb-0">
-                                                                        <h5 class="mb-0">Electronic Demo</h5>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="opensubmegamenu">
-                                                                        <ul>
-                                                                            <li>
-                                                                                <a href="shoes-demo.html"
-                                                                                    class="megamenu-image">
-                                                                                    <img src="{{asset('frontend/assets/images/demo-image/shoes.jpg')}}"
-                                                                                        class="img-fluid blur-up lazyload"
-                                                                                        alt="">
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="megamenu-image-title pb-0">
-                                                                        <h5 class="mb-0">Shoes Demo</h5>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="opensubmegamenu">
-                                                                        <ul>
-                                                                            <li>
-                                                                                <a href="vegetables-demo.html"
-                                                                                    class="megamenu-image">
-                                                                                    <img src="{{asset('frontend/assets/images/demo-image/vagetables.jpg')}}"
-                                                                                        class="img-fluid blur-up lazyload"
-                                                                                        alt="">
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="megamenu-image-title pb-0">
-                                                                        <h5 class="mb-0">Vegetables Demo</h5>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="javascript:void(0)" class="nav-link menu-title">shop</a>
-                                                <ul class="nav-submenu menu-content">
-                                                    <li>
-                                                        <a href="shop-canvas-filter.html">Shop Canvas Filter</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-category-slider.html">Shop Category Filter</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-filter-hide.html">Shop Filter Hide</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-left-sidebar.html">Shop Left Sidebar
-                                                            <span>Trending</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-list-infinite.html">Shop List Infinite</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-list.html">Shop Shop List</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-no-sidebar.html">Shop No Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-right-sidebar.html">Shop Right Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-top-filter.html">Shop Top Filter</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-with-category.html">Shop With Category <span
-                                                                class="tren-budge">New</span></a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="javascript:void(0)" class="nav-link menu-title">product</a>
-                                                <ul class="nav-submenu menu-content">
-                                                    <li>
-                                                        <a href="product-4-image.html">Product 4 Images</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-360-view.html">Product 360 View</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-bundle.html">Product Bundle</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-left-sidebar.html">Product Left Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-left-thumbnail.html">Product Left thumbnail</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-no-sidebar.html">Product No Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-right-sidebar.html">Product Right Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-right-thumbnail.html">Product Right
-                                                            thumbnail</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-sticky.html">Product Sticky</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-video-thumbnail.html">Product Video
-                                                            Thumbnail</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-menu dropdown ratio_40">
-                                                <a href="javascript:void(0)" class="nav-link menu-title">
-                                                    <div class="gradient-title">Voxo plus</div>
-                                                </a>
-                                                <div class="mega-menu-container poster-bg-image menu-content">
-                                                    <div class="container-fluid">
-                                                        <div class="row row-cols-5">
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="submenu-title">
-                                                                        <h5>Email Template</h5>
-                                                                    </div>
-                                                                    <div class="submenu-content opensubmegamenu">
-                                                                        <ul class="list">
-                                                                            <li>
-                                                                                <a
-                                                                                    href="https://themes.pixelstrap.com/voxo/email-template/abandonment-email.html">Abandonment
-                                                                                    Email</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="https://themes.pixelstrap.com/voxo/email-template/black-friday.html">Black
-                                                                                    Fridday</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="https://themes.pixelstrap.com/voxo/email-template/email-template-1.html">Email
-                                                                                    Template 1</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="https://themes.pixelstrap.com/voxo/email-template/email-template-2.html">Email
-                                                                                    Template 2</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="https://themes.pixelstrap.com/voxo/email-template/offer.html">Offer
-                                                                                    Template</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="https://themes.pixelstrap.com/voxo/email-template/order-success-1.html">Order
-                                                                                    Success 1</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="https://themes.pixelstrap.com/voxo/email-template/order-success-2.html">Order
-                                                                                    Success 2</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="submenu-title">
-                                                                        <h5>Email Template</h5>
-                                                                    </div>
-                                                                    <div class="submenu-content opensubmegamenu">
-                                                                        <ul class="list">
-                                                                            <li>
-                                                                                <a
-                                                                                    href="https://themes.pixelstrap.com/voxo/email-template/product-review.html">Product
-                                                                                    Review</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="https://themes.pixelstrap.com/voxo/email-template/reset-password.html">Reset
-                                                                                    Password</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="https://themes.pixelstrap.com/voxo/email-template/welcome.html">Welcome
-                                                                                    Template</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="link-section">
-                                                                    <div class="submenu-title">
-                                                                        <h5>Invoice Template</h5>
-                                                                    </div>
-                                                                    <div class="submenu-content opensubmegamenu">
-                                                                        <ul class="list">
-                                                                            <li>
-                                                                                <a
-                                                                                    href="https://themes.pixelstrap.com/voxo/invoice/invoice-1.html">Invoice
-                                                                                    1 Template</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="https://themes.pixelstrap.com/voxo/invoice/invoice-2.html">Invoice
-                                                                                    2 Template</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="https://themes.pixelstrap.com/voxo/invoice/invoice-3.html">Invoice
-                                                                                    3 Template</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+<body>
+   <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
 
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="submenu-title">
-                                                                        <h5>Portfolio Page</h5>
-                                                                    </div>
-                                                                    <div class="submenu-content opensubmegamenu">
-                                                                        <ul class="list">
-                                                                            <li>
-                                                                                <a href="portfolio-2-grid.html">Portfolio
-                                                                                    2 Grid</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="portfolio-2-masonary.html">Portfolio
-                                                                                    2 Masonary</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="portfolio-3-grid.html">Portfolio
-                                                                                    3 Grid</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="portfolio-3-masonary.html">Portfolio
-                                                                                    3 Masonary</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="portfolio-4-grid.html">Portfolio
-                                                                                    4 Grid</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="portfolio-4-masonary.html">Portfolio
-                                                                                    4 Masonary</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="portfolio-no-space.html">Portfolio
-                                                                                    No Space</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
 
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="submenu-title">
-                                                                        <h5>Element Page</h5>
-                                                                    </div>
-                                                                    <div class="submenu-content opensubmegamenu">
-                                                                        <ul class="list">
-                                                                            <li>
-                                                                                <a href="element-button.html">Element
-                                                                                    Button</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="element-category.html">Element
-                                                                                    Category</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a
-                                                                                    href="element-collection-banner.html">Element
-                                                                                    Collection Banner</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="element-deal-banner.html">Element
-                                                                                    Deal Banner</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="element-header.html">Element
-                                                                                    Header</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="element-home.html">Element
-                                                                                    Home</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="element-product.html">Element
-                                                                                    Product</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+   <!-- pre loader area start -->
 
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="submenu-title">
-                                                                        <h5>Cookie Bar</h5>
-                                                                    </div>
-                                                                    <div class="submenu-content opensubmegamenu">
-                                                                        <ul class="list">
-                                                                            <li>
-                                                                                <a href="furniture-demo.html">Bottom</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="electronic-demo.html">Bottom
-                                                                                    Left</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="index.html">Bottom Right</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
+   <!-- pre loader area end -->
 
-                                                                <div class="link-section">
-                                                                    <div class="submenu-title">
-                                                                        <h5>Search</h5>
-                                                                    </div>
-                                                                    <div class="submenu-content opensubmegamenu">
-                                                                        <ul class="list">
-                                                                            <li>
-                                                                                <a href="vegetables-demo.html">Ajax
-                                                                                    Search</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+   <!-- back to top start -->
+   <div class="back-to-top-wrapper">
+      <button id="back_to_top" type="button" class="back-to-top-btn">
+         <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+               stroke-linejoin="round" />
+         </svg>
+      </button>
+   </div>
+   <!-- back to top end -->
 
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="javascript:void(0)" class="nav-link menu-title">pages</a>
-                                                <ul class="nav-submenu menu-content">
-                                                    <li>
-                                                        <a href="404.html">404</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="log-in.html">Log In</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="sign-up.html">Register</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="forgot.html">Forgot Password</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="cart.html">cart</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="checkout.html">checkout</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="coming-soon.html">coming soon<span>trending</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="compare.html">compare</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="contact-us.html">contact us</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="faq.html">faq</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="order-success.html">order success</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="order-tracking.html">order tracking</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="review.html">review</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="search.html">search</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="user-dashboard.html">user dashboard</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="wishlist.html">wishlist</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="javascript:void(0)" class="nav-link menu-title">blog</a>
-                                                <ul class="nav-submenu menu-content">
-                                                    <li>
-                                                        <a href="blog-details.html">Blog Details</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-infinite-scroll.html">Blog Infinite Scroll</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-left-sidebar.html">Blog Left Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-listing.html">Blog Listing</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-masonary.html">blog Masonary <span>New</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-no-sidebar.html">blog No Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-right-sidebar.html">Blog Right Sidebar</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="mobile-poster d-flex d-xl-none">
-                                                <img src="{{asset('frontend/assets/images/pwa.png')}}" class="img-fluid"
-                                                    alt="">
-                                                <div class="mobile-contain">
-                                                    <h5>Enjoy app-like experience</h5>
-                                                    <p class="font-light">With this Screen option you can use Website
-                                                        like an App.</p>
-                                                    <a href="javascript:void(0)" id="installApp"
-                                                        class="btn btn-solid-default btn-spacing w-100">ADD TO
-                                                        HOMESCREEN</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </nav>
-                            <div class="menu-right">
-                                <ul>
-                                    <li>
-                                        <div class="search-box theme-bg-color">
-                                            <i data-feather="search"></i>
-                                        </div>
-                                    </li>
-
-                                    <li class="onhover-dropdown cart-dropdown">
-                                        <button type="button" class="btn btn-solid-default btn-spacing">
-                                            <i data-feather="shopping-cart" class="pe-2"></i>
-                                            <span>$5686.25</span>
-                                        </button>
-                                        <div class="onhover-div">
-                                            <div class="cart-menu">
-                                                <div class="cart-title">
-                                                    <h6>
-                                                        <i data-feather="shopping-bag"></i>
-                                                        <span class="label label-theme rounded-pill">5</span>
-                                                    </h6>
-                                                    <span class="d-md-none d-block">
-                                                        <i class="fas fa-arrow-right back-cart"></i>
-                                                    </span>
-                                                </div>
-                                                <ul class="custom-scroll">
-                                                    <li>
-                                                        <div class="media">
-                                                            <img src="{{asset('frontend/assets/images/fashion/product/front/1.jpg')}}"
-                                                                class="img-fluid blur-up lazyload" alt="">
-                                                            <div class="media-body">
-                                                                <h6>Slim Fit Plastic Coat</h6>
-                                                                <div class="qty-with-price">
-                                                                    <span>$78.00</span>
-                                                                    <span>
-                                                                        <input type="number" class="form-control"
-                                                                            value="1">
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                            <button type="button" class="btn-close d-block d-md-none"
-                                                                aria-label="Close">
-                                                                <i class="fas fa-times"></i>
-                                                            </button>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="media">
-                                                            <img src="{{asset('frontend/assets/images/fashion/product/front/7.jpg')}}"
-                                                                class="img-fluid blur-up lazyload" alt="">
-                                                            <div class="media-body">
-                                                                <h6>Womens Stylish Jacket</h6>
-                                                                <div class="qty-with-price">
-                                                                    <span>$24.00</span>
-                                                                    <span>
-                                                                        <input type="number" class="form-control"
-                                                                            value="1">
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                            <button type="button" class="btn-close d-block d-md-none"
-                                                                aria-label="Close">
-                                                                <i class="fas fa-times"></i>
-                                                            </button>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="cart-btn">
-                                                <h6 class="cart-total"><span class="font-light">Total:</span> $
-                                                    542.00</h6>
-                                                <button onclick="location.href = 'cart.html';" type="button"
-                                                    class="btn btn-solid-default btn-block">
-                                                    Proceed to payment
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="search-full">
-                                <div class="input-group">
-                                    <span class="input-group-text">
-                                        <i data-feather="search" class="font-light"></i>
-                                    </span>
-                                    <input type="text" class="form-control search-type" placeholder="Search here..">
-                                    <span class="input-group-text close-search">
-                                        <i data-feather="x" class="font-light"></i>
-                                    </span>
-                                </div>
-                                <div class="search-suggestion">
-                                    <ul class="custom-scroll">
-                                        <li>
-                                            <div class="product-cart media">
-                                                <img src="{{asset('frontend/assets/images/electronics/product/1.jpg')}}"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                                <div class="media-body">
-                                                    <a href="javascript:void(0)">
-                                                        <h6 class="mb-1">Latest Sports Shoes</h6>
-                                                    </a>
-                                                    <ul class="rating mt-1">
-                                                        <li>
-                                                            <i class="fas fa-star theme-color"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="fas fa-star theme-color"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="fas fa-star theme-color"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="fas fa-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="fas fa-star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <p class="mb-0 mt-1">$28.00</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="product-cart media">
-                                                <img src="{{asset('frontend/assets/images/electronics/product/5.jpg')}}"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                                <div class="media-body">
-                                                    <a href="javascript:void(0)">
-                                                        <h6 class="mb-1">Powermatic 900 W Juicer</h6>
-                                                    </a>
-                                                    <ul class="rating mt-1">
-                                                        <li>
-                                                            <i class="fas fa-star theme-color"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="fas fa-star theme-color"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="fas fa-star theme-color"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="fas fa-star theme-color"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="fas fa-star theme-color"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <p class="mb-0 mt-1">$35.00</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+   <!-- offcanvas area start -->
+   <div class="offcanvas__area offcanvas__radius">
+      <div class="offcanvas__wrapper">
+         <div class="offcanvas__close">
+            <button class="offcanvas__close-btn offcanvas-close-btn">
+               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                     stroke-linejoin="round" />
+                  <path d="M1 1L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                     stroke-linejoin="round" />
+               </svg>
+            </button>
+         </div>
+         <div class="offcanvas__content">
+            <div class="offcanvas__top mb-70 d-flex justify-content-between align-items-center">
+               <div class="offcanvas__logo logo">
+                  <a href="index.html">
+                     <img src="{{asset('assets/img/apex/apex-logo.png')}}" alt="logo" width="65px">
+                  </a>
+               </div>
             </div>
-        </div>
-    </header>
-    <!-- header end -->
+            <div class="offcanvas__category pb-40">
+               <button class="tp-offcanvas-category-toggle">
+                  <i class="fa-solid fa-bars"></i>
+                  All Categories
+               </button>
+               <div class="tp-category-mobile-menu">
 
-    <!-- mobile fix menu start -->
-    <div class="mobile-menu d-sm-none">
-        <ul>
-            <li>
-                <a href="demo3.html" class="active">
-                    <i data-feather="home"></i>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0)" class="toggle-category">
-                    <i data-feather="align-justify"></i>
-                    <span>Category</span>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">
-                    <i data-feather="shopping-bag"></i>
-                    <span>Cart</span>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">
-                    <i data-feather="heart"></i>
-                    <span>Wishlist</span>
-                </a>
-            </li>
-            <li>
-                <a href="user-dashboard.html">
-                    <i data-feather="user"></i>
-                    <span>Account</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- mobile fix menu end -->
+               </div>
+            </div>
+            <div class="tp-main-menu-mobile fix d-lg-none mb-40"></div>
+
+            <div class="offcanvas__contact align-items-center d-none">
+               <div class="offcanvas__contact-icon mr-20">
+                  <span>
+                     <img src="assets/img/icon/contact.png" alt="">
+                  </span>
+               </div>
+               <div class="offcanvas__contact-content">
+                  <h3 class="offcanvas__contact-title">
+                     <a href="tel:098-852-987">004524865</a>
+                  </h3>
+               </div>
+            </div>
+            <div class="offcanvas__btn">
+               <a href="contact.html" class="tp-btn-2 tp-btn-border-2">Contact Us</a>
+            </div>
+         </div>
+
+      </div>
+   </div>
+   <!-- <div class="body-overlay"></div> -->
+   <!-- offcanvas area end -->
+
+   <!-- mobile menu area start -->
+   <div id="tp-bottom-menu-sticky" class="tp-mobile-menu d-lg-none">
+      <div class="container">
+         <div class="row row-cols-5">
+            <div class="col">
+               <div class="tp-mobile-item text-center">
+                  <a href="shop.html" class="tp-mobile-item-btn">
+                     <i class="flaticon-store"></i>
+                     <span>Store</span>
+                  </a>
+               </div>
+            </div>
+            <div class="col">
+               <div class="tp-mobile-item text-center">
+                  <button class="tp-mobile-item-btn tp-search-open-btn">
+                     <i class="flaticon-search-1"></i>
+                     <span>Search</span>
+                  </button>
+               </div>
+            </div>
+            <div class="col">
+               <div class="tp-mobile-item text-center">
+                  <a href="wishlist.html" class="tp-mobile-item-btn">
+                     <i class="flaticon-love"></i>
+                     <span>Wishlist</span>
+                  </a>
+               </div>
+            </div>
+            <div class="col">
+               <div class="tp-mobile-item text-center">
+                  <a href="profile.html" class="tp-mobile-item-btn">
+                     <i class="flaticon-user"></i>
+                     <span>Account</span>
+                  </a>
+               </div>
+            </div>
+            <div class="col">
+               <div class="tp-mobile-item text-center">
+                  <button class="tp-mobile-item-btn tp-offcanvas-open-btn">
+                     <i class="flaticon-menu-1"></i>
+                     <span>Menu</span>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- mobile menu area end -->
+
+   <!-- search area start -->
+   <section class="tp-search-area">
+      <div class="container">
+         <div class="row">
+            <div class="col-xl-12">
+               <div class="tp-search-form">
+                  <div class="tp-search-close text-center mb-20">
+                     <button class="tp-search-close-btn tp-search-close-btn"></button>
+                  </div>
+                  <form action="#">
+                     <div class="tp-search-input mb-10">
+                        <input type="text" placeholder="Search for product...">
+                        <button type="submit"><i class="flaticon-search-1"></i></button>
+                     </div>
+
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- search area end -->
+
+   <!-- cart mini area start -->
+
+   <!-- cart mini area end -->
+
+   <!-- header area start -->
+   <header>
+      <div class="tp-header-area p-relative z-index-11">
+         <!-- header top start  -->
+
+
+         <!-- header main start -->
+         <div class="tp-header-main tp-header-sticky">
+            <div class="container">
+               <div class="row align-items-center">
+                  <div class="col-xl-2 col-lg-2 col-md-4 col-6">
+                     <div class="logo">
+                        <a href="{{url('/')}}">
+                           <img src="{{asset('assets/img/apex/apex-logo.png')}}" alt="logo" width="100px">
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xl-8 col-lg-8 d-none d-lg-block">
+                     <div class="tp-header-search ">
+                        <form action="#">
+                           <div class="tp-header-search-wrapper d-flex align-items-center">
+                              <div class="tp-header-search-box">
+                                 <input type="text" placeholder="Search for Products...">
+                              </div>
+
+                              <div class="tp-header-search-btn">
+                                 <button type="submit">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                       xmlns="http://www.w3.org/2000/svg">
+                                       <path
+                                          d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
+                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                       <path d="M19 19L14.65 14.65" stroke="currentColor" stroke-width="2"
+                                          stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+                  <div class="col-xl-2 col-lg-2 col-md-6 col-6">
+                     <div class="tp-header-main-right d-flex align-items-center justify-content-end">
+                        <div class="tp-header-action d-flex align-items-center ml-50">
+                           <div class="tp-header-action-item d-none d-lg-block">
+                              <div class="tp-header-contact-icon">
+                                 <span>
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                       xmlns="http://www.w3.org/2000/svg">
+                                       <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M1.96977 3.24859C2.26945 2.75144 3.92158 0.946726 5.09889 1.00121C5.45111 1.03137 5.76246 1.24346 6.01544 1.49057H6.01641C6.59631 2.05874 8.26011 4.203 8.35352 4.65442C8.58411 5.76158 7.26378 6.39979 7.66756 7.5157C8.69698 10.0345 10.4707 11.8081 12.9908 12.8365C14.1058 13.2412 14.7441 11.9219 15.8513 12.1515C16.3028 12.2459 18.4482 13.9086 19.0155 14.4894V14.4894C19.2616 14.7414 19.4757 15.0537 19.5049 15.4059C19.5487 16.6463 17.6319 18.3207 17.2583 18.5347C16.3767 19.1661 15.2267 19.1544 13.8246 18.5026C9.91224 16.8749 3.65985 10.7408 2.00188 6.68096C1.3675 5.2868 1.32469 4.12906 1.96977 3.24859Z"
+                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                       <path d="M12.936 1.23685C16.4432 1.62622 19.2124 4.39253 19.6065 7.89874"
+                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                       <path d="M12.936 4.59337C14.6129 4.92021 15.9231 6.23042 16.2499 7.90726"
+                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                    </svg>
+                                 </span>
+                              </div>
+                              <div class="tp-header-contact-content">
+                                 <h5>Hotline:</h5>
+                                 <p><a href="tel:402-763-282-46">+(402) 763 282 46</a></p>
+                              </div>
+                           </div>
+
+                           <div class="tp-header-action-item d-lg-none">
+                              <button type="button" class="tp-header-action-btn tp-offcanvas-open-btn">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" viewBox="0 0 30 16">
+                                    <rect x="10" width="20" height="2" fill="currentColor" />
+                                    <rect x="5" y="7" width="25" height="2" fill="currentColor" />
+                                    <rect x="10" y="14" width="20" height="2" fill="currentColor" />
+                                 </svg>
+                              </button>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- header bottom start -->
+         <div class="tp-header-bottom tp-header-bottom-border d-none d-lg-block">
+            <div class="container">
+               <div class="tp-mega-menu-wrapper p-relative">
+                  <div class="row align-items-center">
+                     <div class="col-xl-3 col-lg-3">
+                        <div class="tp-header-category tp-category-menu tp-header-category-toggle">
+                           <button class="tp-category-menu-btn tp-category-menu-toggle">
+                              <span>
+                                 <svg width="18" height="14" viewBox="0 0 18 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                       d="M0 1C0 0.447715 0.447715 0 1 0H15C15.5523 0 16 0.447715 16 1C16 1.55228 15.5523 2 15 2H1C0.447715 2 0 1.55228 0 1ZM0 7C0 6.44772 0.447715 6 1 6H17C17.5523 6 18 6.44772 18 7C18 7.55228 17.5523 8 17 8H1C0.447715 8 0 7.55228 0 7ZM1 12C0.447715 12 0 12.4477 0 13C0 13.5523 0.447715 14 1 14H11C11.5523 14 12 13.5523 12 13C12 12.4477 11.5523 12 11 12H1Z"
+                                       fill="currentColor" />
+                                 </svg>
+                              </span>
+                              All Categories
+                           </button>
+                           <nav class="tp-category-menu-content">
+                              <ul>
+                                 <li>
+                                    <a href="shop.html">
+                                       <span>
+                                          <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M5.90532 14.8316V12.5719C5.9053 11.9971 6.37388 11.5301 6.95443 11.5262H9.08101C9.66434 11.5262 10.1372 11.9944 10.1372 12.5719V12.5719V14.8386C10.1371 15.3266 10.5305 15.7254 11.0233 15.7368H12.441C13.8543 15.7368 15 14.6026 15 13.2035V13.2035V6.77525C14.9925 6.22482 14.7314 5.70794 14.2911 5.37171L9.44253 1.50496C8.59311 0.83168 7.38562 0.83168 6.5362 1.50496L1.70886 5.37873C1.26693 5.7136 1.00544 6.23133 1 6.78227V13.2035C1 14.6026 2.1457 15.7368 3.55899 15.7368H4.97671C5.48173 15.7368 5.89114 15.3315 5.89114 14.8316V14.8316"
+                                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                          </svg>
+                                       </span>
+                                       New Arrivals</a>
+                                 </li>
+
+                                 @if(!empty(getCategories()))
+                                    @foreach (getCategories() as $category)
+
+                                    @if ($category->sub_category->isNotEmpty())
+                                       <li class="has-dropdown">
+                                          <a href="shop.html">
+                                             <span>
+                                                <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                                   xmlns="http://www.w3.org/2000/svg">
+                                                   <path
+                                                      d="M14.5 1H2.5C1.67157 1 1 1.67157 1 2.5V10C1 10.8284 1.67157 11.5 2.5 11.5H14.5C15.3284 11.5 16 10.8284 16 10V2.5C16 1.67157 15.3284 1 14.5 1Z"
+                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                      stroke-linejoin="round" />
+                                                   <path d="M5.5 14.5H11.5" stroke="currentColor" stroke-width="1.5"
+                                                      stroke-linecap="round" stroke-linejoin="round" />
+                                                   <path d="M8.5 11.5V14.5" stroke="currentColor" stroke-width="1.5"
+                                                      stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                             </span>
+                                             {{$category->name}}
+                                          </a>
+                                          @if($category->sub_category->isNotEmpty())
+                                          <ul class="tp-submenu">
+                                             @foreach($category->sub_category as $subCategory)
+                                                <li><a href="shop.html">{{$subCategory->name}}</a></li>
+                                             @endforeach
+                                          </ul>
+                                          @endif
+
+                                       </li>
+                                    @else                                        
+                                    <li class="">
+                                       <a href="shop.html">
+                                          <span>
+                                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                   d="M14.5 1H2.5C1.67157 1 1 1.67157 1 2.5V10C1 10.8284 1.67157 11.5 2.5 11.5H14.5C15.3284 11.5 16 10.8284 16 10V2.5C16 1.67157 15.3284 1 14.5 1Z"
+                                                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                   stroke-linejoin="round" />
+                                                <path d="M5.5 14.5H11.5" stroke="currentColor" stroke-width="1.5"
+                                                   stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M8.5 11.5V14.5" stroke="currentColor" stroke-width="1.5"
+                                                   stroke-linecap="round" stroke-linejoin="round" />
+                                             </svg>
+                                          </span>
+                                          {{$category->name}}
+                                       </a>
+                                       @if($category->sub_category->isNotEmpty())
+                                       <ul class="tp-submenu">
+                                          @foreach($category->sub_category as $subCategory)
+                                          <li><a href="shop.html">{{$subCategory->name}}</a></li>
+                                          @endforeach
+                                       </ul>
+                                       @endif
+
+                                    </li>
+                                    @endif
+                                       
+                                    @endforeach
+                                 @endif
+
+                              </ul>
+                           </nav>
+                        </div>
+                     </div>
+                     <div class="col-xl-6 col-lg-6">
+                        <div class="main-menu menu-style-1">
+                           <nav class="tp-main-menu-content">
+                              <ul>
+                                 <li class="">
+                                    <a href="{{url('/')}}">Home</a>
+                                 </li>
+
+                                 <li><a href="contact.html">Contact</a></li>
+                              </ul>
+                           </nav>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+   <!-- header area end -->
+
+   <div id="header-sticky-2" class="tp-header-sticky-area">
+      <div class="container">
+         <div class="tp-mega-menu-wrapper p-relative">
+            <div class="row align-items-center">
+               <div class="col-xl-3 col-lg-3 col-md-3 col-6">
+                  <div class="logo">
+                     <a href="index.html">
+                        <img src="{{asset('assets/img/apex/apex-logo.png')}}" alt="logo" width="75px">
+                     </a>
+                  </div>
+               </div>
+               <div class="col-xl-6 col-lg-6 col-md-6 d-none d-md-block">
+                  <div class="tp-header-sticky-menu main-menu menu-style-1">
+                     <nav id="mobile-menu">
+                        <ul>
+                           <li class="">
+                              <a href="{{url('/')}}">Home</a>
+                              
+                           </li>
+                           
+                           <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                     </nav>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-3 col-6">
+                  <div class="tp-header-action d-flex align-items-center justify-content-end ml-50">
+                     <div class="tp-header-action-item d-none d-lg-block">
+                        <div class="tp-header-contact-icon">
+                           <span>
+                              <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.96977 3.24859C2.26945 2.75144 3.92158 0.946726 5.09889 1.00121C5.45111 1.03137 5.76246 1.24346 6.01544 1.49057H6.01641C6.59631 2.05874 8.26011 4.203 8.35352 4.65442C8.58411 5.76158 7.26378 6.39979 7.66756 7.5157C8.69698 10.0345 10.4707 11.8081 12.9908 12.8365C14.1058 13.2412 14.7441 11.9219 15.8513 12.1515C16.3028 12.2459 18.4482 13.9086 19.0155 14.4894V14.4894C19.2616 14.7414 19.4757 15.0537 19.5049 15.4059C19.5487 16.6463 17.6319 18.3207 17.2583 18.5347C16.3767 19.1661 15.2267 19.1544 13.8246 18.5026C9.91224 16.8749 3.65985 10.7408 2.00188 6.68096C1.3675 5.2868 1.32469 4.12906 1.96977 3.24859Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                 <path d="M12.936 1.23685C16.4432 1.62622 19.2124 4.39253 19.6065 7.89874"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                 <path d="M12.936 4.59337C14.6129 4.92021 15.9231 6.23042 16.2499 7.90726"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                              </svg>
+                           </span>
+                        </div>
+                        <div class="tp-header-contact-content">
+                           <h5>Hotline:</h5>
+                           <p><a href="tel:402-763-282-46">+(402) 763 282 46</a></p>
+                        </div>
+                     </div>
+                     <div class="tp-header-action-item d-lg-none">
+                        <button type="button" class="tp-header-action-btn tp-offcanvas-open-btn">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" viewBox="0 0 30 16">
+                              <rect x="10" width="20" height="2" fill="currentColor" />
+                              <rect x="5" y="7" width="25" height="2" fill="currentColor" />
+                              <rect x="10" y="14" width="20" height="2" fill="currentColor" />
+                           </svg>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>

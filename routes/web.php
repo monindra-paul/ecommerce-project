@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\ProductSubCategoryController;
 
 
 use App\Http\Controllers\Fronend\HomeController;
+use App\Http\Controllers\Fronend\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -121,3 +122,4 @@ Route::group(['prefix'=>'admin'],function(){
 // frontend routes
 
 Route::get('/',[HomeController::class,'index'])->name('front.home');
+Route::get('/shop',[ShopController::class,'index'])->name('front.shop');
