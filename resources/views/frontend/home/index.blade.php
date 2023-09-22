@@ -293,37 +293,37 @@
                </div>
             </div>
          </div>
-        
+
       </div>
    </section>
    <!-- product category area start -->
    <section class="tp-product-category pt-10 pb-15">
       <div class="container">
          @if(getCategories()->isNotEmpty())
-               <div class="row row-cols-xl-5 row-cols-lg-5 row-cols-md-4">
-                  @foreach(getCategories() as $category)
-                     <div class="col">
-                        <div class="tp-product-category-item text-center mb-40">
-                           @if($category->image !="")
-                           <div class="tp-product-category-thumb fix">
-                              <a href="shop-category.html">
-                                 <img src="{{asset('uploads/category/thumb/'. $category->image)}}" alt="product-category">
-                              </a>
-                           </div>
-                           @endif
-                           <div class="tp-product-category-content">
-                              <h3 class="tp-product-category-title">
-                                 <a href="shop-category.html">{{$category->name}}</a>
-                              </h3>
-                              {{-- @foreach($categories as $categoryc)
-                              <p>{{ $categoryc->products_count}} Product</p>
-                              @endforeach --}}
-                           </div>
-                        </div>
-                     </div>
-                     @endforeach            
+         <div class="row row-cols-xl-5 row-cols-lg-5 row-cols-md-4">
+            @foreach(getCategories() as $category)
+            <div class="col">
+               <div class="tp-product-category-item text-center mb-40">
+                  @if($category->image !="")
+                  <div class="tp-product-category-thumb fix">
+                     <a href="shop-category.html">
+                        <img src="{{asset('uploads/category/thumb/'. $category->image)}}" alt="product-category">
+                     </a>
+                  </div>
+                  @endif
+                  <div class="tp-product-category-content">
+                     <h3 class="tp-product-category-title">
+                        <a href="shop-category.html">{{$category->name}}</a>
+                     </h3>
+                     {{-- @foreach($categories as $categoryc)
+                     <p>{{ $categoryc->products_count}} Product</p>
+                     @endforeach --}}
+                  </div>
                </div>
-            @endif
+            </div>
+            @endforeach
+         </div>
+         @endif
       </div>
    </section>
    <!-- product category area end -->
@@ -413,7 +413,7 @@
                            </span>
                         </button>
                      </li>
-                     
+
                   </ul>
                </div>
             </div>
@@ -423,78 +423,79 @@
                <div class="tp-product-tab-content">
                   <div class="tab-content" id="myTabContent">
 
-                     
+
                      <div class="tab-pane fade show active" id="new-tab-pane" role="tabpanel" aria-labelledby="new-tab"
                         tabindex="0">
                         @if($latestProducts->isNotEmpty())
-                           @foreach($latestProducts as $product)
-                                 @php
-                                    $productImage = $product->product_images->first();
-                                 @endphp
+                        @foreach($latestProducts as $product)
+                        @php
+                        $productImage = $product->product_images->first();
+                        @endphp
 
-                                    <div class="row">
-                                       <div class="col-xl-3 col-lg-3 col-sm-6">
-                                          <div class="tp-product-item p-relative transition-3 mb-25">
-                                             <div class="tp-product-thumb p-relative fix m-img">
-                                                @if(!empty($productImage->image))
-                                                <a href="product-details.html">
-                                                   <img src="{{asset('uploads/product/small/'.$productImage->image)}}" alt="product-electronic">
-                                                </a>
-                                                @else
+                        <div class="row">
+                           <div class="col-xl-3 col-lg-3 col-sm-6">
+                              <div class="tp-product-item p-relative transition-3 mb-25">
+                                 <div class="tp-product-thumb p-relative fix m-img">
+                                    @if(!empty($productImage->image))
+                                    <a href="product-details.html">
+                                       <img src="{{asset('uploads/product/small/'.$productImage->image)}}"
+                                          alt="product-electronic">
+                                    </a>
+                                    @else
 
-                                                <a href="product-details.html">
-                                                   <img src="{{asset('admin/img/product-1.jpg')}}" alt="product-electronic">
-                                                </a>
+                                    <a href="product-details.html">
+                                       <img src="{{asset('admin/img/product-1.jpg')}}" alt="product-electronic">
+                                    </a>
 
-                                                @endif
-                                                <!-- product badge -->
-                                                <div class="tp-product-badge">
-                                                   <span class="product-sale">Sale</span>
-                                                </div>
-
-                                                <!-- product action -->
-                                               
-                                             </div>
-                                             <!-- product content -->
-                                             <div class="tp-product-content">
-                                                <div class="tp-product-category">
-                                                   <a href="shop.html">Tablet</a>
-                                                </div>
-                                                <h3 class="tp-product-title">
-                                                   <a href="product-details.html">
-                                                      {{$product->title}}
-                                                   </a>
-                                                </h3>
-                                                <div class="tp-product-rating d-flex align-items-center">
-                                                   <div class="tp-product-rating-icon">
-                                                      <span><i class="fa-solid fa-star"></i></span>
-                                                      <span><i class="fa-solid fa-star"></i></span>
-                                                      <span><i class="fa-solid fa-star"></i></span>
-                                                      <span><i class="fa-solid fa-star"></i></span>
-                                                      <span><i class="fa-solid fa-star-half-stroke"></i></span>
-                                                   </div>
-                                                   {{-- <div class="tp-product-rating-text">
-                                                      <span>(7 Review)</span>
-                                                   </div> --}}
-                                                </div>
-                                                <div class="tp-product-price-wrapper">
-                                                   @if($product->compare_price > 0)
-                                                   <span class="tp-product-price old-price">₹ {{$product->compare_price}}</span>
-                                                   @endif
-                                                    <span class="tp-product-price new-price"> ₹ {{$product->price}}</span>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       
-
-
+                                    @endif
+                                    <!-- product badge -->
+                                    <div class="tp-product-badge">
+                                       <span class="product-sale">Sale</span>
                                     </div>
 
-                            @endforeach
-                            @endif
+                                    <!-- product action -->
+
+                                 </div>
+                                 <!-- product content -->
+                                 <div class="tp-product-content">
+                                    <div class="tp-product-category">
+                                       <a href="shop.html">Tablet</a>
+                                    </div>
+                                    <h3 class="tp-product-title">
+                                       <a href="product-details.html">
+                                          {{$product->title}}
+                                       </a>
+                                    </h3>
+                                    <div class="tp-product-rating d-flex align-items-center">
+                                       <div class="tp-product-rating-icon">
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star-half-stroke"></i></span>
+                                       </div>
+                                       {{-- <div class="tp-product-rating-text">
+                                          <span>(7 Review)</span>
+                                       </div> --}}
+                                    </div>
+                                    <div class="tp-product-price-wrapper">
+                                       @if($product->compare_price > 0)
+                                       <span class="tp-product-price old-price">₹ {{$product->compare_price}}</span>
+                                       @endif
+                                       <span class="tp-product-price new-price"> ₹ {{$product->price}}</span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+
+
+                        </div>
+
+                        @endforeach
+                        @endif
                      </div>
-                     
+
                   </div>
                </div>
             </div>
@@ -505,10 +506,10 @@
    <!-- product area end -->
 
    <!-- banner area start -->
-   
+
    <!-- banner area end -->
 
-   
+
 
    <!-- product banner area start -->
    <div class="tp-product-banner-area pb-90">
@@ -614,7 +615,257 @@
    </div>
    <!-- product banner area end -->
 
-  
+
+
+   <section class="tp-product-gadget-area pt-80 pb-75">
+      <div class="container">
+         <div class="row">
+            <div class="col-xl-4 col-lg-5">
+               <div class="tp-product-gadget-sidebar mb-40">
+                  <div class="tp-product-gadget-categories p-relative fix mb-10">
+                     <div class="tp-product-gadget-thumb">
+                        <img src="assets/img/product/gadget/gadget-girl.png" alt="">
+                     </div>
+                     <h3 class="tp-product-gadget-categories-title">Best Apex <br> Products</h3>
+
+                     <div class="tp-product-gadget-categories-list">
+                        <ul>
+                           <li><a href="shop-category.html">Micrscope</a></li>
+                           <li><a href="shop-category.html">Remote Control</a></li>
+                           <li><a href="shop-category.html">Monitor</a></li>
+                           <li><a href="shop-category.html">Thermometer</a></li>
+                           <li><a href="shop-category.html">Backpack</a></li>
+                           <li><a href="shop-category.html">Headphones</a></li>
+                        </ul>
+                     </div>
+
+                     <div class="tp-product-gadget-btn">
+                        <a href="{{url('/shop')}}" class="tp-link-btn">More Products
+                           <svg width="15" height="13" viewBox="0 0 15 13" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path d="M13.9998 6.19656L1 6.19656" stroke="currentColor" stroke-width="1.5"
+                                 stroke-linecap="round" stroke-linejoin="round" />
+                              <path d="M8.75674 0.975394L14 6.19613L8.75674 11.4177" stroke="currentColor"
+                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="tp-product-gadget-banner">
+                     <div class="tp-product-gadget-banner-slider-active swiper-container">
+                        <div class="swiper-wrapper">
+                           <div class="tp-product-gadget-banner-item swiper-slide include-bg"
+                              data-background="assets/img/product/gadget/gadget-banner-1.jpg">
+                              <div class="tp-product-gadget-banner-content">
+                                 <span class="tp-product-gadget-banner-price">Only $99.00</span>
+                                 <h3 class="tp-product-gadget-banner-title">
+                                    <a href="product-details.html">Selected novelty <br> Products</a>
+                                 </h3>
+                              </div>
+                           </div>
+                           <div class="tp-product-gadget-banner-item swiper-slide include-bg"
+                              data-background="assets/img/product/gadget/gadget-banner-2.jpg">
+                              <div class="tp-product-gadget-banner-content">
+                                 <span class="tp-product-gadget-banner-price">Only $55.00</span>
+                                 <h3 class="tp-product-gadget-banner-title">
+                                    <a href="product-details.html">Top Rated <br> Products</a>
+                                 </h3>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="tp-product-gadget-banner-slider-dot tp-swiper-dot"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-8 col-lg-7">
+               <div class="tp-product-gadget-wrapper">
+                  <div class="row">
+                     @if($latestProducts->isNotEmpty())
+                     @foreach($latestProducts as $product)
+                     @php
+                     $productImage = $product->product_images->first();
+                     @endphp
+                     
+                        <div class="col-xl-4 col-sm-6">
+                           <div class="tp-product-item p-relative transition-3 mb-25">
+                              <div class="tp-product-thumb p-relative fix m-img">
+                                 @if(!empty($productImage->image))
+                                 <a href="product-details.html">
+                                    <img src="{{asset('uploads/product/small/'.$productImage->image)}}"
+                                       alt="product-electronic">
+                                 </a>
+                                 @else
+                                 <a href="product-details.html">
+                                    <img src="{{asset('admin/img/product-1.jpg')}}" alt="product-electronic">
+                                 </a>
+                                 @endif
+                                 <!-- product badge -->
+                                 <div class="tp-product-badge">
+                                    <span class="product-sale">Sale</span>
+                                 </div>
+                              </div>
+                              <!-- product content -->
+                              <div class="tp-product-content">
+                                 <div class="tp-product-category">
+                                    <a href="shop.html">Electric</a>
+                                 </div>
+                                 <h3 class="tp-product-title">
+                                    <a href="product-details.html">
+                                       {{$product->title}}
+                                    </a>
+                                 </h3>
+                                 <div class="tp-product-rating d-flex align-items-center">
+                                    <div class="tp-product-rating-icon">
+                                       <span><i class="fa-solid fa-star"></i></span>
+                                       <span><i class="fa-solid fa-star"></i></span>
+                                       <span><i class="fa-solid fa-star"></i></span>
+                                       <span><i class="fa-solid fa-star"></i></span>
+                                       <span><i class="fa-solid fa-star-half-stroke"></i></span>
+                                    </div>
+                                    {{-- <div class="tp-product-rating-text">
+                                       <span>(6 Review)</span>
+                                    </div> --}}
+                                 </div>
+
+                                 <div class="tp-product-price-wrapper">
+                                    @if($product->compare_price > 0)
+                                    <span class="tp-product-price old-price">₹ {{$product->compare_price}}</span>
+                                    @endif
+                                    <span class="tp-product-price">₹ {{$product->price}}</span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                    
+                     @endforeach
+                     @endif
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+   <section class="tp-testimonial-area grey-bg-7 pt-130 pb-135">
+      <div class="container">
+         <div class="row justify-content-center">
+            <div class="col-xl-12">
+               <div class="tp-testimonial-slider p-relative z-index-1">
+                  <div class="tp-testimonial-shape">
+                     <span class="tp-testimonial-shape-gradient"></span>
+                  </div>
+                  <h3 class="tp-testimonial-section-title text-center">The Review Are In</h3>
+                  <div class="row justify-content-center">
+                     <div class="col-xl-8 col-lg-8 col-md-10">
+                        <div class="tp-testimonial-slider-active swiper-container">
+                           <div class="swiper-wrapper">
+                              <div class="tp-testimonial-item text-center mb-20 swiper-slide">
+                                 <div class="tp-testimonial-rating">
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                 </div>
+                                 <div class="tp-testimonial-content">
+                                    <p>“ How you use the city or town name is up to you. All results may be freely used
+                                       in any work.”</p>
+                                 </div>
+                                 <div
+                                    class="tp-testimonial-user-wrapper d-flex align-items-center justify-content-center">
+                                    <div class="tp-testimonial-user d-flex align-items-center">
+                                       <div class="tp-testimonial-avater mr-10">
+                                          <img src="assets/img/users/user-2.jpg" alt="">
+                                       </div>
+                                       <div class="tp-testimonial-user-info tp-testimonial-user-translate">
+                                          <h3 class="tp-testimonial-user-title">Theodore Handle</h3>
+                                          <span class="tp-testimonial-designation">CO Founder</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="tp-testimonial-item text-center mb-20 swiper-slide">
+                                 <div class="tp-testimonial-rating">
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                 </div>
+                                 <div class="tp-testimonial-content">
+                                    <p>“Very happy with our choice to take our daughter to Brave care. The entire team
+                                       was great! Thank you!”</p>
+                                 </div>
+                                 <div
+                                    class="tp-testimonial-user-wrapper d-flex align-items-center justify-content-center">
+                                    <div class="tp-testimonial-user d-flex align-items-center">
+                                       <div class="tp-testimonial-avater mr-10">
+                                          <img src="assets/img/users/user-3.jpg" alt="">
+                                       </div>
+                                       <div class="tp-testimonial-user-info tp-testimonial-user-translate">
+                                          <h3 class="tp-testimonial-user-title">Shahnewaz Sakil</h3>
+                                          <span class="tp-testimonial-designation">UI/UX Designer</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="tp-testimonial-item text-center mb-20 swiper-slide">
+                                 <div class="tp-testimonial-rating">
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                 </div>
+                                 <div class="tp-testimonial-content">
+                                    <p>“Thanks for all your efforts and teamwork over the last several months! Thank you
+                                       so much”</p>
+                                 </div>
+                                 <div
+                                    class="tp-testimonial-user-wrapper d-flex align-items-center justify-content-center">
+                                    <div class="tp-testimonial-user d-flex align-items-center">
+                                       <div class="tp-testimonial-avater mr-10">
+                                          <img src="assets/img/users/user-4.jpg" alt="">
+                                       </div>
+                                       <div class="tp-testimonial-user-info tp-testimonial-user-translate">
+                                          <h3 class="tp-testimonial-user-title">James Dopli</h3>
+                                          <span class="tp-testimonial-designation">Developer</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tp-testimonial-arrow d-none d-md-block">
+                     <button class="tp-testimonial-slider-button-prev">
+                        <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M1.061 6.99959L16 6.99959" stroke="currentColor" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                           <path d="M7.08618 1L1.06079 6.9995L7.08618 13" stroke="currentColor" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                     </button>
+                     <button class="tp-testimonial-slider-button-next">
+                        <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M15.939 6.99959L1 6.99959" stroke="currentColor" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                           <path d="M9.91382 1L15.9392 6.9995L9.91382 13" stroke="currentColor" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                     </button>
+                  </div>
+                  <div
+                     class="tp-testimonial-slider-dot tp-swiper-dot text-center mt-30 tp-swiper-dot-style-darkRed d-md-none">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
 
    <!-- subscribe area start -->
    <section class="tp-subscribe-area pt-70 pb-65 theme-bg p-relative z-index-1">

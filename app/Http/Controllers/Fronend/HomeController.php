@@ -22,7 +22,7 @@ class HomeController extends Controller
 
        $latestProducts =  Product::orderBy('id','DESC')
         ->where('status',1)
-        ->take(8)
+        ->take(6)
         ->get();
 
         $data['latestProducts'] = $latestProducts;
@@ -33,9 +33,8 @@ class HomeController extends Controller
     }
 
 
-    public function category(){
-        
+    public function category(){        
         $categories = Category::withCount('products')->get();
-         return view('frontend.home.index', compact('categories'));
+        return view('frontend.home.index', compact('categories'));
     }
 }
