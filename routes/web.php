@@ -12,9 +12,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductImageController;
 use App\Http\Controllers\Admin\ProductSubCategoryController;
-
-
-
+use App\Http\Controllers\Fronend\CategoryController as FronendCategoryController;
 use App\Http\Controllers\Fronend\HomeController;
 use App\Http\Controllers\Fronend\ShopController;
 
@@ -120,6 +118,7 @@ Route::group(['prefix'=>'admin'],function(){
 
 
 // frontend routes
+Route::get('/categories',[FronendCategoryController::class,'index'])->name('front.category'); //see later
 
 Route::get('/',[HomeController::class,'index'])->name('front.home');
-Route::get('/shop',[ShopController::class,'index'])->name('front.shop');
+Route::get('/shop/{categorySlug?}',[ShopController::class,'index'])->name('front.shop');
