@@ -118,7 +118,7 @@ Route::group(['prefix'=>'admin'],function(){
 
 
 // frontend routes
-Route::get('/categories',[FronendCategoryController::class,'index'])->name('front.category'); //see later
 
 Route::get('/',[HomeController::class,'index'])->name('front.home');
+Route::get('/categories',[FronendCategoryController::class,'index'])->name('front.category'); //see later
 Route::get('/shop/{categorySlug?}',[ShopController::class,'index'])->name('front.shop');

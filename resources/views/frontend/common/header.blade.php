@@ -368,6 +368,8 @@
                                     <a href="{{url('/')}}">Home</a>
                                  </li>
 
+                                 <li><a href="{{url('/categories')}}">Categories</a></li>
+                                 <li><a href="{{url('/shop')}}">Shop</a></li>
                                  <li><a href="contact.html">Contact</a></li>
                               </ul>
                            </nav>
@@ -401,7 +403,8 @@
                               <a href="{{url('/')}}">Home</a>
                               
                            </li>
-                           
+                           <li><a href="{{url('/categories')}}">Categories</a></li>
+                           <li><a href="{{url('/shop')}}">Shop</a></li>
                            <li><a href="contact.html">Contact</a></li>
                         </ul>
                      </nav>

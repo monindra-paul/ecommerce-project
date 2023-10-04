@@ -292,13 +292,17 @@
                   <h3 class="tp-section-title-5">Our Categories</h3>
                </div>
             </div>
+           
          </div>
 
       </div>
    </section>
    <!-- product category area start -->
+   
    <section class="tp-product-category pt-10 pb-15">
+      
       <div class="container">
+         
          @if(getCategories()->isNotEmpty())
          <div class="row row-cols-xl-5 row-cols-lg-5 row-cols-md-4">
             @foreach(getCategories() as $category)
@@ -306,14 +310,14 @@
                <div class="tp-product-category-item text-center mb-40">
                   @if($category->image !="")
                   <div class="tp-product-category-thumb fix">
-                     <a href="shop-category.html">
+                     <a href="{{route('front.shop',$category->slug)}}">
                         <img src="{{asset('uploads/category/thumb/'. $category->image)}}" alt="product-category">
                      </a>
                   </div>
                   @endif
                   <div class="tp-product-category-content">
                      <h3 class="tp-product-category-title">
-                        <a href="shop-category.html">{{$category->name}}</a>
+                        <a href="{{route('front.shop',$category->slug)}}">{{$category->name}}</a>
                      </h3>
                      {{-- @foreach($categories as $categoryc)
                      <p>{{ $categoryc->products_count}} Product</p>
@@ -325,6 +329,16 @@
          </div>
          @endif
       </div>
+      <div class="tp-product-offer-more mb-40 text-center">
+         <a href="{{url('/categories')}}" class="tp-btn tp-btn-2 tp-btn-blue">View All Categories 
+            <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M16 6.99976L1 6.99976" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M9.9502 0.975414L16.0002 6.99941L9.9502 13.0244" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+         </a>
+         <span class="tp-product-offer-more-border"></span>
+      </div>
+      
    </section>
    <!-- product category area end -->
 
