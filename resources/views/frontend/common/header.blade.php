@@ -295,65 +295,65 @@
                                  </li>
 
                                  @if(!empty(getCategories()))
-                                    @foreach (getCategories() as $category)
+                                 @foreach (getCategories() as $category)
 
-                                    @if ($category->sub_category->isNotEmpty())
-                                       <li class="has-dropdown">
-                                          <a href="shop.html">
-                                             <span>
-                                                <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
-                                                   xmlns="http://www.w3.org/2000/svg">
-                                                   <path
-                                                      d="M14.5 1H2.5C1.67157 1 1 1.67157 1 2.5V10C1 10.8284 1.67157 11.5 2.5 11.5H14.5C15.3284 11.5 16 10.8284 16 10V2.5C16 1.67157 15.3284 1 14.5 1Z"
-                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round" />
-                                                   <path d="M5.5 14.5H11.5" stroke="currentColor" stroke-width="1.5"
-                                                      stroke-linecap="round" stroke-linejoin="round" />
-                                                   <path d="M8.5 11.5V14.5" stroke="currentColor" stroke-width="1.5"
-                                                      stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                             </span>
-                                             {{$category->name}}
-                                          </a>
-                                          @if($category->sub_category->isNotEmpty())
-                                          <ul class="tp-submenu">
-                                             @foreach($category->sub_category as $subCategory)
-                                                <li><a href="shop.html">{{$subCategory->name}}</a></li>
-                                             @endforeach
-                                          </ul>
-                                          @endif
-
-                                       </li>
-                                    @else                                        
-                                    <li class="">
-                                       <a href="shop.html">
-                                          <span>
-                                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                   d="M14.5 1H2.5C1.67157 1 1 1.67157 1 2.5V10C1 10.8284 1.67157 11.5 2.5 11.5H14.5C15.3284 11.5 16 10.8284 16 10V2.5C16 1.67157 15.3284 1 14.5 1Z"
-                                                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                   stroke-linejoin="round" />
-                                                <path d="M5.5 14.5H11.5" stroke="currentColor" stroke-width="1.5"
-                                                   stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M8.5 11.5V14.5" stroke="currentColor" stroke-width="1.5"
-                                                   stroke-linecap="round" stroke-linejoin="round" />
-                                             </svg>
-                                          </span>
-                                          {{$category->name}}
-                                       </a>
-                                       @if($category->sub_category->isNotEmpty())
-                                       <ul class="tp-submenu">
-                                          @foreach($category->sub_category as $subCategory)
-                                          <li><a href="shop.html">{{$subCategory->name}}</a></li>
-                                          @endforeach
-                                       </ul>
-                                       @endif
-
-                                    </li>
+                                 @if ($category->sub_category->isNotEmpty())
+                                 <li class="has-dropdown">
+                                    <a href="shop.html">
+                                       <span>
+                                          <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M14.5 1H2.5C1.67157 1 1 1.67157 1 2.5V10C1 10.8284 1.67157 11.5 2.5 11.5H14.5C15.3284 11.5 16 10.8284 16 10V2.5C16 1.67157 15.3284 1 14.5 1Z"
+                                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                             <path d="M5.5 14.5H11.5" stroke="currentColor" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                             <path d="M8.5 11.5V14.5" stroke="currentColor" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                          </svg>
+                                       </span>
+                                       {{$category->name}}
+                                    </a>
+                                    @if($category->sub_category->isNotEmpty())
+                                    <ul class="tp-submenu">
+                                       @foreach($category->sub_category as $subCategory)
+                                       <li><a href="shop.html">{{$subCategory->name}}</a></li>
+                                       @endforeach
+                                    </ul>
                                     @endif
-                                       
-                                    @endforeach
+
+                                 </li>
+                                 @else
+                                 <li class="">
+                                    <a href="shop.html">
+                                       <span>
+                                          <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M14.5 1H2.5C1.67157 1 1 1.67157 1 2.5V10C1 10.8284 1.67157 11.5 2.5 11.5H14.5C15.3284 11.5 16 10.8284 16 10V2.5C16 1.67157 15.3284 1 14.5 1Z"
+                                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                             <path d="M5.5 14.5H11.5" stroke="currentColor" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                             <path d="M8.5 11.5V14.5" stroke="currentColor" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                          </svg>
+                                       </span>
+                                       {{$category->name}}
+                                    </a>
+                                    @if($category->sub_category->isNotEmpty())
+                                    <ul class="tp-submenu">
+                                       @foreach($category->sub_category as $subCategory)
+                                       <li><a href="shop.html">{{$subCategory->name}}</a></li>
+                                       @endforeach
+                                    </ul>
+                                    @endif
+
+                                 </li>
+                                 @endif
+
+                                 @endforeach
                                  @endif
 
                               </ul>
@@ -401,7 +401,7 @@
                         <ul>
                            <li class="">
                               <a href="{{url('/')}}">Home</a>
-                              
+
                            </li>
                            <li><a href="{{url('/categories')}}">Categories</a></li>
                            <li><a href="{{url('/shop')}}">Shop</a></li>

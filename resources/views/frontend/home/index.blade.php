@@ -440,24 +440,24 @@
 
                      <div class="tab-pane fade show active" id="new-tab-pane" role="tabpanel" aria-labelledby="new-tab"
                         tabindex="0">
+
+                        <div class="row">
                         @if($latestProducts->isNotEmpty())
                         @foreach($latestProducts as $product)
                         @php
                         $productImage = $product->product_images->first();
                         @endphp
-
-                        <div class="row">
                            <div class="col-xl-3 col-lg-3 col-sm-6">
                               <div class="tp-product-item p-relative transition-3 mb-25">
                                  <div class="tp-product-thumb p-relative fix m-img">
                                     @if(!empty($productImage->image))
-                                    <a href="product-details.html">
+                                    <a href="{{route('front.product',$product->slug)}}">
                                        <img src="{{asset('uploads/product/small/'.$productImage->image)}}"
                                           alt="product-electronic">
                                     </a>
                                     @else
 
-                                    <a href="product-details.html">
+                                    <a href="{{route('front.product',$product->slug)}}">
                                        <img src="{{asset('admin/img/product-1.jpg')}}" alt="product-electronic">
                                     </a>
 
@@ -476,7 +476,7 @@
                                        <a href="shop.html">Tablet</a>
                                     </div>
                                     <h3 class="tp-product-title">
-                                       <a href="product-details.html">
+                                       <a href="{{route('front.product',$product->slug)}}">
                                           {{$product->title}}
                                        </a>
                                     </h3>
@@ -501,15 +501,15 @@
                                  </div>
                               </div>
                            </div>
-
+                           @endforeach
+                           @endif
+      
 
 
                         </div>
 
-                        @endforeach
-                        @endif
                      </div>
-
+                     
                   </div>
                </div>
             </div>

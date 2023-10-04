@@ -35,7 +35,7 @@ class ShopController extends Controller
 
 
         $products = $products->orderBy('id','DESC');
-        $products = $products->get();
+        $products = $products->paginate(10);
 
 
        $data['categories'] = $categories;
@@ -44,4 +44,23 @@ class ShopController extends Controller
 
         return view('frontend.shop.shop',$data);
     }
+
+
+    public function product($slug){
+        // echo $slug;
+        $product = Product::where('slug',$slug)->with('product_images')->first();
+
+        if($product == null){
+            abort(404);
+        }
+        
+
+
+        $data['product'] = $product;
+
+
+        return view('frontend.product.product',$data);
+    }
+
+
 }

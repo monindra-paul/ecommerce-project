@@ -122,3 +122,4 @@ Route::group(['prefix'=>'admin'],function(){
 Route::get('/',[HomeController::class,'index'])->name('front.home');
 Route::get('/categories',[FronendCategoryController::class,'index'])->name('front.category'); //see later
 Route::get('/shop/{categorySlug?}',[ShopController::class,'index'])->name('front.shop');
+Route::get('/product/{slug}',[ShopController::class,'product'])->name('front.product');
