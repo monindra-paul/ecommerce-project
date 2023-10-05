@@ -403,7 +403,7 @@
          <div class="row align-items-end">
             <div class="col-xl-5 col-lg-6 col-md-5">
                <div class="tp-section-title-wrapper mb-40">
-                  <h3 class="tp-section-title">Trending Products
+                  <h3 class="tp-section-title">Featured Products
 
                      <svg width="114" height="35" viewBox="0 0 114 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M112 23.275C1.84952 -10.6834 -7.36586 1.48086 7.50443 32.9053" stroke="currentColor"
@@ -442,8 +442,8 @@
                         tabindex="0">
 
                         <div class="row">
-                        @if($latestProducts->isNotEmpty())
-                        @foreach($latestProducts as $product)
+                        @if($products->isNotEmpty())
+                        @foreach($products as $product)
                         @php
                         $productImage = $product->product_images->first();
                         @endphp
@@ -695,8 +695,8 @@
             <div class="col-xl-8 col-lg-7">
                <div class="tp-product-gadget-wrapper">
                   <div class="row">
-                     @if($latestProducts->isNotEmpty())
-                     @foreach($latestProducts as $product)
+                     @if($allProducts->isNotEmpty())
+                     @foreach($allProducts as $product)
                      @php
                      $productImage = $product->product_images->first();
                      @endphp
@@ -705,12 +705,12 @@
                            <div class="tp-product-item p-relative transition-3 mb-25">
                               <div class="tp-product-thumb p-relative fix m-img">
                                  @if(!empty($productImage->image))
-                                 <a href="product-details.html">
+                                 <a href="{{route('front.product',$product->slug)}}">
                                     <img src="{{asset('uploads/product/small/'.$productImage->image)}}"
                                        alt="product-electronic">
                                  </a>
                                  @else
-                                 <a href="product-details.html">
+                                 <a href="{{route('front.product',$product->slug)}}">
                                     <img src="{{asset('admin/img/product-1.jpg')}}" alt="product-electronic">
                                  </a>
                                  @endif
@@ -725,7 +725,7 @@
                                     <a href="shop.html">Electric</a>
                                  </div>
                                  <h3 class="tp-product-title">
-                                    <a href="product-details.html">
+                                    <a href="{{route('front.product',$product->slug)}}">
                                        {{$product->title}}
                                     </a>
                                  </h3>

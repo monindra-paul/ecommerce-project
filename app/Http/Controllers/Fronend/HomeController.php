@@ -17,15 +17,15 @@ class HomeController extends Controller
         ->where('status',1)
         ->get();
 
-        $data['featuredProducts'] = $products;
+        $data['products'] = $products;
 
 
-       $latestProducts =  Product::orderBy('id','DESC')
+       $allProducts =  Product::orderBy('id','DESC')
         ->where('status',1)
         ->take(6)
         ->get();
 
-        $data['latestProducts'] = $latestProducts;
+        $data['allProducts'] = $allProducts;
 
 
 

@@ -9,7 +9,7 @@
                           <div class="tp-footer-widget-content">
                              <div class="tp-footer-logo">
                                 <a href="index.html">
-                                   <img src="assets/img/logo/logo.svg" alt="logo">
+                                   <img src="{{asset('assets/img/apex/apex-logo.png')}}" alt="logo" width="120px">
                                 </a>
                              </div>
                              <p class="tp-footer-desc">We are a team of designers and developers that create high quality WordPress</p>
@@ -102,13 +102,13 @@
                     <div class="row align-items-center">
                        <div class="col-md-6">
                           <div class="tp-footer-copyright">
-                             <p>© 2023 All Rights Reserved  |  HTML Template by <a href="index.html">Themepure</a>.</p>
+                             <p>© 2023 All Rights Reserved <a href="{{url('/')}}">Apex Bags |</a> Developed By <a href="https://ecoretechserv.com" target="blank">ECore TechServ</a>.</p>
                           </div>
                        </div>
                        <div class="col-md-6">
                           <div class="tp-footer-payment text-md-end">
                              <p>
-                                <img src="assets/img/footer/footer-pay.png" alt="">
+                                <img src="{{asset('assets/img/footer/footer-pay.png')}}" alt="">
                              </p>
                           </div>
                        </div>

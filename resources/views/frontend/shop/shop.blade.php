@@ -472,12 +472,12 @@
                                     <div class="tp-product-thumb-2 p-relative z-index-1 fix w-img">
                                        <!-- product action -->
                                        @if(!empty($productImage->image))
-                                       <a href="product-details.html">
+                                       <a href="{{route('front.product',$product->slug)}}">
                                           <img src="{{asset('uploads/product/small/'.$productImage->image)}}"
                                              alt="product-apex-bag">
                                        </a>
                                        @else
-                                       <a href="product-details.html">
+                                       <a href="{{route('front.product',$product->slug)}}">
                                           <img src="{{asset('admin/img/product-1.jpg')}}" alt="product-electronic">
                                        </a>
                                        @endif
@@ -488,7 +488,7 @@
                                           {{-- <a href="#">{{$product->category_id}}</a> --}}
                                        </div>
                                        <h3 class="tp-product-title-2">
-                                          <a href="product-details.html">{{$product->title}}</a>
+                                          <a href="{{route('front.product',$product->slug)}}">{{$product->title}}</a>
                                        </h3>
                                        <div class="tp-product-rating-icon tp-product-rating-icon-2">
                                           <span><i class="fa-solid fa-star"></i></span>

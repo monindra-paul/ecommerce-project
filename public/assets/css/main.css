@@ -20659,6 +20659,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
   padding: 10px 30px;
   background-color: var(--tp-theme-primary);
   color: var(--tp-common-white);
+  border-radius: 5px;
 }
 
 .tp-product-details-buy-now-btn:hover {

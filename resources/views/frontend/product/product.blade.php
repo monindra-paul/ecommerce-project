@@ -23,7 +23,7 @@
                             <span><a href="{{route('front.home')}}">Home</a></span>
 
                             <span><a href="{{route('front.shop')}}">Shop</a></span>
-                            <span>{{$product->title}}</span>
+                            <span style="color: #008194;"><a href="{{route('front.product',$product->slug)}}">{{$product->title}}</a></span>
                         </div>
                     </div>
                 </div>
@@ -36,14 +36,12 @@
     <section class="tp-product-details-area">
         <div class="tp-product-details-top pb-115">
             <div class="container">
-                <div class="row">
-                    
+                <div class="row">                    
                     <div class="col-xl-7 col-lg-6">
                         <div class="tp-product-details-thumb-slider p-relative">
                             <div class="tp-product-details-thumb-slider-active swiper-container">
                                 <div class="swiper-wrapper">
                                     @if($product->product_images)
-
                                     @foreach($product->product_images as $key => $productImage)
                                     <div class="tp-prouct-details-thumb-item w-img swiper-slide {{($key == 0) ? 'active' : ''}}">
                                         <img src="{{asset('uploads/product/large/'.$productImage->image)}}"
@@ -98,12 +96,11 @@
                                         <span><i class="fa-solid fa-star"></i></span>
                                     </div>
                                     <div class="tp-product-details-reviews">
-                                        <span>(36 Reviews)</span>
+                                        {{-- <span>(36 Reviews)</span> --}}
                                     </div>
                                 </div>
                             </div>
                             <p>A Screen Everyone Will Love: Whether your family is streaming or video chatting with friends tablet A8... <span>See more</span></p>
-
                             <!-- price -->
                             <div class="tp-product-details-price-wrapper mb-20">
                                 @if($product->compare_price > 0)
@@ -113,7 +110,7 @@
                             </div>
 
                             <!-- variations -->
-                            <div class="tp-product-details-variation">
+                            {{-- <div class="tp-product-details-variation">
                                 <!-- single item -->
                                 <div class="tp-product-details-variation-item">
                                     <h4 class="tp-product-details-variation-title">Color :</h4>
@@ -136,11 +133,11 @@
                                         </button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <!-- actions -->
                             <div class="tp-product-details-action-wrapper">
-                                <h3 class="tp-product-details-action-title">Quantity</h3>
+                                {{-- <h3 class="tp-product-details-action-title">Quantity</h3>
                                 <div class="tp-product-details-action-item-wrapper d-flex align-items-center">
                                     <div class="tp-product-details-quantity">
                                         <div class="tp-product-quantity mb-15 mr-15">
@@ -166,8 +163,8 @@
                                     <div class="tp-product-details-add-to-cart mb-15 w-100">
                                         <button class="tp-product-details-add-to-cart-btn w-100">Add To Cart</button>
                                     </div>
-                                </div>
-                                <button class="tp-product-details-buy-now-btn w-100">Buy Now</button>
+                                </div> --}}
+                                <button class="tp-product-details-buy-now-btn w-100">Call Now</button>
                             </div>
                             <div class="tp-product-details-action-sm">
                                 <button type="button" class="tp-product-details-action-sm-btn">
