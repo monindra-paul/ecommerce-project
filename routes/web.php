@@ -9,10 +9,12 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\TempImagesController;
 use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\ContactController as AdminContactController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductImageController;
 use App\Http\Controllers\Admin\ProductSubCategoryController;
 use App\Http\Controllers\Fronend\CategoryController as FronendCategoryController;
+use App\Http\Controllers\Fronend\ContactController;
 use App\Http\Controllers\Fronend\HomeController;
 use App\Http\Controllers\Fronend\ShopController;
 
@@ -99,6 +101,13 @@ Route::group(['prefix'=>'admin'],function(){
 
 
 
+        Route::get('/contact',[AdminContactController::class,'index'])->name('contactapplication');
+        Route::put('/contact/{id}',[AdminContactController::class,'update'])->name('contactapplication.update');
+        Route::get('/contact/{id}',[AdminContactController::class,'show'])->name('contactapplication.id');
+
+
+
+
 
         Route::get('/getSlug',function(Request $request){
             $slug = '';
@@ -120,6 +129,8 @@ Route::group(['prefix'=>'admin'],function(){
 // frontend routes
 
 Route::get('/',[HomeController::class,'index'])->name('front.home');
-Route::get('/categories',[FronendCategoryController::class,'index'])->name('front.category'); //see later
+Route::get('/categories',[FronendCategoryController::class,'index'])->name('front.category'); 
 Route::get('/shop/{categorySlug?}',[ShopController::class,'index'])->name('front.shop');
 Route::get('/product/{slug}',[ShopController::class,'product'])->name('front.product');
+Route::get('/contact',[ContactController::class,'index'])->name('front.contact');
+Route::post('/contact',[ContactController::class,'postContact'])->name('front.postcontact');
