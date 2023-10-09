@@ -89,7 +89,7 @@
                </div>
             </div>
             <div class="offcanvas__btn">
-               <a href="contact.html" class="tp-btn-2 tp-btn-border-2">Contact Us</a>
+               <a href="{{url('/contact')}}" class="tp-btn-2 tp-btn-border-2">Contact Us</a>
             </div>
          </div>
 
@@ -101,12 +101,12 @@
    <!-- mobile menu area start -->
    <div id="tp-bottom-menu-sticky" class="tp-mobile-menu d-lg-none">
       <div class="container">
-         <div class="row row-cols-5">
+         <div class="row row-cols-4">
             <div class="col">
                <div class="tp-mobile-item text-center">
-                  <a href="shop.html" class="tp-mobile-item-btn">
+                  <a href="{{url('/')}}" class="tp-mobile-item-btn">
                      <i class="flaticon-store"></i>
-                     <span>Store</span>
+                     <span>Home</span>
                   </a>
                </div>
             </div>
@@ -120,28 +120,22 @@
             </div>
             <div class="col">
                <div class="tp-mobile-item text-center">
-                  <a href="wishlist.html" class="tp-mobile-item-btn">
-                     <i class="flaticon-love"></i>
-                     <span>Wishlist</span>
-                  </a>
-               </div>
-            </div>
-            <div class="col">
-               <div class="tp-mobile-item text-center">
-                  <a href="profile.html" class="tp-mobile-item-btn">
-                     <i class="flaticon-user"></i>
-                     <span>Account</span>
-                  </a>
-               </div>
-            </div>
-            <div class="col">
-               <div class="tp-mobile-item text-center">
-                  <button class="tp-mobile-item-btn tp-offcanvas-open-btn">
+                  <a href="{{url('/categories')}}" class="tp-mobile-item-btn tp-offcanvas-open-btn">
                      <i class="flaticon-menu-1"></i>
-                     <span>Menu</span>
-                  </button>
+                     <span>Category</span>
+                  </a>
                </div>
             </div>
+           
+            <div class="col">
+               <div class="tp-mobile-item text-center">
+                  <a href="{{url('/contact')}}" class="tp-mobile-item-btn">
+                     <i class="flaticon-user"></i>
+                     <span>Contact</span>
+                  </a>
+               </div>
+            </div>
+            
          </div>
       </div>
    </div>
@@ -156,12 +150,11 @@
                   <div class="tp-search-close text-center mb-20">
                      <button class="tp-search-close-btn tp-search-close-btn"></button>
                   </div>
-                  <form action="#">
+                  <form action="{{url('/shop')}}" method="get">                  
                      <div class="tp-search-input mb-10">
-                        <input type="text" placeholder="Search for product...">
+                        <input type="text" value="{{Request::get('search')}}" placeholder="Search your product..." name="search">
                         <button type="submit"><i class="flaticon-search-1"></i></button>
                      </div>
-
                   </form>
                </div>
             </div>
@@ -193,10 +186,10 @@
                   </div>
                   <div class="col-xl-8 col-lg-8 d-none d-lg-block">
                      <div class="tp-header-search ">
-                        <form action="#">
+                        <form action="{{url('/shop')}}" method="get">
                            <div class="tp-header-search-wrapper d-flex align-items-center">
                               <div class="tp-header-search-box">
-                                 <input type="text" placeholder="Search for Products...">
+                                 <input type="text" name="search" value="{{Request::get('search')}}" placeholder="Search Your Products...">
                               </div>
 
                               <div class="tp-header-search-btn">
@@ -357,7 +350,7 @@
 
                                  <li><a href="{{url('/categories')}}">Categories</a></li>
                                  <li><a href="{{url('/shop')}}">Shop</a></li>
-                                 <li><a href="contact.html">Contact</a></li>
+                                 <li><a href="{{url('/contact')}}">Contact</a></li>
                               </ul>
                            </nav>
                         </div>

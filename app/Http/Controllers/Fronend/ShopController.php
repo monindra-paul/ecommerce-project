@@ -22,6 +22,12 @@ class ShopController extends Controller
        $products = Product::where('status',1);
        //filters
 
+
+       if(!empty($request->get('search'))){
+        $products = $products->where('title', 'like','%'.$request->get('search').'%');
+       }
+
+
        if(!empty($categorySlug)){
         $category = Category::where('slug',$categorySlug)->first();
         $products = $products->where('category_id',$category->id);
