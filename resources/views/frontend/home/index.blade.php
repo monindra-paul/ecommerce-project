@@ -473,7 +473,7 @@
                                  <!-- product content -->
                                  <div class="tp-product-content">
                                     <div class="tp-product-category">
-                                       <a href="shop.html">Tablet</a>
+                                       {{-- <a href="shop.html">Tablet</a> --}}
                                     </div>
                                     <h3 class="tp-product-title">
                                        <a href="{{route('front.product',$product->slug)}}">
@@ -498,6 +498,11 @@
                                        @endif
                                        <span class="tp-product-price new-price"> ₹ {{$product->price}}</span>
                                     </div>
+                                    <a href="tel:+919064062315">
+                                       <div id="button-call-us">
+                                          <button>Call Us</button>
+                                       </div>
+                                    </a>
                                  </div>
                               </div>
                            </div>
@@ -722,7 +727,7 @@
                               <!-- product content -->
                               <div class="tp-product-content">
                                  <div class="tp-product-category">
-                                    <a href="shop.html">Electric</a>
+                                    {{-- <a href="shop.html">Electric</a> --}}
                                  </div>
                                  <h3 class="tp-product-title">
                                     <a href="{{route('front.product',$product->slug)}}">
@@ -748,6 +753,11 @@
                                     @endif
                                     <span class="tp-product-price">₹ {{$product->price}}</span>
                                  </div>
+                                 <a href="tel:+919064062315">
+                                    <div id="button-call-us">
+                                       <button>Call Us</button>
+                                    </div>
+                                 </a>
                               </div>
                            </div>
                         </div>

@@ -44,7 +44,7 @@
                      </div>
                   </div>
                   <!-- status -->
-                  <div class="tp-shop-widget mb-50">
+                  {{-- <div class="tp-shop-widget mb-50">
                      <h3 class="tp-shop-widget-title">Product Status</h3>
 
                      <div class="tp-shop-widget-content">
@@ -61,7 +61,7 @@
                            </ul><!-- .filter-items -->
                         </div>
                      </div>
-                  </div>
+                  </div> --}}
                   <!-- categories -->
                   @if($categories->isNotEmpty())
                   <div class="tp-shop-widget mb-50">
@@ -505,6 +505,12 @@
 
                                           @endif
                                        </div>
+
+                                       <a href="tel:+919064062315">
+                                          <div id="button-call-us">
+                                             <button>Call Us</button>
+                                          </div>
+                                       </a>
                                     </div>
                                  </div>
                               </div>
