@@ -25,7 +25,7 @@ class HomeController extends Controller
         ->take(6)
         ->get();
 
-        $lim_cats = Category::orderBy('name','DESC')->where('status',1)->take(6)->get();
+        $lim_cats = Category::orderBy('id','DESC')->where('status',1)->take(6)->get();
 
 
         $data['allProducts'] = $allProducts;
