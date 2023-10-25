@@ -16,7 +16,6 @@ class CategoryController extends Controller
  
         $brands = Brand::orderBy('name','ASC')->where('status',1)->get();
  
- 
         $products = Product::where('status',1);
         //filters
  

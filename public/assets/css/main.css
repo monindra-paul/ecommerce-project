@@ -22169,7 +22169,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
   width: 6px;
   height: 6px;
   text-align: center;
-  background-color: #E7E7E7;
+  background-color: var(--tp-green-dark);
   border-radius: 50%;
 }
 
@@ -24818,4 +24818,9 @@ only screen and (min-width: 576px) and (max-width: 767px),
   border-radius: 5px;
   color: white;
   margin-top: 5px;
+}
+
+#catselected{
+ color: var(--tp-green-dark);
+ font-weight: 600;
 }

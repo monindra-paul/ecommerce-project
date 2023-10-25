@@ -42,7 +42,7 @@
                           <div class="tp-footer-widget-content">
                              <div class="tp-footer-talk mb-20">
                                 <span>Got Questions? Call us</span>
-                                <h4><a href="tel:670-413-90-762">+91 4494949944</a></h4>
+                                <h4><a href="tel:917001639863">+91 7001639863</a></h4>
                              </div>
                              <div class="tp-footer-contact">
                                 <div class="tp-footer-contact-item d-flex align-items-start">
@@ -57,7 +57,7 @@
                                       </span>
                                    </div>
                                     <div class="tp-footer-contact-content">
-                                      <p><a href="https://html.weblearnbd.net/cdn-cgi/l/email-protection#f182999e9788b1828481819e8385df929e9c"><span class="__cf_email__" data-cfemail="7f0c171019063f0c0a0f0f100d0b511c1012">info@apexbags.com</span></a></p>
+                                      <p><a href="mailto:info@apexbags.in"><span class="__cf_email__" data-cfemail="7f0c171019063f0c0a0f0f100d0b511c1012">info@apexbags.com</span></a></p>
                                     </div>
                                 </div>
                                 <div class="tp-footer-contact-item d-flex align-items-start">
@@ -70,7 +70,7 @@
                                       </span>
                                    </div>
                                    <div class="tp-footer-contact-content">
-                                      <p><a href="https://www.google.com/maps/place/Sleepy+Hollow+Rd,+Gouverneur,+NY+13642,+USA/@44.3304966,-75.4552367,17z/data=!3m1!4b1!4m6!3m5!1s0x4cccddac8972c5eb:0x56286024afff537a!8m2!3d44.3304928!4d-75.453048!16s%2Fg%2F1tdsjdj4" target="_blank">79 Sleepy Hollow St. <br> Jamaica, New York 1432</a></p>
+                                      <p><a href="https://www.google.com/maps/place/Sleepy+Hollow+Rd,+Gouverneur,+NY+13642,+USA/@44.3304966,-75.4552367,17z/data=!3m1!4b1!4m6!3m5!1s0x4cccddac8972c5eb:0x56286024afff537a!8m2!3d44.3304928!4d-75.453048!16s%2Fg%2F1tdsjdj4" target="_blank">Ramkrishna Rd, Nagarthuba<br> Habra, West Bengal, 743271</a></p>
                                    </div>
                                 </div>
                              </div>
@@ -124,6 +124,35 @@
      <script src="{{asset('assets/js/imagesloaded-pkgd.js')}}"></script>
      {{-- <script src="{{asset('assets/js/ajax-form.js')}}"></script> --}}
      <script src="{{asset('assets/js/main.js')}}"></script>
+     <script src="{{asset('assets/js/ion.rangeSlider.min.js')}}"></script>
+
+     <script>
+      rangeSlider = $(".js-range-slider").ionRangeSlider({
+         type : "double",
+         min : 0,
+         max : 1000,
+         from : 0,
+         
+         to : 500,
+         skin : "round",
+         max_postfix : "+",
+         prefix : "₹",
+         onFinish: function(){
+            apply_filters()
+         }
+      });
+
+
+      var slider = $(".js-range-slider").data("ionRangeSlider");
+
+      function apply_filters(){
+         url += '&price_min='+slider.result.form+'&price_max='+slider.result.to;
+
+       
+      
+      }
+     </script>
+
    </body>
 
 </html>

@@ -28,21 +28,10 @@
             <div class="col-xl-3 col-lg-4">
                <div class="tp-shop-sidebar mr-10">
                   <!-- filter -->
-                  <div class="tp-shop-widget mb-35">
+                  {{-- <div class="tp-shop-widget mb-35">
                      <h3 class="tp-shop-widget-title no-border">Price Filter</h3>
-
-                     <div class="tp-shop-widget-content">
-                        <div class="tp-shop-widget-filter">
-                           <div id="slider-range" class="mb-10"></div>
-                           <div class="tp-shop-widget-filter-info d-flex align-items-center justify-content-between">
-                              <span class="input-range">
-                                 <input type="text" id="amount" readonly>
-                              </span>
-                              <button class="tp-shop-widget-filter-btn" type="button">Filter</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                     <input type="text" class="js-range-slider" name="my_range" value="" />
+                  </div> --}}
                   <!-- status -->
                   {{-- <div class="tp-shop-widget mb-50">
                      <h3 class="tp-shop-widget-title">Product Status</h3>
@@ -70,7 +59,7 @@
                         <div class="tp-shop-widget-categories">
                            <ul>
                               @foreach ($categories as $category)
-                              <li><a href="{{route('front.shop',$category->slug)}}">{{$category->name}}<span>18</span></a></li>
+                              <li><a href="{{route('front.shop',$category->slug)}}" id="{{($categorySelected == $category->id) ? 'catselected' : ''}}">{{$category->name}}</a></li>
                               @endforeach
                            </ul>
                         </div>
@@ -485,7 +474,7 @@
 
                                     <div class="tp-product-content-2 pt-15">
                                        <div class="tp-product-tag-2">
-                                          {{-- <a href="#">{{$product->category_id}}</a> --}}
+                                          <a href="#">{{$product->product_category->name}}</a>
                                        </div>
                                        <h3 class="tp-product-title-2">
                                           <a href="{{route('front.product',$product->slug)}}">{{$product->title}}</a>
@@ -506,9 +495,9 @@
                                           @endif
                                        </div>
 
-                                       <a href="tel:+919064062315">
+                                       <a href="https://api.whatsapp.com/send?phone=917001639863" target="_blank">
                                           <div id="button-call-us">
-                                             <button>Call Us</button>
+                                             <button>Reach Us</button>
                                           </div>
                                        </a>
                                     </div>

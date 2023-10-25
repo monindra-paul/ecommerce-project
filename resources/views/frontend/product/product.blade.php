@@ -78,7 +78,7 @@
                     <div class="col-xl-5 col-lg-6">
                         <div class="tp-product-details-wrapper">
                             <div class="tp-product-details-category">
-                                <span>Computers & Tablets</span>
+                                <span>{{$product->product_category->name}}</span>
                             </div>
                             <h3 class="tp-product-details-title">{{$product->title}}</h3>
 
@@ -100,7 +100,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>A Screen Everyone Will Love: Whether your family is streaming or video chatting with friends tablet A8... <span>See more</span></p>
+                            <p>{!!$product->short_description!!}</p>
                             <!-- price -->
                             <div class="tp-product-details-price-wrapper mb-20">
                                 @if($product->compare_price > 0)
@@ -164,7 +164,9 @@
                                         <button class="tp-product-details-add-to-cart-btn w-100">Add To Cart</button>
                                     </div>
                                 </div> --}}
-                                <button class="tp-product-details-buy-now-btn w-100">Call Now</button>
+                                <a href="https://api.whatsapp.com/send?phone=917001639863" target="_blank">
+                                    <button class="tp-product-details-buy-now-btn w-100">Reach Us</button>
+                                </a>
                             </div>
                             <div class="tp-product-details-action-sm">
                                 <button type="button" class="tp-product-details-action-sm-btn">
@@ -220,20 +222,24 @@
                                     <p>{{$product->sku}}</p>
                                 </div>
                                 <div class="tp-product-details-query-item d-flex align-items-center">
-                                    <span>Category: </span>
-                                    <p>Computers & Tablets</p>
+                                    <span>Size: </span>
+                                    <p style="color: #008194">{{$product->sizes}}</p>
                                 </div>
                                 <div class="tp-product-details-query-item d-flex align-items-center">
+                                    <span>Category: </span>
+                                    <p>{{$product->product_category->name}}</p>
+                                </div>
+                                {{-- <div class="tp-product-details-query-item d-flex align-items-center">
                                     <span>Tag: </span>
                                     <p>Android</p>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="tp-product-details-social">
                                 <span>Share: </span>
                                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
                                 <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fa-brands fa-vimeo-v"></i></a>
+                                <a href="https://api.whatsapp.com/send?phone=917865006370" target="blank"><i class="fa-brands fa-vimeo-v"></i></a>
                             </div>
                             <div class="tp-product-details-msg mb-15">
                                 <ul>
@@ -747,7 +753,7 @@
                     </div>
                     <div class="tp-product-details-wrapper">
                         <div class="tp-product-details-category">
-                            <span>Computers & Tablets</span>
+                            <span>{{$product->product_category->name}}</span>
                         </div>
                         <h3 class="tp-product-details-title">Samsung galaxy A8 tablet</h3>
 

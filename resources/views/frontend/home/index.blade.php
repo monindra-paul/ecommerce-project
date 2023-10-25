@@ -473,7 +473,7 @@
                                  <!-- product content -->
                                  <div class="tp-product-content">
                                     <div class="tp-product-category">
-                                       {{-- <a href="shop.html">Tablet</a> --}}
+                                       <a href="shop.html">{{$product->product_category->name}}</a>
                                     </div>
                                     <h3 class="tp-product-title">
                                        <a href="{{route('front.product',$product->slug)}}">
@@ -498,9 +498,9 @@
                                        @endif
                                        <span class="tp-product-price new-price"> ₹ {{$product->price}}</span>
                                     </div>
-                                    <a href="tel:+919064062315">
+                                    <a href="https://api.whatsapp.com/send?phone=917001639863" target="_blank">
                                        <div id="button-call-us">
-                                          <button>Call Us</button>
+                                          <button>Reach Us</button>
                                        </div>
                                     </a>
                                  </div>
@@ -648,14 +648,13 @@
                      <h3 class="tp-product-gadget-categories-title">Best Apex <br> Products</h3>
 
                      <div class="tp-product-gadget-categories-list">
-                        <ul>
-                           <li><a href="shop-category.html">Micrscope</a></li>
-                           <li><a href="shop-category.html">Remote Control</a></li>
-                           <li><a href="shop-category.html">Monitor</a></li>
-                           <li><a href="shop-category.html">Thermometer</a></li>
-                           <li><a href="shop-category.html">Backpack</a></li>
-                           <li><a href="shop-category.html">Headphones</a></li>
+                        @if(!empty($lim_cats))
+                        <ul>                               
+                           @foreach($lim_cats as $lim_cat)
+                              <li><a href="shop-category.html">{{$lim_cat->name}}</a></li>
+                           @endforeach                           
                         </ul>
+                        @endif
                      </div>
 
                      <div class="tp-product-gadget-btn">
@@ -727,7 +726,7 @@
                               <!-- product content -->
                               <div class="tp-product-content">
                                  <div class="tp-product-category">
-                                    {{-- <a href="shop.html">Electric</a> --}}
+                                    <a href="shop.html">{{$product->product_category->name}}</a>
                                  </div>
                                  <h3 class="tp-product-title">
                                     <a href="{{route('front.product',$product->slug)}}">
@@ -753,9 +752,9 @@
                                     @endif
                                     <span class="tp-product-price">₹ {{$product->price}}</span>
                                  </div>
-                                 <a href="tel:+919064062315">
+                                 <a href="https://api.whatsapp.com/send?phone=917001639863" target="_blank">
                                     <div id="button-call-us">
-                                       <button>Call Us</button>
+                                       <button>Reach Us</button>
                                     </div>
                                  </a>
                               </div>

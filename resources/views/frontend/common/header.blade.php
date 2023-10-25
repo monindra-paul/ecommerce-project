@@ -4,7 +4,7 @@
 <head>
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <title>Apex Bags - Ecommerce Website</title>
+   <title>Apex Bags -Trolley, Backpack, Duffle Bags</title>
    <meta name="description" content="">
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,6 +21,7 @@
    <link rel="stylesheet" href="{{asset('assets/css/flaticon_shofy.css')}}">
    <link rel="stylesheet" href="{{asset('assets/css/spacing.css')}}">
    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/ion.rangeSlider.min.css')}}">
 </head>
 
 <body>
@@ -126,7 +127,7 @@
                   </a>
                </div>
             </div>
-           
+
             <div class="col">
                <div class="tp-mobile-item text-center">
                   <a href="{{url('/contact')}}" class="tp-mobile-item-btn">
@@ -135,7 +136,7 @@
                   </a>
                </div>
             </div>
-            
+
          </div>
       </div>
    </div>
@@ -150,9 +151,10 @@
                   <div class="tp-search-close text-center mb-20">
                      <button class="tp-search-close-btn tp-search-close-btn"></button>
                   </div>
-                  <form action="{{url('/shop')}}" method="get">                  
+                  <form action="{{url('/shop')}}" method="get">
                      <div class="tp-search-input mb-10">
-                        <input type="text" value="{{Request::get('search')}}" placeholder="Search your product..." name="search">
+                        <input type="text" value="{{Request::get('search')}}" placeholder="Search your product..."
+                           name="search">
                         <button type="submit"><i class="flaticon-search-1"></i></button>
                      </div>
                   </form>
@@ -189,7 +191,8 @@
                         <form action="{{url('/shop')}}" method="get">
                            <div class="tp-header-search-wrapper d-flex align-items-center">
                               <div class="tp-header-search-box">
-                                 <input type="text" name="search" value="{{Request::get('search')}}" placeholder="Search Your Products...">
+                                 <input type="text" name="search" value="{{Request::get('search')}}"
+                                    placeholder="Search Your Products...">
                               </div>
 
                               <div class="tp-header-search-btn">
@@ -232,7 +235,7 @@
                               </div>
                               <div class="tp-header-contact-content">
                                  <h5>Hotline:</h5>
-                                 <p><a href="tel:402-763-282-46">+(402) 763 282 46</a></p>
+                                 <p><a href="tel:+917001639863">+91 7001639863</a></p>
                               </div>
                            </div>
 
@@ -273,13 +276,11 @@
                            </button>
                            <nav class="tp-category-menu-content">
                               <ul>
-                                 
-
                                  @if(!empty(getCategories()))
                                  @foreach (getCategories() as $category)
 
                                  @if ($category->sub_category->isNotEmpty())
-                                 <li class="">
+                                 <li class="has-dropdown">
                                     <a href="{{route('front.shop',$category->slug)}}">
                                        <span>
                                           <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
@@ -296,13 +297,13 @@
                                        </span>
                                        {{$category->name}}
                                     </a>
-                                    {{-- @if($category->sub_category->isNotEmpty())
+                                    @if($category->sub_category->isNotEmpty())
                                     <ul class="tp-submenu">
                                        @foreach($category->sub_category as $subCategory)
-                                       <li><a href="shop.html">{{$subCategory->name}}</a></li>
+                                       <li><a href="{{route('front.shop',[$category->slug,$subCategory->slug])}}">{{$subCategory->name}}</a></li>
                                        @endforeach
                                     </ul>
-                                    @endif --}}
+                                    @endif
 
                                  </li>
                                  @else
@@ -412,7 +413,7 @@
                         </div>
                         <div class="tp-header-contact-content">
                            <h5>Hotline:</h5>
-                           <p><a href="tel:402-763-282-46">+(402) 763 282 46</a></p>
+                           <p><a href="tel:+917001639863">+91 7001639863</a></p>
                         </div>
                      </div>
                      <div class="tp-header-action-item d-lg-none">

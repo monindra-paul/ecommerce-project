@@ -25,7 +25,11 @@ class HomeController extends Controller
         ->take(6)
         ->get();
 
+        $lim_cats = Category::orderBy('name','DESC')->where('status',1)->take(6)->get();
+
+
         $data['allProducts'] = $allProducts;
+        $data['lim_cats'] = $lim_cats;
 
 
 
@@ -35,6 +39,9 @@ class HomeController extends Controller
 
     public function category(){        
         $categories = Category::withCount('products')->get();
+
+
+     
         return view('frontend.home.index', compact('categories'));
     }
 }

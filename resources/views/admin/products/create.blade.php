@@ -47,6 +47,13 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="mb-3">
+                                            <label for="short_description">Short Description</label>
+                                            <textarea name="short_description" id="short_description" cols="30" rows="10"
+                                                class="summernote" placeholder="Short Description"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
                                             <label for="description">Description</label>
                                             <textarea name="description" id="description" cols="30" rows="10"
                                                 class="summernote" placeholder="Description"></textarea>
@@ -103,6 +110,14 @@
                                             <label for="sku">SKU (Stock Keeping Unit)</label>
                                             <input type="text" name="sku" id="sku" class="form-control"
                                                 placeholder="sku">
+                                            <p class="error"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="sizes">Sizes Available</label>
+                                            <input type="text" name="sizes" id="sizes" class="form-control"
+                                                placeholder="Sizes Available">
                                             <p class="error"></p>
                                         </div>
                                     </div>

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
+            $table->text('short_description')->nullable();
             $table->text('description')->nullable();
             $table->double('price', 10,2);
             $table->double('compare_price', 10,2)->nullable();
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->foreignId('brand_id')->nullable()->constrained()->onDelete('cascade');
             $table->enum('is_featured',['Yes','No'])->default('No');
             $table->string('sku');
+            $table->string('sizes');
             $table->string('barcode')->nullable();
             $table->enum('track_qty',['Yes','No'])->default('Yes');
             $table->integer('qty')->nullable();

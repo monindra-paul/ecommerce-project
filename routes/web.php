@@ -130,7 +130,7 @@ Route::group(['prefix'=>'admin'],function(){
 
 Route::get('/',[HomeController::class,'index'])->name('front.home');
 Route::get('/categories',[FronendCategoryController::class,'index'])->name('front.category'); 
-Route::get('/shop/{categorySlug?}',[ShopController::class,'index'])->name('front.shop');
+Route::get('/shop/{categorySlug?}/{subcategorySlug?}',[ShopController::class,'index'])->name('front.shop');
 Route::get('/product/{slug}',[ShopController::class,'product'])->name('front.product');
 Route::get('/contact',[ContactController::class,'index'])->name('front.contact');
 Route::post('/contact',[ContactController::class,'postContact'])->name('front.postcontact');
