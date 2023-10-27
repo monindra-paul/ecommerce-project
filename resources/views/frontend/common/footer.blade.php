@@ -12,7 +12,7 @@
                                    <img src="{{asset('assets/img/apex/apex-logo.png')}}" alt="logo" width="120px">
                                 </a>
                              </div>
-                             <p class="tp-footer-desc">We are a team of designers and developers that create high quality WordPress</p>
+                             <p class="tp-footer-desc">Discover top-quality products at Apex. Shop, save, and stay updated. Your go-to destination for online shopping excellence.</p>
                              <div class="tp-footer-social">
                                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                                 <a href="#"><i class="fa-brands fa-twitter"></i></a>

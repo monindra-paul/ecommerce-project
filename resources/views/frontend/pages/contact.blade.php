@@ -36,23 +36,23 @@
                       <div class="tp-contact-form">
                          <form id="contact-form" action="{{url('/contact')}}" method="post">
                             @csrf
-                            <div class="tp-contact-input-wrapper">
+                              <div class="tp-contact-input-wrapper">
                                 @if ($errors->has('name'))
                                 <span class="text-danger">{{ $errors->first('name') }}</span>
                                 @endif
-                               <div class="tp-contact-input-box">
+                                 <div class="tp-contact-input-box">
                                   <div class="tp-contact-input">
                                      <input name="name" id="name" type="text" placeholder="Shahnewaz Sakil">
                                   </div>
                                   <div class="tp-contact-input-title">
                                     
                                      <label for="name">Your Name</label>
-                                  </div>
+                                 </div>
                                </div>
-                               <div class="tp-contact-input-box">
-                                @if ($errors->has('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
-                                @endif
+                               @if ($errors->has('email'))
+                               <span class="text-danger">{{ $errors->first('email') }}</span>
+                               @endif
+                               <div class="tp-contact-input-box">                               
                                   <div class="tp-contact-input">
                                      <input name="email" id="email" type="email" placeholder="apex@gmail.com">
                                   </div>
@@ -60,11 +60,11 @@
                                      <label for="email">Your Email</label>
                                   </div>
                                </div>
-                               <div class="tp-contact-input-box">
-                                
-                                @if ($errors->has('phone'))
-                                <span class="text-danger">{{ $errors->first('phone') }}</span>
-                                @endif
+                               @if ($errors->has('phone'))
+                               <span class="text-danger">{{ $errors->first('phone') }}</span>
+                               @endif
+                               <div class="tp-contact-input-box">                             
+                               
                                   <div class="tp-contact-input">
                                      <input name="phone" id="phone" type="text" placeholder="+91 98800 56548">
                                   </div>

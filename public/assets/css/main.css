@@ -11495,7 +11495,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 
 .tp-footer-desc {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.44;
   color: var(--tp-common-black);
   margin-bottom: 22px;

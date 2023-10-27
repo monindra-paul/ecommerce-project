@@ -231,6 +231,22 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h2 class="h4 mb-3">Related Products</h2>
+                                <div class="mb-3">
+                                    <select multiple class="related_product w-100" name="related_products[]" id="related_products">
+                                        @if (!empty($relatedProducts))
+
+                                        @foreach($relatedProducts as $relProduct)
+                                            <option selected value="{{$relProduct->id}}">{{$relProduct->title}}</option> 
+                                        @endforeach
+                                        @endif
+                                    </select>
+                                    <p class="error"></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -252,6 +268,22 @@
 @section('customJs')
 
 <script>
+
+
+    $('.related_product').select2({
+        ajax: {
+            url: '{{ route("products.getProducts") }}',
+            dataType: 'json',
+            tags: true,
+            multiple: true,
+            minimumInputLength: 3,
+            processResults: function (data) {
+                return {
+                    results: data.tags
+                };
+            }
+        }
+    }); 
 
     $("#title").change(function () {
         element = $(this);

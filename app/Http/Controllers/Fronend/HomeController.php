@@ -39,8 +39,6 @@ class HomeController extends Controller
 
     public function category(){        
         $categories = Category::withCount('products')->get();
-
-
      
         return view('frontend.home.index', compact('categories'));
     }

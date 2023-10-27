@@ -22,6 +22,8 @@
    <link rel="stylesheet" href="{{asset('assets/css/spacing.css')}}">
    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
    <link rel="stylesheet" href="{{asset('assets/css/ion.rangeSlider.min.css')}}">
+
+   <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=653a9d734fde7100198bf786&product=inline-share-buttons&source=platform" async="async"></script>
 </head>
 
 <body>
@@ -61,7 +63,7 @@
          <div class="offcanvas__content">
             <div class="offcanvas__top mb-70 d-flex justify-content-between align-items-center">
                <div class="offcanvas__logo logo">
-                  <a href="index.html">
+                  <a href="{{url('/')}}">
                      <img src="{{asset('assets/img/apex/apex-logo.png')}}" alt="logo" width="65px">
                   </a>
                </div>
@@ -371,7 +373,7 @@
             <div class="row align-items-center">
                <div class="col-xl-3 col-lg-3 col-md-3 col-6">
                   <div class="logo">
-                     <a href="index.html">
+                     <a href="{{url('/')}}">
                         <img src="{{asset('assets/img/apex/apex-logo.png')}}" alt="logo" width="75px">
                      </a>
                   </div>

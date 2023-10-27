@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('admin/plugins/dropzone/min/dropzone.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('admin/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/plugins/select2/css/select2.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/plugins/summernote/summernote.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/css/custom.css')}}">
     <meta name="csrf-token" content="{{csrf_token()}}">
@@ -48,6 +49,7 @@
 <!-- Bootstrap 4 -->
 <script src="{{asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('admin/plugins/dropzone/min/dropzone.min.js')}}"></script>
+<script src="{{asset('admin/plugins/select2/js/select2.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('admin/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->

@@ -651,7 +651,7 @@
                         @if(!empty($lim_cats))
                         <ul>                               
                            @foreach($lim_cats as $lim_cat)
-                              <li><a href="shop-category.html">{{$lim_cat->name}}</a></li>
+                              <li><a href="{{route('front.shop',$lim_cat->slug)}}">{{$lim_cat->name}}</a></li>
                            @endforeach                           
                         </ul>
                         @endif
