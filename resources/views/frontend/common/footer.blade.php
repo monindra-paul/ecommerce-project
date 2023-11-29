@@ -1,158 +1,157 @@
-    <!-- footer area start -->
-      <footer>
-        <div class="tp-footer-area" data-bg-color="footer-bg-grey">
-           <div class="tp-footer-top pt-95 pb-40">
-              <div class="container">
-                 <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-                       <div class="tp-footer-widget footer-col-1 mb-50">
-                           <div class="tp-footer-widget-content">
-                             <div class="tp-footer-logo">
-                                <a href="index.html">
-                                   <img src="{{asset('assets/img/apex/apex-logo.png')}}" alt="logo" width="120px">
-                                </a>
-                             </div>
-                             <p class="tp-footer-desc">Discover top-quality products at Apex. Shop, save, and stay updated. Your go-to destination for online shopping excellence.</p>
-                             <div class="tp-footer-social">
-                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fa-brands fa-vimeo-v"></i></a>
-                             </div>
-                           </div>
-                       </div>
+
+    <!-- START FOOTER -->
+    <footer class="bg_gray">
+        <div class="footer_top small_pt pb_20">
+            <div class="custom-container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="widget">
+                            <div class="footer_logo">
+                                <a href="#"><img src="assets/images/logo_dark.png" alt="logo" /></a>
+                            </div>
+                            <p class="mb-3">If you are going to use of Lorem Ipsum need to be sure there isn't anything
+                                hidden of text</p>
+                            <ul class="contact_info">
+                                <li>
+                                    <i class="ti-location-pin"></i>
+                                    <p>123 Street, Old Trafford, NewYork, USA</p>
+                                </li>
+                                <li>
+                                    <i class="ti-email"></i>
+                                    <a href="mailto:info@sitename.com">info@sitename.com</a>
+                                </li>
+                                <li>
+                                    <i class="ti-mobile"></i>
+                                    <p>+ 457 789 789 65</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-                       <div class="tp-footer-widget footer-col-2 mb-50">
-                          <h4 class="tp-footer-widget-title">Pages</h4>
-                          <div class="tp-footer-widget-content">
-                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Category</a></li>
-                                <li><a href="#">Shop</a></li>
-                                <li><a href="#">Contact</a></li>                                
-                             </ul>
-                          </div>
-                       </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="widget">
+                            <h6 class="widget_title">Useful Links</h6>
+                            <ul class="widget_links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Location</a></li>
+                                <li><a href="#">Affiliates</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-                       <div class="tp-footer-widget footer-col-4 mb-50">
-                          <h4 class="tp-footer-widget-title">Talk To Us</h4>
-                          <div class="tp-footer-widget-content">
-                             <div class="tp-footer-talk mb-20">
-                                <span>Got Questions? Call us</span>
-                                <h4><a href="tel:917001639863">+91 7001639863</a></h4>
-                             </div>
-                             <div class="tp-footer-contact">
-                                <div class="tp-footer-contact-item d-flex align-items-start">
-                                   <div class="tp-footer-contact-icon">
-                                      <span>
-                                         <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 5C1 2.2 2.6 1 5 1H13C15.4 1 17 2.2 17 5V10.6C17 13.4 15.4 14.6 13 14.6H5" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M13 5.40039L10.496 7.40039C9.672 8.05639 8.32 8.05639 7.496 7.40039L5 5.40039" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M1 11.4004H5.8" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M1 8.19922H3.4" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                         </svg>
-                                      </span>
-                                   </div>
-                                    <div class="tp-footer-contact-content">
-                                      <p><a href="mailto:info@apexbags.in"><span class="__cf_email__" data-cfemail="7f0c171019063f0c0a0f0f100d0b511c1012">info@apexbags.com</span></a></p>
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="widget">
+                            <h6 class="widget_title">My Account</h6>
+                            <ul class="widget_links">
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Discount</a></li>
+                                <li><a href="#">Returns</a></li>
+                                <li><a href="#">Orders History</a></li>
+                                <li><a href="#">Order Tracking</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="widget">
+                            <h6 class="widget_title">Instagram</h6>
+                            <ul class="widget_instafeed instafeed_col4">
+                                <li><a href="#"><img src="assets/images/insta_img1.jpg" alt="insta_img"><span
+                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
+                                <li><a href="#"><img src="assets/images/insta_img2.jpg" alt="insta_img"><span
+                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
+                                <li><a href="#"><img src="assets/images/insta_img3.jpg" alt="insta_img"><span
+                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
+                                <li><a href="#"><img src="assets/images/insta_img4.jpg" alt="insta_img"><span
+                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
+                                <li><a href="#"><img src="assets/images/insta_img5.jpg" alt="insta_img"><span
+                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
+                                <li><a href="#"><img src="assets/images/insta_img6.jpg" alt="insta_img"><span
+                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
+                                <li><a href="#"><img src="assets/images/insta_img7.jpg" alt="insta_img"><span
+                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
+                                <li><a href="#"><img src="assets/images/insta_img8.jpg" alt="insta_img"><span
+                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="middle_footer">
+            <div class="custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="shopping_info">
+                            <div class="row justify-content-center">
+                                <div class="col-md-4">
+                                    <div class="icon_box icon_box_style2">
+                                        <div class="icon">
+                                            <i class="flaticon-shipped"></i>
+                                        </div>
+                                        <div class="icon_box_content">
+                                            <h5>Free Delivery</h5>
+                                            <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="tp-footer-contact-item d-flex align-items-start">
-                                   <div class="tp-footer-contact-icon">
-                                      <span>
-                                         <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M8.50001 10.9417C9.99877 10.9417 11.2138 9.72668 11.2138 8.22791C11.2138 6.72915 9.99877 5.51416 8.50001 5.51416C7.00124 5.51416 5.78625 6.72915 5.78625 8.22791C5.78625 9.72668 7.00124 10.9417 8.50001 10.9417Z" stroke="currentColor" stroke-width="1.5"/>
-                                            <path d="M1.21115 6.64496C2.92464 -0.887449 14.0841 -0.878751 15.7889 6.65366C16.7891 11.0722 14.0406 14.8123 11.6313 17.126C9.88298 18.8134 7.11704 18.8134 5.36006 17.126C2.95943 14.8123 0.210885 11.0635 1.21115 6.64496Z" stroke="currentColor" stroke-width="1.5"/>
-                                         </svg>
-                                      </span>
-                                   </div>
-                                   <div class="tp-footer-contact-content">
-                                      <p><a href="https://www.google.com/maps/place/Sleepy+Hollow+Rd,+Gouverneur,+NY+13642,+USA/@44.3304966,-75.4552367,17z/data=!3m1!4b1!4m6!3m5!1s0x4cccddac8972c5eb:0x56286024afff537a!8m2!3d44.3304928!4d-75.453048!16s%2Fg%2F1tdsjdj4" target="_blank">Ramkrishna Rd, Nagarthuba<br> Habra, West Bengal, 743271</a></p>
-                                   </div>
+                                <div class="col-md-4">
+                                    <div class="icon_box icon_box_style2">
+                                        <div class="icon">
+                                            <i class="flaticon-money-back"></i>
+                                        </div>
+                                        <div class="icon_box_content">
+                                            <h5>30 Day Returns Guarantee</h5>
+                                            <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                             </div>
-                          </div>
-                       </div>
+                                <div class="col-md-4">
+                                    <div class="icon_box icon_box_style2">
+                                        <div class="icon">
+                                            <i class="flaticon-support"></i>
+                                        </div>
+                                        <div class="icon_box_content">
+                                            <h5>27/4 Online Support</h5>
+                                            <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                 </div>
-              </div>
-           </div>
-           <div class="tp-footer-bottom">
-              <div class="container">
-                 <div class="tp-footer-bottom-wrapper">
-                    <div class="row align-items-center">
-                       <div class="col-md-6">
-                          <div class="tp-footer-copyright">
-                             <p>© 2023 All Rights Reserved <a href="{{url('/')}}">Apex Bags |</a> Developed By <a href="https://ecoretechserv.com" target="blank">ECore TechServ</a>.</p>
-                          </div>
-                       </div>
-                       <div class="col-md-6">
-                          <div class="tp-footer-payment text-md-end">
-                             <p>
-                                <img src="{{asset('assets/img/footer/footer-pay.png')}}" alt="">
-                             </p>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-           </div>
+                </div>
+            </div>
         </div>
-      </footer>
-     <!-- footer area end -->
-
-
-
-     <!-- JS here -->
-     <script data-cfasync="false" src="{{asset('assets/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script>
-     <script src="{{asset('assets/js/vendor/jquery.js')}}"></script>
-     <script src="{{asset('assets/js/vendor/waypoints.js')}}"></script>
-     <script src="{{asset('assets/js/bootstrap-bundle.js')}}"></script>
-     <script src="{{asset('assets/js/meanmenu.js')}}"></script>
-     <script src="{{asset('assets/js/swiper-bundle.js')}}"></script>
-     <script src="{{asset('assets/js/slick.js')}}"></script>
-     <script src="{{asset('assets/js/range-slider.js')}}"></script>
-     <script src="{{asset('assets/js/magnific-popup.js')}}"></script>
-     <script src="{{asset('assets/js/nice-select.js')}}"></script>
-     <script src="{{asset('assets/js/purecounter.js')}}"></script>
-     <script src="{{asset('assets/js/countdown.js')}}"></script>
-     <script src="{{asset('assets/js/wow.js')}}"></script>
-     <script src="{{asset('assets/js/isotope-pkgd.js')}}"></script>
-     <script src="{{asset('assets/js/imagesloaded-pkgd.js')}}"></script>
-     {{-- <script src="{{asset('assets/js/ajax-form.js')}}"></script> --}}
-     <script src="{{asset('assets/js/main.js')}}"></script>
-     <script src="{{asset('assets/js/ion.rangeSlider.min.js')}}"></script>
-
-     <script>
-      rangeSlider = $(".js-range-slider").ionRangeSlider({
-         type : "double",
-         min : 0,
-         max : 1000,
-         from : 0,
-         
-         to : 500,
-         skin : "round",
-         max_postfix : "+",
-         prefix : "₹",
-         onFinish: function(){
-            apply_filters()
-         }
-      });
-
-
-      var slider = $(".js-range-slider").data("ionRangeSlider");
-
-      function apply_filters(){
-         url += '&price_min='+slider.result.form+'&price_max='+slider.result.to;
-
-       
-      
-      }
-     </script>
-
-   </body>
-
-</html>
+        <div class="bottom_footer border-top-tran">
+            <div class="custom-container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <p class="mb-lg-0 text-center">© 2020 All Rights Reserved by Bestwebcreator</p>
+                    </div>
+                    <div class="col-lg-4 order-lg-first">
+                        <div class="widget mb-lg-0">
+                            <ul class="social_icons text-center text-lg-start">
+                                <li><a href="#" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#" class="sc_google"><i class="ion-social-googleplus"></i></a></li>
+                                <li><a href="#" class="sc_youtube"><i class="ion-social-youtube-outline"></i></a></li>
+                                <li><a href="#" class="sc_instagram"><i class="ion-social-instagram-outline"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <ul class="footer_payment text-center text-lg-end">
+                            <li><a href="#"><img src="assets/images/visa.png" alt="visa"></a></li>
+                            <li><a href="#"><img src="assets/images/discover.png" alt="discover"></a></li>
+                            <li><a href="#"><img src="assets/images/master_card.png" alt="master_card"></a></li>
+                            <li><a href="#"><img src="assets/images/paypal.png" alt="paypal"></a></li>
+                            <li><a href="#"><img src="assets/images/amarican_express.png" alt="amarican_express"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
