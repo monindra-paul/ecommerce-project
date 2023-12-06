@@ -2017,7 +2017,7 @@ header.light_skin.nav-fixed .social_icons li a:hover {
 	overflow: hidden;
 }
 .el_banner1 {
-	background-color: #FDBB99;
+	background-color: #E8104C;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
@@ -2081,7 +2081,7 @@ header.light_skin.nav-fixed .social_icons li a:hover {
 	width: 100%;
 }
 .el_banner2 {
-	background-color: #53C0E9;
+	background-color: #01ACC8;
 	text-align: right;
 	position: relative;
 	overflow: hidden;
@@ -2389,7 +2389,7 @@ input.text {
 	float: right;
 }
 .categories_btn.categories_menu {
-	padding: 12px 15px;
+	/* padding: 12px 15px; */
 	border-radius: 4px;
 }
 .categories_btn span {
@@ -6220,6 +6220,7 @@ select option {
 .widget_categories li:last-child,
 .widget_archive li:last-child {
 	padding-bottom: 0;
+	/* margin-left: 18px; */
 }
 .widget_categories .categories_num,
 .widget_archive .archive_num {
@@ -7255,3 +7256,10 @@ blockquote p:last-child {
 .input-group > .input-group-append > .btn {
 	height: 100%;
 }
+
+
+/* custom apex css */
+#catselected{
+	color: #FF1C3A;
+	font-weight: 600;
+   }

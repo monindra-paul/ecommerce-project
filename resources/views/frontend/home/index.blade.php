@@ -11,7 +11,7 @@
                             data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active background_bg"
-                                    data-img-src="assets/images/banner13.jpg">
+                                    data-img-src="{{asset('assets/images/apex/home-slider1.png')}}">
                                     <div class="banner_slide_content banner_content_inner">
                                         <div class="col-lg-7 col-10">
                                             <div class="banner_content3 overflow-hidden">
@@ -79,24 +79,24 @@
                 </div>
                 <div class="col-lg-2 d-none d-lg-block">
                     <div class="shop_banner2 el_banner1">
-                        <a href="#" class="hover_effect1">
+                        <a href="{{url('/shop')}}" class="hover_effect1">
                             <div class="el_title text_white">
-                                <h6>iphone Collection</h6>
-                                <span>25% off</span>
+                                <h6>Flat Discount on</h6>
+                                <span>Apex Bags</span>
                             </div>
                             <div class="el_img">
-                                <img src="assets/images/shop_banner_img6.png" alt="shop_banner_img6">
+                                <img src="{{asset('assets/images/apex/home-right-1.png')}}" alt="shop_banner_img6">
                             </div>
                         </a>
                     </div>
                     <div class="shop_banner2 el_banner2">
                         <a href="#" class="hover_effect1">
                             <div class="el_title text_white">
-                                <h6>MAC Computer</h6>
+                                <h6>Get Your Duffle Bag</h6>
                                 <span><u>Shop Now</u></span>
                             </div>
                             <div class="el_img">
-                                <img src="assets/images/shop_banner_img7.png" alt="shop_banner_img7">
+                                <img src="{{asset('assets/images/apex/home-right-2.png')}}" alt="shop_banner_img7">
                             </div>
                         </a>
                     </div>
