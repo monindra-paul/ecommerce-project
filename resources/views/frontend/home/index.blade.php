@@ -1,4 +1,7 @@
 @extends('frontend.layout.app')
+@section('header')
+@include('frontend.common.home-header')
+@endsection
 @section('content')
 
     <!-- START SECTION BANNER -->
@@ -1272,8 +1275,136 @@
         </div>
         <!-- END SECTION SHOP -->
 
+
+        
+    <div class="section bg_redon">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="heading_s1 text-center">
+                        <h2>Our Client Say!</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="testimonial_wrap testimonial_style1 carousel_slider owl-carousel owl-theme nav_style2 owl-loaded owl-drag" data-nav="true" data-dots="false" data-center="true" data-loop="true" data-autoplay="true" data-items="1">
+                        
+                        
+                        
+                        
+                    <div class="owl-stage-outer"><div class="owl-stage" style="transition: all 0.25s ease 0s; width: 3104px; transform: translate3d(-776px, 0px, 0px);"><div class="owl-item cloned" style="width: 388px;"><div class="testimonial_box">
+                            <div class="testimonial_desc">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet animi blanditiis consequatur debitis dicta distinctio, enim error eum iste libero modi nam natus perferendis possimus quasi sint sit tempora voluptatem.</p>
+                            </div>
+                            <div class="author_wrap">
+                                <div class="author_img">
+                                    <img src="assets/images/user_img3.jpg" alt="user_img3">
+                                </div>
+                                <div class="author_name">
+                                    <h6>Daisy Lana</h6>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+                        </div></div><div class="owl-item cloned" style="width: 388px;"><div class="testimonial_box">
+                            <div class="testimonial_desc">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet animi blanditiis consequatur debitis dicta distinctio, enim error eum iste libero modi nam natus perferendis possimus quasi sint sit tempora voluptatem.</p>
+                            </div>
+                            <div class="author_wrap">
+                                <div class="author_img">
+                                    <img src="assets/images/user_img4.jpg" alt="user_img4">
+                                </div>
+                                <div class="author_name">
+                                    <h6>John Becker</h6>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+                        </div></div><div class="owl-item active center" style="width: 388px;"><div class="testimonial_box">
+                            <div class="testimonial_desc">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet animi blanditiis consequatur debitis dicta distinctio, enim error eum iste libero modi nam natus perferendis possimus quasi sint sit tempora voluptatem.</p>
+                            </div>
+                            <div class="author_wrap">
+                                <div class="author_img">
+                                    <img src="assets/images/user_img1.jpg" alt="user_img1">
+                                </div>
+                                <div class="author_name">
+                                    <h6>Lissa Castro</h6>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+                        </div></div><div class="owl-item" style="width: 388px;"><div class="testimonial_box">
+                            <div class="testimonial_desc">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet animi blanditiis consequatur debitis dicta distinctio, enim error eum iste libero modi nam natus perferendis possimus quasi sint sit tempora voluptatem.</p>
+                            </div>
+                            <div class="author_wrap">
+                                <div class="author_img">
+                                    <img src="assets/images/user_img2.jpg" alt="user_img2">
+                                </div>
+                                <div class="author_name">
+                                    <h6>Alden Smith</h6>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+                        </div></div><div class="owl-item" style="width: 388px;"><div class="testimonial_box">
+                            <div class="testimonial_desc">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet animi blanditiis consequatur debitis dicta distinctio, enim error eum iste libero modi nam natus perferendis possimus quasi sint sit tempora voluptatem.</p>
+                            </div>
+                            <div class="author_wrap">
+                                <div class="author_img">
+                                    <img src="assets/images/user_img3.jpg" alt="user_img3">
+                                </div>
+                                <div class="author_name">
+                                    <h6>Daisy Lana</h6>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+                        </div></div><div class="owl-item" style="width: 388px;"><div class="testimonial_box">
+                            <div class="testimonial_desc">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet animi blanditiis consequatur debitis dicta distinctio, enim error eum iste libero modi nam natus perferendis possimus quasi sint sit tempora voluptatem.</p>
+                            </div>
+                            <div class="author_wrap">
+                                <div class="author_img">
+                                    <img src="assets/images/user_img4.jpg" alt="user_img4">
+                                </div>
+                                <div class="author_name">
+                                    <h6>John Becker</h6>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+                        </div></div><div class="owl-item cloned" style="width: 388px;"><div class="testimonial_box">
+                            <div class="testimonial_desc">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet animi blanditiis consequatur debitis dicta distinctio, enim error eum iste libero modi nam natus perferendis possimus quasi sint sit tempora voluptatem.</p>
+                            </div>
+                            <div class="author_wrap">
+                                <div class="author_img">
+                                    <img src="assets/images/user_img1.jpg" alt="user_img1">
+                                </div>
+                                <div class="author_name">
+                                    <h6>Lissa Castro</h6>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+                        </div></div><div class="owl-item cloned" style="width: 388px;"><div class="testimonial_box">
+                            <div class="testimonial_desc">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet animi blanditiis consequatur debitis dicta distinctio, enim error eum iste libero modi nam natus perferendis possimus quasi sint sit tempora voluptatem.</p>
+                            </div>
+                            <div class="author_wrap">
+                                <div class="author_img">
+                                    <img src="assets/images/user_img2.jpg" alt="user_img2">
+                                </div>
+                                <div class="author_name">
+                                    <h6>Alden Smith</h6>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+                        </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="ion-ios-arrow-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="ion-ios-arrow-right"></i></button></div><div class="owl-dots disabled"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
       <!-- START SECTION BANNER -->
-      <div class="section pb_20 small_pt">
+    <div class="section pb_20 small_pt">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -1287,6 +1418,12 @@
         </div>
     </div>
     <!-- END SECTION BANNER -->
+
+
+
+
+
+
     </div>
     <!-- END MAIN CONTENT -->
 

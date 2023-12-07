@@ -142,7 +142,36 @@
                                                 placeholder="Barcode" value="{{$product->barcode}}">
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="dimensions">Product Dimensions</label>
+                                            <input type="text" name="dimensions" id="dimensions" class="form-control"
+                                                placeholder="Product Dimensions ( W X H X L )" value="{{$product->dimensions}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="rain_cover">Is rain Cover Available?</label>
+                                            <input type="text" name="rain_cover" id="rain_cover" class="form-control"
+                                                placeholder="If available type 'Yes' or type 'No'" value="{{$product->rain_cover}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="laptop_compatibility">Is Product Laptop Compatibility?</label>
+                                            <input type="text" name="laptop_compatibility" id="laptop_compatibility" class="form-control"
+                                                placeholder="If compatable type 'Yes' or type 'No'" value="{{$product->laptop_compatibility}}">
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="colors">Product avalable color</label>
+                                            <input type="text" name="colors" id="colors" class="form-control"
+                                                placeholder="Product avalable color" value="{{$product->colors}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
                                         <div class="mb-3">
                                             <div class="custom-control custom-checkbox">
                                                 <input type="hidden" name="track_qty" value="No">

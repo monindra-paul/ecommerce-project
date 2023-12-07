@@ -26,6 +26,10 @@ return new class extends Migration
             $table->text('related_products')->nullable();
             $table->string('sku');
             $table->string('sizes');
+            $table->string('dimensions')->nullable();
+            $table->string('rain_cover')->nullable();
+            $table->string('laptop_compatibility')->nullable();
+            $table->string('colors')->nullable();
             $table->string('barcode')->nullable();
             $table->enum('track_qty',['Yes','No'])->default('Yes');
             $table->integer('qty')->nullable();

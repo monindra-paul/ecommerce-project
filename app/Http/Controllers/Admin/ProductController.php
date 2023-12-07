@@ -77,6 +77,10 @@ class ProductController extends Controller
         $product->compare_price = $request->compare_price;
         $product->sku = $request->sku;
         $product->sizes = $request->sizes;
+        $product->dimensions = $request->dimensions;
+        $product->rain_cover = $request->rain_cover;
+        $product->laptop_compatibility = $request->laptop_compatibility;
+        $product->colors = $request->colors;
         $product->barcode = $request->barcode;
         $product->track_qty = $request->track_qty;
         $product->qty = $request->qty;
@@ -233,6 +237,10 @@ class ProductController extends Controller
         $product->compare_price = $request->compare_price;
         $product->sku = $request->sku;
         $product->sizes = $request->sizes;
+        $product->dimensions = $request->dimensions;
+        $product->rain_cover = $request->rain_cover;
+        $product->laptop_compatibility = $request->laptop_compatibility;
+        $product->colors = $request->colors;
         $product->barcode = $request->barcode;
         $product->track_qty = $request->track_qty;
         $product->qty = $request->qty;

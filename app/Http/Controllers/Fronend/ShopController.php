@@ -68,6 +68,7 @@ class ShopController extends Controller
     public function product($slug){
         // echo $slug;
         $product = Product::where('slug',$slug)->with('product_images')->first();
+        $brands = Brand::orderBy('name','ASC')->where('status',1)->get();
 
         if($product == null){
             abort(404);
@@ -85,6 +86,7 @@ class ShopController extends Controller
 
 
         $data['product'] = $product;
+        $data['brands'] = $brands;
         $data['relatedProducts'] = $relatedProducts;
 
 

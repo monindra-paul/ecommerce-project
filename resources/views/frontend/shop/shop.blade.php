@@ -1,4 +1,7 @@
 @extends('frontend.layout.app')
+@section('header')
+@include('frontend.common.header')
+@endsection
 @section('content')
 
     <!-- START SECTION BREADCRUMB -->
@@ -105,14 +108,14 @@
                                         <div class="pr_desc">
                                             <p>{!!$product->short_description!!}</p>
                                         </div>
-                                        <div class="pr_switch_wrap">
+                                        {{-- <div class="pr_switch_wrap">
                                             <div class="product_color_switch">
                                                 <span class="active" data-color="#87554B"></span>
                                                 <span data-color="#333333"></span>
                                                 <span data-color="#DA323F"></span>
                                                
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="list_product_action_box">
                                             <ul class="list_none pr_action_btn">
                                                 <li class="add-to-cart"><a href="https://api.whatsapp.com/send?phone=917001639863"><i class="linearicons-phone-wave"></i>
