@@ -29,7 +29,7 @@
 				<a href="#" class="h3">Administrative Panel</a>
 			</div>
 			<div class="card-body">
-				<p class="login-box-msg">Welcome to Maha Ayurvedas</p>
+				<p class="login-box-msg">Welcome to Apex Bags Admin</p>
 				<form action="{{route('admin.authenticate')}}" method="post">
 					@csrf
 					<div class="input-group mb-3">
@@ -70,15 +70,13 @@
 					  			</div>
 							</div> -->
 						<!-- /.col -->
-						<div class="col-4">
-							<button type="submit" class="btn btn-primary btn-block">Login</button>
+						<div class="col-12">
+							<button type="submit" style="background-color: #FF1B3B; border:none;" class="btn btn-primary btn-block">Login</button>
 						</div>
 						<!-- /.col -->
 					</div>
 				</form>
-				<p class="mb-1 mt-3">
-					<a href="forgot-password.html">I forgot my password</a>
-				</p>
+				
 			</div>
 			<!-- /.card-body -->
 		</div>
