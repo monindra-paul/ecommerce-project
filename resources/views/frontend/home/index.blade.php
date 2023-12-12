@@ -451,7 +451,7 @@
                             <div class="tab-pane fade show active" id="sellers" role="tabpanel" aria-labelledby="sellers-tab">
                                 <div class="product_slider carousel_slider owl-carousel owl-theme dot_style1"
                                     data-loop="true" data-margin="20"
-                                    data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "991":{"items": "4"}}'>
+                                    data-responsive='{"0":{"items": "2"}, "481":{"items": "2"}, "768":{"items": "3"}, "991":{"items": "4"}}'>
                                     
                                     @if($products->isNotEmpty())
                                         @foreach($products as $product)
@@ -473,26 +473,28 @@
                                                     <div class="product_info">
                                                         <h6 class="product_title"><a
                                                                 href="{{route('front.product',$product->slug)}}">{{$product->title}}</a></h6>
-                                                        <div class="product_price">
-                                                            <span class="price"> ₹ {{$product->price}}</span>
-                                                            @if($product->compare_price > 0)
-                                                            <del>₹ {{$product->compare_price}}</del>
-                                                            @endif
-                                                            <div class="on_sale">
-                                                                <span>{{round(($product->price / $product->compare_price ) *100),1}}% Off</span>
+                                                        <a href="{{route('front.product',$product->slug)}}">
+                                                            <div class="product_price">
+                                                                <span class="price"> ₹ {{$product->price}}</span>
+                                                                @if($product->compare_price > 0)
+                                                                <del>₹ {{$product->compare_price}}</del>
+                                                                @endif
+                                                                <div class="on_sale">
+                                                                    <span>{{round(($product->price / $product->compare_price ) *100),1}}% Off</span>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="rating_wrap">
-                                                            <div class="rating">
-                                                                <div class="product_rate" style="width:100%"></div>
+                                                            <div class="rating_wrap">
+                                                                <div class="rating">
+                                                                    <div class="product_rate" style="width:100%"></div>
+                                                                </div>
+                                                                {{-- <span class="rating_num">(15)</span> --}}
                                                             </div>
-                                                            {{-- <span class="rating_num">(15)</span> --}}
-                                                        </div>
-                                                        <div class="pr_desc">
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                Phasellus blandit massa enim. Nullam id varius nunc id varius
-                                                                nunc.</p>
-                                                        </div>
+                                                            <div class="pr_desc">
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                    Phasellus blandit massa enim. Nullam id varius nunc id varius
+                                                                    nunc.</p>
+                                                            </div>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1220,7 +1222,7 @@
                             <div class="col-12">
                                 <div class="product_slider carousel_slider owl-carousel owl-theme dot_style1"
                                     data-loop="true" data-margin="20"
-                                    data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "991":{"items": "4"}}'>
+                                    data-responsive='{"0":{"items": "2"}, "481":{"items": "2"}, "768":{"items": "3"}, "991":{"items": "4"}}'>
                                     
                                     @if($allProducts->isNotEmpty())
                                         @foreach($allProducts as $product)
@@ -1229,39 +1231,44 @@
                                             @endphp
                                             <div class="item">
                                                 <div class="product_wrap">
-                                                    <div class="product_img">
-                                                        @if(!empty($productImage->image))
-                                                        <a href="{{route('front.product',$product->slug)}}">
-                                                            <img src="{{asset('uploads/product/small/'.$productImage->image)}}" alt="el_img2">
-                                                            <img class="product_hover_img" src="{{asset('uploads/product/small/'.$productImage->image)}}"
-                                                                alt="el_hover_img2">
-                                                        </a>
-                                                        @endif
-                                                        
-                                                    </div>
+                                                    <a href="{{route('front.product',$product->slug)}}">
+                                                        <div class="product_img">
+                                                            @if(!empty($productImage->image))
+                                                            <a href="{{route('front.product',$product->slug)}}">
+                                                                <img src="{{asset('uploads/product/small/'.$productImage->image)}}" alt="el_img2">
+                                                                <img class="product_hover_img" src="{{asset('uploads/product/small/'.$productImage->image)}}"
+                                                                    alt="el_hover_img2">
+                                                            </a>
+                                                            @endif                                                            
+                                                        </div>
+                                                    </a>
+                                                    
                                                     <div class="product_info">
                                                         <h6 class="product_title"><a href="{{route('front.product',$product->slug)}}">{{$product->title}}</a></h6>
-                                                        <div class="product_price">
-                                                            <span class="price"> ₹ {{$product->price}}</span>
-                                                            @if($product->compare_price > 0)
-                                                            <del>₹ {{$product->compare_price}}</del>
-                                                            @endif
-                                                            <div class="on_sale">
-                                                                <span>{{round(($product->price / $product->compare_price ) *100),1}}% Off</span>
+                                                        <a href="{{route('front.product',$product->slug)}}">
+                                                            <div class="product_price">
+                                                                <span class="price"> ₹ {{$product->price}}</span>
+                                                                @if($product->compare_price > 0)
+                                                                <del>₹ {{$product->compare_price}}</del>
+                                                                @endif
+                                                                <div class="on_sale">
+                                                                    <span>{{round(($product->price / $product->compare_price ) *100),1}}% Off</span>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="rating_wrap">
-                                                            <div class="rating">
-                                                                <div class="product_rate" style="width:100%"></div>
+                                                            <div class="rating_wrap">
+                                                                <div class="rating">
+                                                                    <div class="product_rate" style="width:100%"></div>
+                                                                </div>
+                                                                {{-- <span class="rating_num">(15)</span> --}}
                                                             </div>
-                                                            {{-- <span class="rating_num">(15)</span> --}}
-                                                        </div>
-                                                        <div class="pr_desc">
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                Phasellus blandit massa enim. Nullam id varius nunc id varius
-                                                                nunc.</p>
-                                                        </div>
+                                                            <div class="pr_desc">
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                    Phasellus blandit massa enim. Nullam id varius nunc id varius
+                                                                    nunc.</p>
+                                                            </div>
+                                                    </a>
                                                     </div>
+                                               
                                                 </div>
                                             </div>
                                         @endforeach

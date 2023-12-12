@@ -87,27 +87,29 @@
                                     <div class="product_info">
                                         <h5 style="color:#FF1C3A; font-size:15px;"><a href="{{route('front.shop',$product->product_category->slug)}}">{{$product->product_category->name}}</a></h5>
                                         <h6 class="product_title"><a href="{{route('front.product',$product->slug)}}">{{$product->title}}</a></h6>
-                                        <div class="product_price">
+                                        <a href="{{route('front.product',$product->slug)}}">
+                                            <div class="product_price">
 
-                                            <span class="price">₹ {{$product->price}}</span>
-                                            @if($product->compare_price > 0)
-                                                <del>₹ {{$product->compare_price}}</del>
-                                            @endif
+                                                <span class="price">₹ {{$product->price}}</span>
+                                                @if($product->compare_price > 0)
+                                                    <del>₹ {{$product->compare_price}}</del>
+                                                @endif
 
-                                            <div class="on_sale">
-                                                <span>{{round(($product->price / $product->compare_price ) *100),1}}% Off</span>
+                                                <div class="on_sale">
+                                                    <span>{{round(($product->price / $product->compare_price ) *100),1}}% Off</span>
+                                                </div>
+
                                             </div>
-
-                                        </div>
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width:100%"></div>
+                                            <div class="rating_wrap">
+                                                <div class="rating">
+                                                    <div class="product_rate" style="width:100%"></div>
+                                                </div>
+                                                {{-- <span class="rating_num">(21)</span> --}}
                                             </div>
-                                            {{-- <span class="rating_num">(21)</span> --}}
-                                        </div>
-                                        <div class="pr_desc">
-                                            <p>{!!$product->short_description!!}</p>
-                                        </div>
+                                            <div class="pr_desc">
+                                                <p>{!!$product->short_description!!}</p>
+                                            </div>
+                                        </a>
                                         {{-- <div class="pr_switch_wrap">
                                             <div class="product_color_switch">
                                                 <span class="active" data-color="#87554B"></span>
