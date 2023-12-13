@@ -14,7 +14,7 @@
                         data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active background_bg"
-                                data-img-src="{{asset('assets/images/apex/apex-slider-1.webp')}}">
+                                data-img-src="{{asset('assets/images/apex/apex-slider-3.webp')}}">
                                 {{-- --}}
                             </div>
                             <div class="carousel-item background_bg"
@@ -22,22 +22,8 @@
                                 {{-- --}}
                             </div>
                             <div class="carousel-item background_bg"
-                                data-img-src="{{asset('assets/images/apex/home-slider1.png')}}">
-                                <div class="banner_slide_content banner_content_inner">
-                                    <div class="col-lg-8 col-10">
-                                        <div class="banner_content3 overflow-hidden">
-                                            <h5 class="mb-3 staggered-animation font-weight-light"
-                                                data-animation="slideInLeft" data-animation-delay="0.5s">Taking your
-                                                Backpack Experience<br> to Next Level</h5>
-                                            <h2 class="staggered-animation" data-animation="slideInLeft"
-                                                data-animation-delay="1s">Explore Now</h2>
-
-                                            <a class="btn btn-fill-out btn-radius staggered-animation text-uppercase"
-                                                href="{{url('/shop')}}" data-animation="slideInLeft"
-                                                data-animation-delay="1.5s">Shop Now</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                data-img-src="{{asset('assets/images/apex/apex-slider-1.webp')}}">
+                                {{--  --}}
                             </div>
                         </div>
                         <ol class="carousel-indicators indicators_style3">
@@ -238,22 +224,22 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="sale-banner mb-3 mb-md-4">
-                        <a class="hover_effect1" href="#">
-                            <img src="assets/images/shop_banner_img7.jpg" alt="shop_banner_img7">
+                        <a class="hover_effect1" href="{{url('/shop')}}">
+                            <img src="{{asset('assets/images/apex/h-1.webp')}}" alt="shop_banner_img7">
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="sale-banner mb-3 mb-md-4">
-                        <a class="hover_effect1" href="#">
-                            <img src="assets/images/shop_banner_img8.jpg" alt="shop_banner_img8">
+                        <a class="hover_effect1" href="{{url('/shop')}}">
+                            <img src="{{asset('assets/images/apex/h-2.webp')}}" alt="shop_banner_img8">
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="sale-banner mb-3 mb-md-4">
-                        <a class="hover_effect1" href="#">
-                            <img src="assets/images/shop_banner_img9.jpg" alt="shop_banner_img9">
+                        <a class="hover_effect1" href="{{url('/shop')}}">
+                            <img src="{{asset('assets/images/apex/h-3.webp')}}" alt="shop_banner_img9">
                         </a>
                     </div>
                 </div>
