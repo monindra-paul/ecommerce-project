@@ -123,7 +123,7 @@
                                 @endif
                                 @if(!empty($product->sku))
                                 <div class="pr_switch_wrap">
-                                    <span style="color: #FF1C3A" class="switch_lable">Available Colors:</span>
+                                    <span style="color: #FF1C3A" class="switch_lable">SKU:</span>
                                     <div class="product_size_switch">
                                         <p>{{$product->sku}}</p>                                        
                                     </div>
@@ -131,7 +131,7 @@
                                 @endif
                                 @if(!empty($product->product_category))
                                 <div class="pr_switch_wrap">
-                                    <span style="color: #FF1C3A" class="switch_lable">Available Colors:</span>
+                                    <span style="color: #FF1C3A" class="switch_lable">Product Category:</span>
                                     <div class="product_size_switch">
                                         <p>{{$product->product_category->name}}</p>                                        
                                     </div>
@@ -200,17 +200,7 @@
                             <div class="tab-content shop_info_tab">
                                 <div class="tab-pane fade show active" id="Description" role="tabpanel"
                                     aria-labelledby="Description-tab">
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-                                        in a piece of classical Latin literature from 45 BC, making it over 2000 years
-                                        old. Vivamus bibendum magna Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        elit.Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-                                        roots in a piece of classical Latin literature from 45 BC, making it over 2000
-                                        years old.</p>
-                                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                                        praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                        excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-                                        officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-                                        rerum facilis est et expedita distinctio.</p>
+                                    <p>{!!$product->description!!}</p>
                                 </div>
                                 <div class="tab-pane fade" id="Additional-info" role="tabpanel"
                                     aria-labelledby="Additional-info-tab">
@@ -222,7 +212,7 @@
                                             @endif
                                         </tr>
                                         <tr>
-                                            @if(!empty($product->sizes))
+                                            @if(!empty($product->colors))
                                             <td style="color: #FF1C3A">Availabale Color</td>
                                             <td>{{$product->colors}}</td>
                                             @endif
@@ -258,56 +248,51 @@
                                 </div>
                                 <div class="tab-pane fade" id="Reviews" role="tabpanel" aria-labelledby="Reviews-tab">
                                     <div class="comments">
-                                        <h5 class="product_tab_title">2 Review For <span>Blue Dress For Woman</span>
+                                        <h5 class="product_tab_title">2 Review For <span>{{$product->title}}</span>
                                         </h5>
                                         <ul class="list_none comment_list mt-4">
                                             <li>
                                                 <div class="comment_img">
-                                                    <img src="assets/images/user1.jpg" alt="user1" />
+                                                    <img src="{{asset('assets/images/apex/apex-logo.webp')}}" alt="user1" />
                                                 </div>
                                                 <div class="comment_block">
                                                     <div class="rating_wrap">
                                                         <div class="rating">
-                                                            <div class="product_rate" style="width:80%"></div>
+                                                            <div class="product_rate" style="width:100%"></div>
                                                         </div>
                                                     </div>
                                                     <p class="customer_meta">
-                                                        <span class="review_author">Alea Brooks</span>
-                                                        <span class="comment-date">March 5, 2018</span>
+                                                        <span class="review_author">Mohini Karmakar</span>
+                                                        <span class="comment-date">Kolkata</span> 
                                                     </p>
                                                     <div class="description">
-                                                        <p>Lorem Ipsumin gravida nibh vel velit auctor aliquet. Aenean
-                                                            sollicitudin, lorem quis bibendum auctor, nisi elit
-                                                            consequat ipsum, nec sagittis sem nibh id elit. Duis sed
-                                                            odio sit amet nibh vulputate</p>
+                                                        <p>Awesome material. Its the best quality. The material in it has a fantastic quality. Most desirable by new generation. And I would recommend my colleagues to buy this. One of them asked me to give my bag but I denied. Again I can not stop my self to praise it</p>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="comment_img">
-                                                    <img src="assets/images/user2.jpg" alt="user2" />
+                                                    <img src="{{asset('assets/images/apex/apex-logo.webp')}}" alt="user1" />
                                                 </div>
                                                 <div class="comment_block">
                                                     <div class="rating_wrap">
                                                         <div class="rating">
-                                                            <div class="product_rate" style="width:60%"></div>
+                                                            <div class="product_rate" style="width:100%"></div>
                                                         </div>
                                                     </div>
                                                     <p class="customer_meta">
-                                                        <span class="review_author">Grace Wong</span>
-                                                        <span class="comment-date">June 17, 2018</span>
+                                                        <span class="review_author">Kunal Sarkar</span>
+                                                        <span class="comment-date">Siliguri</span> 
                                                     </p>
                                                     <div class="description">
-                                                        <p>It is a long established fact that a reader will be
-                                                            distracted by the readable content of a page when looking at
-                                                            its layout. The point of using Lorem Ipsum is that it has a
-                                                            more-or-less normal distribution of letters</p>
+                                                        <p>I had purchased a Apex Bags's Bagpack worth rs 1000.And iam very happy with this bag pack. I will say its better then american tourister's bagpacks.</p>
                                                     </div>
                                                 </div>
                                             </li>
+                                            
                                         </ul>
                                     </div>
-                                    <div class="review_form field_form">
+                                    {{-- <div class="review_form field_form">
                                         <h5>Add a review</h5>
                                         <form class="row mt-3">
                                             <div class="form-group col-12 mb-3">
@@ -337,7 +322,7 @@
                                                     value="Submit">Submit Review</button>
                                             </div>
                                         </form>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

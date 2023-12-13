@@ -31,7 +31,7 @@ class ProductImageController extends Controller
        
         $destPath = public_path().'/uploads/product/large/'.$imageName;
         $image = Image::make($sourcePath);
-        $image->resize(1400, null, function ($constraint) {
+        $image->resize(1600, null, function ($constraint) {
             $constraint->aspectRatio();
         });
         $image->save($destPath);
@@ -41,7 +41,7 @@ class ProductImageController extends Controller
 
         $destPath = public_path().'/uploads/product/small/'.$imageName;
         $image = Image::make($sourcePath);
-        $image->fit(300, 400);
+        $image->fit(500, 600);
         $image->save($destPath);
       
 

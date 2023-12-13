@@ -62,7 +62,7 @@
                                <ul>
                                    @if($category->sub_category->isNotEmpty())
                                        <li class="dropdown dropdown-mega-menu">
-                                       <a class="dropdown-item nav-link dropdown-toggler" href="{{route('front.shop',$category->slug)}}" data-bs-toggle="dropdown"><i class="flaticon-tv"></i>
+                                       <a class="dropdown-item nav-link dropdown-toggler" href="{{route('front.shop',$category->slug)}}" data-bs-toggle="dropdown"><i class="linearicons-power"></i>
                                            <span>{{$category->name}}</span></a>
                                        <div class="dropdown-menu">
                                            <ul class="mega-menu d-lg-flex">
@@ -86,7 +86,7 @@
                                        </li>
                                    @else 
 
-                                   <li><a class="dropdown-item nav-link nav_item" href="{{route('front.shop',$category->slug)}}"><i class="flaticon-headphones"></i> <span>{{$category->name}}</span></a></li>
+                                   <li><a class="dropdown-item nav-link nav_item" href="{{route('front.shop',$category->slug)}}"><i class="linearicons-power"></i><span>{{$category->name}}</span></a></li>
                                    @endif
                                 
                                 

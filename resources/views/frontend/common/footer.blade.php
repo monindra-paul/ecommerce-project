@@ -13,8 +13,8 @@
                                             <i class="flaticon-shipped"></i>
                                         </div>
                                         <div class="icon_box_content">
-                                            <h5>Free Delivery</h5>
-                                            <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
+                                            <h5>Delivering Since 30 Years</h5>
+                                            {{-- <p>Phasellus blandit massa enim elit of passage varius nunc.</p> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -24,8 +24,8 @@
                                             <i class="flaticon-money-back"></i>
                                         </div>
                                         <div class="icon_box_content">
-                                            <h5>30 Day Returns Guarantee</h5>
-                                            <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
+                                            <h5>Value For Money Products</h5>
+                                            {{-- <p>Phasellus blandit massa enim elit of passage varius nunc.</p> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -35,8 +35,8 @@
                                             <i class="flaticon-support"></i>
                                         </div>
                                         <div class="icon_box_content">
-                                            <h5>27/4 Online Support</h5>
-                                            <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
+                                            <h5>24/7 Online Support</h5>
+                                            {{-- <p>Phasellus blandit massa enim elit of passage varius nunc.</p> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
                             <h6 class="widget_title">Useful Links</h6>
                             <ul class="widget_links">                               
                                 
-                                <li><a href="#">Location</a></li>                                
+                                <li><a href="https://maps.app.goo.gl/kUnYKbLszwHSXgtF6" target="_blank">Location</a></li>                                
                                 <li><a href="{{url('/contact')}}">Contact</a></li>
                             </ul>
                         </div>
@@ -99,22 +99,43 @@
                         <div class="widget">
                             <h6 class="widget_title">Small Gallery</h6>
                             <ul class="widget_instafeed instafeed_col4">
-                                <li><a href="#"><img src="assets/images/insta_img1.jpg" alt="insta_img"><span
-                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                                <li><a href="#"><img src="assets/images/insta_img2.jpg" alt="insta_img"><span
-                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                                <li><a href="#"><img src="assets/images/insta_img3.jpg" alt="insta_img"><span
-                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                                <li><a href="#"><img src="assets/images/insta_img4.jpg" alt="insta_img"><span
-                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                                <li><a href="#"><img src="assets/images/insta_img5.jpg" alt="insta_img"><span
-                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                                <li><a href="#"><img src="assets/images/insta_img6.jpg" alt="insta_img"><span
-                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                                <li><a href="#"><img src="assets/images/insta_img7.jpg" alt="insta_img"><span
-                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
-                                <li><a href="#"><img src="assets/images/insta_img8.jpg" alt="insta_img"><span
-                                            class="insta_icon"><i class="ti-instagram"></i></span></a></li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{asset('assets/images/apex/gal-pic-1.jpg')}}" alt="insta_img">
+                                        <span class="insta_icon"><i class="ti-instagram"></i></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{asset('assets/images/apex/gal-pic-2.jpg')}}" alt="insta_img">
+                                        <span class="insta_icon"><i class="ti-instagram"></i></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{asset('assets/images/apex/gal-pic-3.jpg')}}" alt="insta_img">
+                                        <span class="insta_icon"><i class="ti-instagram"></i></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{asset('assets/images/apex/gal-pic-4.jpg')}}" alt="insta_img">
+                                        <span class="insta_icon"><i class="ti-instagram"></i></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{asset('assets/images/apex/gal-pic-5.jpg')}}" alt="insta_img">
+                                        <span class="insta_icon"><i class="ti-instagram"></i></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{asset('assets/images/apex/gal-pic-6.jpg')}}" alt="insta_img">
+                                        <span class="insta_icon"><i class="ti-instagram"></i></span>
+                                    </a>
+                                </li>
+                                
                             </ul>
                         </div>
                     </div>
