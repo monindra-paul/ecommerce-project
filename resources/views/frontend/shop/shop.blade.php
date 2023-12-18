@@ -76,7 +76,7 @@
                                 @php
                                 $productImage = $product->product_images->first();
                                 @endphp
-                                <div class="product">
+                                <div class="product" onclick="window.location.href= '{{route('front.product',$product->slug)}}'">
                                     <div class="product_img">
                                         @if(!empty($productImage->image))
                                         <a href="{{route('front.product',$product->slug)}}">
@@ -159,8 +159,8 @@
                             
                             <div class="widget">
                                 <div class="shop_banner">
-                                    <div class="banner_img overlay_bg_20">
-                                        <img src="{{asset('assets/images/apex/shop-side.webp')}}" alt="sidebar_banner_img">
+                                    <div class="banner_img ">
+                                        <img src="{{asset('assets/images/apex/shop-side2.webp')}}" alt="sidebar_banner_img">
                                     </div>
                                     {{-- <div class="shop_bn_content2 text_white">
                                         <h5 class="text-uppercase shop_subtitle">New Collection</h5>

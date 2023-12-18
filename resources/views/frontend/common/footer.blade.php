@@ -14,7 +14,7 @@
                                         </div>
                                         <div class="icon_box_content">
                                             <h5>Delivering Since 30 Years</h5>
-                                            {{-- <p>Phasellus blandit massa enim elit of passage varius nunc.</p> --}}
+                                             <p>We are Happy to Deliver you Since 30 Years</p>
                                         </div>
                                     </div>
                                 </div>
@@ -25,7 +25,7 @@
                                         </div>
                                         <div class="icon_box_content">
                                             <h5>Value For Money Products</h5>
-                                            {{-- <p>Phasellus blandit massa enim elit of passage varius nunc.</p> --}}
+                                            <p>Get Your Best Bags at Low Cost with Quality</p>
                                         </div>
                                     </div>
                                 </div>
@@ -36,7 +36,7 @@
                                         </div>
                                         <div class="icon_box_content">
                                             <h5>24/7 Online Support</h5>
-                                            {{-- <p>Phasellus blandit massa enim elit of passage varius nunc.</p> --}}
+                                            <p>Our 24 X 7 Customer Support Availabale </p> 
                                         </div>
                                     </div>
                                 </div>

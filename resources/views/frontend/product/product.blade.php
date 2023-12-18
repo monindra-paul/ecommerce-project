@@ -160,7 +160,7 @@
                                 <li>Tags: <a href="#" rel="tag">Cloth</a>, <a href="#" rel="tag">printed</a> </li>
                             </ul> --}}
 
-                            <div class="product_share">
+                            {{-- <div class="product_share">
                                 <span>Share:</span>
                                 <ul class="social_icons">
                                     <li><a href="#"><i class="ion-social-facebook"></i></a></li>
@@ -169,7 +169,7 @@
                                     <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
                                     <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
                                 </ul>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -292,37 +292,7 @@
                                             
                                         </ul>
                                     </div>
-                                    {{-- <div class="review_form field_form">
-                                        <h5>Add a review</h5>
-                                        <form class="row mt-3">
-                                            <div class="form-group col-12 mb-3">
-                                                <div class="star_rating">
-                                                    <span data-value="1"><i class="far fa-star"></i></span>
-                                                    <span data-value="2"><i class="far fa-star"></i></span>
-                                                    <span data-value="3"><i class="far fa-star"></i></span>
-                                                    <span data-value="4"><i class="far fa-star"></i></span>
-                                                    <span data-value="5"><i class="far fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-12 mb-3">
-                                                <textarea required="required" placeholder="Your review *"
-                                                    class="form-control" name="message" rows="4"></textarea>
-                                            </div>
-                                            <div class="form-group col-md-6 mb-3">
-                                                <input required="required" placeholder="Enter Name *"
-                                                    class="form-control" name="name" type="text">
-                                            </div>
-                                            <div class="form-group col-md-6 mb-3">
-                                                <input required="required" placeholder="Enter Email *"
-                                                    class="form-control" name="email" type="email">
-                                            </div>
-
-                                            <div class="form-group col-12 mb-3">
-                                                <button type="submit" class="btn btn-fill-out" name="submit"
-                                                    value="Submit">Submit Review</button>
-                                            </div>
-                                        </form>
-                                    </div> --}}
+                                    
                                 </div>
                             </div>
                         </div>
@@ -352,7 +322,7 @@
                                         $productImage = $relProduct->product_images->first();
                                         @endphp
                                     <div class="item">
-                                        <div class="product">
+                                        <div class="product" onclick="window.location.href= '{{route('front.product',$relProduct->slug)}}'">
                                             @if(!empty($productImage->image))
                                             <div class="product_img">
                                                 <a href="{{route('front.product',$relProduct->slug)}}">

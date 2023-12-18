@@ -3414,7 +3414,8 @@ input.text {
 	position: relative;
 	overflow: hidden;
 	background-color: #f7ebed;
-  	border-radius: 50%;
+  	/* border-radius: 50%; */
+	border-radius: 10px;
 }
 .blog_img img {
 	width: 100%;
@@ -4120,7 +4121,7 @@ footer .widget_title {
 	width: 100%;
 }
 .breadcrumb_section.page-title-mini {
-	padding: 70px 0;
+	padding: 25px 0;
 }
 .page-title-mini .page-title h1 {
 	font-size: 28px;
