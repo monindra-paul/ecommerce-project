@@ -82,7 +82,7 @@ Route::group(['prefix'=>'admin'],function(){
 
 
         //product routes       
-         Route::get('/products',[ProductController::class,'index'])->name('products.index');
+        Route::get('/products',[ProductController::class,'index'])->name('products.index');
         Route::get('/products/create',[ProductController::class,'create'])->name('products.create');
         Route::post('/products',[ProductController::class, 'store'])->name('products.store');
         Route::get('/products/{product}/edit',[ProductController::class, 'edit'])->name('products.edit');
@@ -132,6 +132,7 @@ Route::group(['prefix'=>'admin'],function(){
 Route::get('/',[HomeController::class,'index'])->name('front.home');
 Route::get('/categories',[FronendCategoryController::class,'index'])->name('front.category'); 
 Route::get('/shop/{categorySlug?}/{subcategorySlug?}',[ShopController::class,'index'])->name('front.shop');
+Route::get('/shop/{brandSelected?}',[ShopController::class,'index'])->name('front.shop.brand');
 Route::get('/product/{slug}',[ShopController::class,'product'])->name('front.product');
 Route::get('/cart',[CartController::class,'cart'])->name('front.cart');
 Route::post('/add-to-cart',[CartController::class,'addToCart'])->name('front.addToCart');

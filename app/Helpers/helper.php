@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Brand;
 use App\Models\Category;
 
 
@@ -13,5 +14,9 @@ function getCategories(){
    ->where('showHome','Yes')->get();
 }
 
+
+function getBrands(){
+   return Brand::orderBy('name', 'ASC') ->where('status',1);
+}
 
 ?>

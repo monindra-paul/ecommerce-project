@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
+use App\Models\TempImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
+use Image;
 
 class BrandController extends Controller
 {
@@ -45,6 +48,33 @@ class BrandController extends Controller
             $brand->slug = $request->slug;
             $brand->status = $request->status;
             $brand->save();
+
+
+            if (!empty($request->image_id)) {
+                $tempImage = TempImage::find($request->image_id);
+                $extArray = explode('.', $tempImage->name);
+                $ext = last($extArray);
+
+                $newImageName = $brand->id . '.' . $ext;
+
+                $sPath = public_path() .'/temp/'.$tempImage->name;
+                $dPath = public_path() .'/uploads/brand/'.$newImageName;
+                File::copy($sPath, $dPath);
+
+                //resize
+
+                $dPath = public_path() .'/uploads/brand/thumb/'.$newImageName;
+                $img = Image::make($sPath);
+                // $img->resize(300, 200);
+                $img->fit(540, 540, function ($constraint) {
+                    $constraint->upsize();
+                });
+                $img->save($dPath);
+
+
+                $brand->image = $newImageName;
+                $brand->save();
+            }
 
             $request->session()->flash('success', 'Brand Created Successfully');
 
@@ -105,6 +135,42 @@ class BrandController extends Controller
             $brand->status = $request->status;
             $brand->save();
 
+
+
+            $oldImage = $brand->image;
+
+            if (!empty($request->image_id)) {
+                $tempImage = TempImage::find($request->image_id);
+                $extArray = explode('.', $tempImage->name);
+                $ext = last($extArray);
+
+                $newImageName = $brand->id . '-' . time() . '.' . $ext;
+
+                $sPath = public_path() . '/temp/' . $tempImage->name;
+                $dPath = public_path() . '/uploads/brand/' . $newImageName;
+                File::copy($sPath, $dPath);
+
+                //resize
+
+                $dPath = public_path() . '/uploads/brand/thumb/' . $newImageName;
+                $img = Image::make($sPath);
+                // $img->resize(300, 200);
+                $img->fit(540, 540, function ($constraint) {
+                    $constraint->upsize();
+                });
+                $img->save($dPath);
+
+
+
+                $brand->image = $newImageName;
+                $brand->save();
+
+
+                //delete old images
+
+                File::delete(public_path() . '/uploads/brand/thumb/' . $oldImage);
+                File::delete(public_path() . '/uploads/brand/' . $oldImage);
+            }
 
             $request->session()->flash('success', 'Brand Updated Successfully');
 

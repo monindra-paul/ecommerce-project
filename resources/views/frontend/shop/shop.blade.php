@@ -34,7 +34,7 @@
                         <div class="row align-items-center mb-4 pb-1">
                             <div class="col-12">
                                 <div class="product_header">
-                                    <div class="product_header_left">
+                                    {{-- <div class="product_header_left">
                                         <div class="custom_select">
                                             <select class="form-control form-control-sm">
                                                 <option value="order">Default sorting</option>
@@ -44,7 +44,7 @@
                                                 <option value="price-desc">Sort by price: high to low</option>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="product_header_right">
                                         <div class="products_view">
                                             <a href="javascript:;" class="shorting_icon grid active"><i

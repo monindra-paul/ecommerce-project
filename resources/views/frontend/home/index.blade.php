@@ -106,6 +106,51 @@
 
 
 
+
+<!-- START SECTION CATEGORIES -->
+<div class="section small_pb small_pt">
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="heading_s4 text-center">
+                    <h2>Our Brands</h2>
+                </div>
+                <p class="text-center leads"></p>
+            </div>
+        </div>
+        @if($allBrands->isNotEmpty())
+      
+
+           <div class="row align-items-center ">
+               <div class="col-12 text-center">
+                   <div class="cat_slider cat_style1 mt-4 mt-md-0 d-flex justify-content-center carousel_slider owl-carousel owl-theme nav_style5"
+                       data-loop="false" data-dots="false" data-nav="true" data-margin="30"
+                       data-responsive='{"0":{"items": "2"}, "480":{"items": "3"}, "576":{"items": "4"}, "768":{"items": "5"}, "991":{"items": "6"}, "1199":{"items": "7"}}'>
+                       @foreach($allBrands as $brand)
+                       <div class="item ">
+                           <div class="categories_box">
+                               <a href="{{route('front.shop.brand',$brand->slug)}}">
+                                   @if($brand->image !="")
+                                   <img src="{{asset('uploads/brand/thumb/'. $brand->image)}}" alt="brand-img" />
+                                   @endif
+                                   <span>{{$brand->name}}</span>
+                               </a>
+                           </div>
+                       </div>
+                       @endforeach
+   
+                   </div>
+               </div>
+           </div>
+      
+        
+        @endif
+    </div>
+</div>
+<!-- END SECTION CATEGORIES -->
+
+
+
 <!-- END MAIN CONTENT -->
 <div class="main_content">
 
