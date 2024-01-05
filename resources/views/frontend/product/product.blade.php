@@ -235,13 +235,11 @@
                                             <td>{{$product->dimensions}}</td>
                                             @endif
                                         </tr>
-                                        <tr>
-                                            @foreach ($brands as $brand)
+                                        <tr>                                          
                                             @if(!empty($product->brand_id))
                                             <td style="color: #FF1C3A">Product Brand</td>
-                                            <td>{{$brand->name}}</td>
-                                            @endif
-                                            @endforeach
+                                            <td>{{$product->product_brand->name}}</td>
+                                            @endif                                           
                                         </tr>
                                         
                                     </table>

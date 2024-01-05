@@ -18,7 +18,7 @@
                                 {{-- --}}
                             </div>
                             <div class="carousel-item background_bg"
-                                data-img-src="{{asset('assets/images/apex/apex-slider-2.webp')}}">
+                                data-img-src="{{asset('assets/images/apex/apex-slider-3.1.webp')}}">
                                 {{-- --}}
                             </div>
                             <div class="carousel-item background_bg"
@@ -129,9 +129,9 @@
                        @foreach($allBrands as $brand)
                        <div class="item ">
                            <div class="categories_box">
-                               <a href="{{route('front.shop.brand',$brand->slug)}}">
+                               <a href="{{route('front.brand',$brand->slug)}}">
                                    @if($brand->image !="")
-                                   <img src="{{asset('uploads/brand/thumb/'. $brand->image)}}" alt="brand-img" />
+                                   <img src="{{asset('uploads/brand/thumb/'. $brand->image)}}" name="brand" alt="brand-img" />
                                    @endif
                                    <span>{{$brand->name}}</span>
                                </a>

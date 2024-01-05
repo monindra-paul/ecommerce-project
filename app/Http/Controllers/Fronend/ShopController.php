@@ -13,10 +13,10 @@ class ShopController extends Controller
 {
 
     
-    public function index(Request $request, $categorySlug = null, $subCategorySlug = null, $brandSlug = null){
+    public function index(Request $request, $categorySlug = null, $subCategorySlug = null){
 
         $categorySelected = "";
-        $brandSelected = "";
+       
 
        $categories = Category::orderBy('name','ASC')->with('sub_category')->where('status',1)->get();
 
@@ -35,20 +35,8 @@ class ShopController extends Controller
 
        if(!empty($categorySlug)){
         $category = Category::where('slug',$categorySlug)->first();
-        $brand = Brand::where('slug',$brandSelected)->first();
-        $products = $products->where('brand_id',$brand->brand_id);
         $products = $products->where('category_id',$category->id);
         $categorySelected = $category->id;
-        $brandSelected = $brand->id;
-       }
-
-
-        //brands
-
-       if(!empty($brandSlug)){
-        $brand = Brand::where('slug',$brandSlug)->first();
-        $products = $products->where('brand_id',$brand->id);
-        $brandSelected = $brand->id;
        }
 
 
@@ -61,6 +49,7 @@ class ShopController extends Controller
        }
 
 
+       
     //    $products = Product::orderBy('id','DESC')->where('status',1)->get();
 
 
@@ -73,7 +62,7 @@ class ShopController extends Controller
        $data['brands'] = $brands;
        $data['products'] = $products;
        $data['categorySelected'] = $categorySelected;
-       $data['brandSelected'] = $brandSelected;
+       
 
         return view('frontend.shop.shop',$data);
     }

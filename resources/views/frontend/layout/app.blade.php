@@ -88,6 +88,8 @@
     <script src="{{asset('assets/js/jquery.elevatezoom.js')}}"></script>
     <!-- scripts js -->
     <script src="{{asset('assets/js/scripts.js')}}"></script>
+    <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

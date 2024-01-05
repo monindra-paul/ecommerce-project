@@ -145,8 +145,7 @@
                                                    <i class="flaticon-headphones"></i> <span> {{$category->name}}</span>
                                                </a>
                                            </li>
-                                       @endif
-                                           
+                                       @endif                                         
                                        
                                            
                                        
