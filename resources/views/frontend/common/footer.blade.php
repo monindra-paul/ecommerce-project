@@ -1,187 +1,88 @@
- <!-- START FOOTER -->
- <footer class="bg_gray">
-    <div class="middle_footer">
-        <div class="custom-container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="shopping_info">
-                        <div class="row justify-content-center">
-                            <div class="col-md-4">
-                                <div class="icon_box icon_box_style2">
-                                    <div class="icon">
-                                        <i class="flaticon-shipped"></i>
-                                    </div>
-                                    <div class="icon_box_content">
-                                        <h5>Delivering Since 30 Years</h5>
-                                         <p>We are Happy to Deliver you Since 30 Years</p>
-                                    </div>
+
+    <!-- footer area start -->
+    <footer class="h6_footer-area h8_footer-area">
+        <div class="footer-top pt-200 pb-30">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                        <div class="h6_footer-widget mb-40 mr-80">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="{{asset('assets/img/enroot/enrootlogo-ft.png')}}" alt="" width="85px"></a>
+                            </div>
+                            <p class="h6_footer-widget-text">
+                                The aim of education is to enlighten one's mind so that one could have a broad mind as well as a broad outlook. Education represents the truth of life in a beautiful way for the well being of human race.
+                            </p>
+                            <div class="h6_footer-social">
+                                <ul>
+                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-8 d-flex flex-wrap flex-sm-nowrap justify-content-between">
+                        <div class="h6_footer-inner">
+                            <div class="h6_footer-widget mb-40">
+                                <h5 class="h6_footer-widget-title">Pages</h5>
+                                <div class="h6_footer-widget-list">
+                                    <ul>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Gallery</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="#">Event</a></li>
+
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="icon_box icon_box_style2">
-                                    <div class="icon">
-                                        <i class="flaticon-money-back"></i>
-                                    </div>
-                                    <div class="icon_box_content">
-                                        <h5>Value For Money Products</h5>
-                                        <p>Get Your Best Bags at Low Cost with Quality</p>
-                                    </div>
+                        </div>
+                        <div class="h6_footer-inner">
+                            <div class="h6_footer-widget mb-40">
+                                <h5 class="h6_footer-widget-title">Courses</h5>
+                                <div class="h6_footer-widget-list">
+                                    <ul>
+                                        <li><a href="#">Abacus</a></li>
+                                        <li><a href="#">Vedic Math</a></li>
+                                        <li><a href="#">Chess</a></li>
+
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="icon_box icon_box_style2">
-                                    <div class="icon">
-                                        <i class="flaticon-support"></i>
-                                    </div>
-                                    <div class="icon_box_content">
-                                        <h5>24/7 Online Support</h5>
-                                        <p>Our 24 X 7 Customer Support Availabale </p> 
-                                    </div>
+                        </div>
+
+                    </div>
+                    {{-- <div class="col-xl-4 col-lg-4 col-md-5">
+                        <div class="h6_footer-widget ml-80 mb-40">
+                            <h5 class="h6_footer-widget-title">Newsletter</h5>
+                            <p class="h6_footer-widget-text newsletter-text">Sign up foe our newsletter and get 34% <br>
+                                off your next course.</p>
+                            <form action="#">
+                                <div class="h6_footer-subscribe-form">
+                                    <input type="email" placeholder="Enter Your Email*">
+                                    <button type="submit">Subscribe</button>
                                 </div>
-                            </div>
+                                <div class="h6_footer-subscribe-condition">
+                                    <label class="condition_label">I agree to the terms of use and privacy policy.
+                                        <input type="checkbox">
+                                        <span class="check_mark"></span>
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                    </div> --}}
+                </div>
+            </div>
+        </div>
+        <div class="h6_copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="h6_copyright-text">
+                            <p>Copyright © 2024 All Rights Reserved</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="footer_top small_pt pb_20">
-        <div class="custom-container">
-            <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="widget">
-                        <div class="footer_logo">
-                            <a href="{{url('/')}}"><img src="{{asset('assets/images/apex/apex-logo.webp')}}" width="130px" alt="logo" /></a>
-                        </div>
-                        <p class="mb-3">Discover top-quality products at Apex. Shop, save, and stay updated. Your go-to destination for online shopping excellence.</p>
-                        <ul class="contact_info">
-                            <li>
-                                <i class="ti-location-pin"></i>
-                                <p>Ramkrishna Rd, Nagarthuba
-                                    Habra, West Bengal, 743271</p>
-                            </li>
-                            <li>
-                                <i class="ti-email"></i>
-                                <a href="mailto:info@apexbags.com
-                                ">info@apexbags.com
-                                    </a>
-                            </li>
-                            <li>
-                                <i class="ti-mobile"></i>
-                                <a href="tel:+917001639863">+91 7001639863</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6">
-                    <div class="widget">
-                        <h6 class="widget_title">Useful Links</h6>
-                        <ul class="widget_links">                               
-                            
-                            <li><a href="https://maps.app.goo.gl/kUnYKbLszwHSXgtF6" target="_blank">Location</a></li>                                
-                            <li><a href="{{url('/contact')}}">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6">
-                    <div class="widget">
-                        <h6 class="widget_title">Explore</h6>
-                        <ul class="widget_links">
-                            <li><a href="{{url('/')}}">Home</a></li>
-                            <li><a href="{{url('/shop')}}">Shop</a></li>
-                            <li><a href="{{url('/categories')}}">Categories</a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="widget">
-                        <h6 class="widget_title">Small Gallery</h6>
-                        <ul class="widget_instafeed instafeed_col4">
-                            <li>
-                                <a href="#">
-                                    <img src="{{asset('assets/images/apex/gal-pic-1.jpg')}}" alt="insta_img">
-                                    <span class="insta_icon"><i class="ti-instagram"></i></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{asset('assets/images/apex/gal-pic-2.jpg')}}" alt="insta_img">
-                                    <span class="insta_icon"><i class="ti-instagram"></i></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{asset('assets/images/apex/gal-pic-3.jpg')}}" alt="insta_img">
-                                    <span class="insta_icon"><i class="ti-instagram"></i></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{asset('assets/images/apex/gal-pic-4.jpg')}}" alt="insta_img">
-                                    <span class="insta_icon"><i class="ti-instagram"></i></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{asset('assets/images/apex/gal-pic-5.jpg')}}" alt="insta_img">
-                                    <span class="insta_icon"><i class="ti-instagram"></i></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{asset('assets/images/apex/gal-pic-6.jpg')}}" alt="insta_img">
-                                    <span class="insta_icon"><i class="ti-instagram"></i></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{asset('assets/images/apex/gal-pic-7.jpg')}}" alt="insta_img">
-                                    <span class="insta_icon"><i class="ti-instagram"></i></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{asset('assets/images/apex/gal-pic-8.jpg')}}" alt="insta_img">
-                                    <span class="insta_icon"><i class="ti-instagram"></i></span>
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-   
-    <div class="bottom_footer border-top-tran">
-        <div class="custom-container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <p class="mb-lg-0 text-center">© 2024 All Rights Reserved by Apex Bags | <a style="color: #FF1C3A" href="">ECore TechServ</a></p>
-                </div>
-                <div class="col-lg-4 order-lg-first">
-                    <div class="widget mb-lg-0">
-                        <ul class="social_icons text-center text-lg-start">
-                            <li><a href="https://www.facebook.com/apexbagsofficial" target=_blank class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
-                            <li><a href="https://twitter.com/Apex_Bags" target=_blank  class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
-                            <li><a href="https://www.instagram.com/apexbagsofficial/" target=_blank class="sc_instagram"><i class="ion-social-instagram-outline"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <ul class="footer_payment text-center text-lg-end">
-                        <li><a href="#"><img src="assets/images/visa.png" alt="visa"></a></li>
-                        <li><a href="#"><img src="assets/images/discover.png" alt="discover"></a></li>
-                        <li><a href="#"><img src="assets/images/master_card.png" alt="master_card"></a></li>
-                        <li><a href="#"><img src="assets/images/paypal.png" alt="paypal"></a></li>
-                        <li><a href="#"><img src="assets/images/amarican_express.png" alt="amarican_express"></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- END FOOTER -->
+    </footer>
+    <!-- footer area end -->

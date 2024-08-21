@@ -1,99 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
+<!Doctype html>
+<html class="no-js" lang="zxx">
 
 <head>
-    <!-- Meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="Anil z" name="author">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Enroot Abacus - Abacus, Vedic Math & Chess Learning School</title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Apex bags deliver you the best quality & low budget school bags, luggage, office bags etc.">
-    <meta name="keywords"
-        content="ecommerce, apex bags, apex bag, online store">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
 
-    <!-- SITE TITLE -->
-    <title>Apex Bags | Best Quality Low Budget School Bags & Luggage</title>
-    <!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.png')}}">
-    <!-- Animation CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
-    <!-- Latest Bootstrap min CSS -->
-    <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"
-        rel="stylesheet">
-    <!-- Icon Font CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/ionicons.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/themify-icons.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/linearicons.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/flaticon.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/simple-line-icons.css')}}">
-    <!--- owl carousel CSS-->
-    <link rel="stylesheet" href="{{asset('assets/owlcarousel/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/owlcarousel/css/owl.theme.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/owlcarousel/css/owl.theme.default.min.css')}}">
-    <!-- Magnific Popup CSS -->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}">
-    <!-- Slick CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/slick-theme.css')}}">
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
-
+    <link rel="stylesheet" href="{{asset('assets/css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/odometer.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/meanmenu.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/swiper-bundle.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
 </head>
 
 <body>
+    <!-- sidebar-information-area-start -->
+    <div class="sidebar-info side-info">
+        <div class="sidebar-logo-wrapper mb-25">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-8">
+                    <div class="sidebar-logo">
+                        <a href="#"><img src="assets/img/logo/logo-en.png" alt="logo-img"></a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-4">
+                    <div class="sidebar-close-wrapper text-end">
+                        <button class="sidebar-close side-info-close"><i class="fal fa-times"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-menu-wrapper fix">
+            <div class="mobile-menu"></div>
+        </div>
+    </div>
+    <div class="offcanvas-overlay"></div>
+    <!-- sidebar-information-area-end -->
 
    
 
+    @include('frontend.common.header')
 
-    @yield('header')
     @yield('content')
-    @yield('customJs')
+
     @include('frontend.common.footer')
 
+    @yield('customJs')
 
 
-    <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a>
 
-    <!-- Latest jQuery -->
-    <script src="{{asset('assets/js/jquery-3.7.1.min.js')}}"></script>
-    <!-- popper min js -->
-    <script src="{{asset('assets/js/popper.min.js')}}"></script>
-    <!-- Latest compiled and minified Bootstrap -->
-    <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
-    <!-- owl-carousel min js  -->
-    <script src="{{asset('assets/owlcarousel/js/owl.carousel.min.js')}}"></script>
-    <!-- magnific-popup min js  -->
-    <script src="{{asset('assets/js/magnific-popup.min.js')}}"></script>
-    <!-- waypoints min js  -->
-    <script src="{{asset('assets/js/waypoints.min.js')}}"></script>
-    <!-- parallax js  -->
-    <script src="{{asset('assets/js/parallax.js')}}"></script>
-    <!-- countdown js  -->
-    <script src="{{asset('assets/js/jquery.countdown.min.js')}}"></script>
-    <!-- imagesloaded js -->
-    <script src="{{asset('assets/js/imagesloaded.pkgd.min.js')}}"></script>
-    <!-- isotope min js -->
-    <script src="{{asset('assets/js/isotope.min.js')}}"></script>
-    <!-- jquery.dd.min js -->
-    <script src="{{asset('assets/js/jquery.dd.min.js')}}"></script>
-    <!-- slick js -->
-    <script src="{{asset('assets/js/slick.min.js')}}"></script>
-    <!-- elevatezoom js -->
-    <script src="{{asset('assets/js/jquery.elevatezoom.js')}}"></script>
-    <!-- scripts js -->
-    <script src="{{asset('assets/js/scripts.js')}}"></script>
-    <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+    <!-- JS here -->
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('assets/js/swiper-bundle.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.meanmenu.min.js')}}"></script>
+    <script src="{{asset('assets/js/wow.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.nice-select.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.scrollUp.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('assets/js/odometer.min.js')}}"></script>
+    <script src="{{asset('assets/js/appear.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.bxslider.min.js')}}"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
+    <script>    
+        $(function() {
+            $('marquee').mouseover(function() {
+                $(this).attr('scrollamount',0);
+            }).mouseout(function() {
+                $(this).attr('scrollamount',5);
+            });
+        });
 
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+
+
+
+
+    </script>
 </body>
 
 </html>

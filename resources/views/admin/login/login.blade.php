@@ -23,13 +23,13 @@
 		<div class="card card-outline card-primary">
 			<div class="text-center">
 
-				<img src="{{asset('admin/img/apex/apex-logo.webp')}}" alt="" srcset="" width="30%" class="m-2">
+				<img src="{{asset('admin/img/enroot/enrootlogo-ft.png')}}" alt="" srcset="" width="30%" class="m-2">
 			</div>
 			<div class="card-header text-center">
 				<a href="#" class="h3">Administrative Panel</a>
 			</div>
 			<div class="card-body">
-				<p class="login-box-msg">Welcome to Apex Bags Admin</p>
+				<p class="login-box-msg">Welcome to Enroot Abacus Admin</p>
 				<form action="{{route('admin.authenticate')}}" method="post">
 					@csrf
 					<div class="input-group mb-3">

@@ -9,44 +9,43 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function index(){
-        return view ('admin.login.login');
-    }
-    public function authenticate(Request $request){
-        
-        $validator = Validator::make($request->all(),[
+  public function index()
+  {
+    return view('admin.login.login');
+  }
+  public function authenticate(Request $request)
+  {
 
-            'email'=> 'required|email',
-            'password'=> 'required'
+    $validator = Validator::make($request->all(), [
 
-        ]);
-        
-        if($validator->passes()){
+      'email' => 'required|email',
+      'password' => 'required'
+    ]);
 
-          if(Auth::guard('admin')->attempt(['email'=> $request->email,
-          'password' => $request->password],
-          $request->get('remember'))){
+    if ($validator->passes()) {
 
-            $admin = Auth::guard('admin')->user();
-            if($admin->role == 1){
-              return redirect()->route('admin.dashboard');
-            }
-            else{
-              Auth::guard('admin')->logout();
-              return redirect()->route('admin.login.login')->with('error','You Are Not Authorized');
-            }         
-          }
-          else{
-            return redirect()->route('admin.login.login')->with('error' , 'Email or Password is Incorrect');
-          }
+      if (Auth::guard('admin')->attempt(
+        [
+          'email' => $request->email,
+          'password' => $request->password
+        ],
+        $request->get('remember')
+      )) {
+
+        $admin = Auth::guard('admin')->user();
+        if ($admin->role == 1) {
+          return redirect()->route('admin.dashboard');
+        } else {
+          Auth::guard('admin')->logout();
+          return redirect()->route('admin.login.login')->with('error', 'You Are Not Authorized');
         }
-        
-        else{
-            return redirect()->route('admin.login.login')
-            ->withErrors($validator)
-            ->withInput($request->only('email'));
-        }
-
-
+      } else {
+        return redirect()->route('admin.login.login')->with('error', 'Email or Password is Incorrect');
+      }
+    } else {
+      return redirect()->route('admin.login.login')
+        ->withErrors($validator)
+        ->withInput($request->only('email'));
     }
+  }
 }

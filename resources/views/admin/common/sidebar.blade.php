@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 				<!-- Brand Logo -->
 				<a href="{{url('/admin/login')}}" class="brand-link">
-					<img src="{{asset('admin/img/apex/apex-logo.webp')}}" alt="Apex Logo" class="brand-image    width="80px">
+					<img src="{{asset('admin/img/enroot/enrootlogo-ft.png')}}" alt="Enroot Logo" class="brand-image    width="80px">
 					<span class="brand-text font-weight-light">Admin</span>
 				</a>
 				<!-- Sidebar -->
@@ -38,9 +38,9 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="{{route('products.index')}}" class="nav-link">
+								<a href="{{route('presences.index')}}" class="nav-link">
 									<i class="nav-icon fas fa-tag"></i>
-									<p>Products</p>
+									<p>Franchisee</p>
 								</a>
 							</li>
 							

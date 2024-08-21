@@ -1,145 +1,186 @@
 @extends('frontend.layout.app')
-@section('header')
-@include('frontend.common.header')
-@endsection
 @section('content')
 
-    <!-- START SECTION BREADCRUMB -->
-    <div class="breadcrumb_section bg_gray page-title-mini">
-        <div class="container"><!-- STRART CONTAINER -->
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="page-title">
-                        <h1>Contact</h1>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <ol class="breadcrumb justify-content-md-end">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                        <li class="breadcrumb-item active">Contact</li>
-                    </ol>
-                </div>
-            </div>
-        </div><!-- END CONTAINER-->
-    </div>
-    <!-- END SECTION BREADCRUMB -->
 
-    <!-- START MAIN CONTENT -->
-    <div class="main_content">
-
-        <!-- START SECTION CONTACT -->
-        <div class="section pb_70">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-md-6">
-                        <div class="contact_wrap contact_style3">
-                            <div class="contact_icon">
-                                <i class="linearicons-map2"></i>
-                            </div>
-                            <div class="contact_text">
-                                <span>Address</span>
-                                <p>Ramkrishna Rd, Nagarthuba
-                                    Habra, West Bengal, 743271</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6">
-                        <div class="contact_wrap contact_style3">
-                            <div class="contact_icon">
-                                <i class="linearicons-envelope-open"></i>
-                            </div>
-                            <div class="contact_text">
-                                <span>Email Address</span>
-                                <a href="mailto:info@apexbags.com
-                                ">info@apexbags.com
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6">
-                        <div class="contact_wrap contact_style3">
-                            <div class="contact_icon">
-                                <i class="linearicons-tablet2"></i>
-                            </div>
-                            <div class="contact_text">
-                                <span>Phone</span>
-                                <p>+91 7001639863</p>
-                            </div>
+<main>
+    <!-- breadcrumb area start -->
+    <section class="breadcrumb-area bg-default" data-background="assets/img/breadcrumb/breadcrumb-bg.jpg">
+        <img src="assets/img/breadcrumb/shape-1.png" alt="" class="breadcrumb-shape">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <h2 class="breadcrumb-title">Our Presence</h2>
+                        <div class="breadcrumb-list">
+                            <a href="{{url('/')}}">Home</a>
+                            <span>Our Presence</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- END SECTION CONTACT -->
+    </section>
+    <!-- breadcrumb area end -->
 
-        <!-- START SECTION CONTACT -->
-        <div class="section pt-0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="heading_s1">
-                            <h2>Get In touch</h2>
+
+   
+    <section class="h5_event-area pt-135 pb-140">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-area-5 text-center mb-60">
+                        <span class="section-subtitle">Our Presence</span>
+                        <h2 class="section-title mb-0">Our Presence</h2>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="row g-0">
+                <div class="col-xl-7">
+
+                    <marquee scrollamount="11" behavior="scroll" direction="up" height="500px">
+                        <div class="h5_event-wrap">
+                            @foreach ($presences as $presence)
+
+                                
+                           
+                            <div class="h5_event-item">
+                                <div class="h5_event-item-date p-3">
+                                    <h4>{{$presence->name}}
+                                    </h4>
+                                
+                                </div>
+                                <div class="h5_event-item-content pt-4 pb-4">
+                                    <ul>
+                                        {{-- <li><a href="#"><i class="fa-light fa-location-dot"></i>London, US</a></li> --}}
+                                    </ul>
+                                    <h5><a href="#">{{$presence->location}}, {{$presence->state}}                              </a></h5>
+
+                                </div>
+                            </div>
+                            @endforeach
                         </div>
-                        <p class="leads">Discover top-quality products at Apex. Shop, save, and stay updated. Your go-to destination for online shopping excellence.</p>
-                        <div class="field_form">
-                            <form id="contact-form" action="{{url('/contact')}}" method="post">
+                    </marquee>
+                </div>
+                <div class="col-xl-5">
+                    <div class="h5_event-img w_img">
+                        <img src="assets/img/event/5/1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+       
+        </div>
+    </section>
+
+
+    <!-- contact area start -->
+    <section class="contact-area pt-120 pb-120">
+        <div class="container">
+            <div class="contact-wrap">
+                <div class="row">
+                    <div class="col-xl-8 col-md-8">
+                        <div class="contact-content pr-80 mb-20">
+                            <h3 class="contact-title mb-25">Send Us a Message</h3>
+                            <form action="{{url('/our-presence')}}" method="post" class="contact-form">
                                 @csrf
                                 <div class="row">
-                                    @if ($errors->has('name'))
-                                    <span class="text-danger">{{ $errors->first('name') }}</span>
-                                    @endif
-                                    <div class="form-group col-md-6 mb-3">
-                                        <input placeholder="Enter Name *" id="first-name" class="form-control"
-                                            name="name" type="text">
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                                        <div class="contact-form-input mb-30">
+                                            @if ($errors->has('name'))
+                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                                            @endif
+                                            <input type="text" placeholder="Your Name" name="name">
+                                            <span class="inner-icon"><i class="fa-thin fa-user"></i></span>
+                                        </div>
                                     </div>
-                                    @if ($errors->has('email'))
-                                    <span class="text-danger">{{ $errors->first('email') }}</span>
-                                    @endif
-                                    <div class="form-group col-md-6 mb-3">
-                                        <input placeholder="Enter Email *" id="email" class="form-control"
-                                            name="email" type="email">
-                                    </div>
-                                    @if ($errors->has('phone'))
-                                    <span class="text-danger">{{ $errors->first('phone') }}</span>
-                                    @endif
-                                    <div class="form-group col-md-12 mb-3">
-                                        <input placeholder="Enter Phone No. *" id="phone" class="form-control"
-                                            name="phone">
-                                    </div>
-                                    @if ($errors->has('message'))
-                                    <span class="text-danger">{{ $errors->first('message') }}</span>
-                                    @endif
-                                    <div class="form-group col-md-12 mb-3">
-                                        <textarea placeholder="Message *" id="description" class="form-control"
-                                            name="message" rows="4"></textarea>
-                                    </div>
-                                    <div class="col-md-12 mb-3">
-                                        @if(session('success'))
-                                        <div class="alert alert-success">{{session('success')}}</div>
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                                        <div class="contact-form-input mb-30">
+                                            @if ($errors->has('email'))
+                                            <span class="text-danger">{{ $errors->first('email') }}</span>
                                         @endif
-                                        <button type="submit"  class="btn btn-fill-out"
-                                             >Send Message</button>
+                                            <input type="email" placeholder="Email Address" name="email">
+                                            <span class="inner-icon"><i class="fa-thin fa-envelope"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <div class="contact-form-input mb-30">
+                                            @if ($errors->has('phone'))
+                                            <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                        @endif
+                                            <input type="text" placeholder="Your Number" name="phone">
+                                            <span class="inner-icon"><i class="fa-thin fa-phone-volume"></i></span>
+                                        </div>
                                     </div>
                                     
+                                    <div class="col-12">
+                                        <div class="contact-form-input mb-50 contact-form-textarea">
+                                            @if ($errors->has('message'))
+                                                <span class="text-danger">{{ $errors->first('message') }}</span>
+                                            @endif
+                                            <textarea name="message" cols="30" rows="10"
+                                                placeholder="Feel free to get in touch!" name="message"></textarea>
+                                            <span class="inner-icon"><i class="fa-thin fa-pen"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="contact-form-submit mb-30">
+                                            <div class="contact-form-btn">
+                                                <button type="submit" class="theme-btn contact-btn">Send Message</button>
+                                            </div>
+                                           
+                                    @if (session('success'))
+                                        <div class="alert alert-success">{{ session('success') }}</div>
+                                    @endif
+
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-6 pt-2 pt-lg-0 mt-4 mt-lg-0">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58834.80558425347!2d88.62164359995921!3d22.83300120973261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f8b1e74517d33d%3A0x6c7044a895e6db97!2sApex%20Bags!5e0!3m2!1sen!2sin!4v1701948449424!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+                    <div class="col-xl-4 col-md-4">
+                        <div class="contact-info ml-50 mb-20">
+                            <h3 class="contact-title mb-40">Get In Touch</h3>
+                            <div class="contact-info-item">
+                                <span><i class="fa-thin fa-location-dot"></i>Address</span>
+                                <p>5/H/11, Gagan Sarkar Road,
+                                    Beleghata, Kolkata- 700010</p>
+                            </div>
+                            <div class="contact-info-item">
+                                <span><i class="fa-thin fa-mobile-notch"></i>Phone</span>
+                                <a href="tel:+919836009339">+91 9836009339</a>
+                            </div>
+                            <div class="contact-info-item">
+                                <span><i class="fa-thin fa-envelope"></i>Email</span>
+                                <a href="mailto:enrootabacus@gmail.com">enrootabacus@gmail.com</a>
+                            </div>
+                            <!-- <div class="contact-social">
+                                <span>Social Media</span>
+                                <ul>
+                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div> -->
+                        </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
-        <!-- END SECTION CONTACT -->
+        <div class="contact-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d147120.012062842!2d13.706000467398074!3d51.075159941942076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1senveto!5e0!3m2!1sen!2sbd!4v1680961754336!5m2!1sen!2sbd"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    <!-- contact area end -->
 
-      
 
-        <div class="visme_d" data-title="Contact Us Contact Form" data-url="kk19xnmk-contact-us-contact-form" data-domain="forms" data-full-page="false" data-min-height="500px" data-form-id="10371"></div>
+</main>
 
-
-    </div>
-    <!-- END MAIN CONTENT -->
 
 @endsection
