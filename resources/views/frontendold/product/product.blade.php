@@ -69,14 +69,14 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="pr_detail">
                             <div class="product_description">
-                                <h4 class="product_title"><a href="#">Apex #{{$product->title}}</a></h4>
+                                <h4 class="product_title"><a href="#">{{$product->title}}</a></h4>
                                 <div class="product_price">
                                     <span class="price">₹ {{$product->price}}</span>
                                     @if($product->compare_price > 0)
                                     <span class="tp-product-details-price old-price">₹ {{$product->compare_price}}</span>
                                     @endif
                                     <div class="on_sale">
-                                        <span>{{round((($product->compare_price - $product->price) / $product->compare_price ) *100),1}}% Off</span>
+                                        <span>{{round(($product->price / $product->compare_price ) *100),1}}% Off</span>
                                     </div>
                                 </div>
                                 <div class="rating_wrap">
@@ -330,14 +330,14 @@
                                             </div>
                                             @endif
                                             <div class="product_info">
-                                                <h6 class="product_title"><a href="{{route('front.product',$relProduct->slug)}}">Apex #{{$relProduct->title}}</a></h6>
+                                                <h6 class="product_title"><a href="{{route('front.product',$relProduct->slug)}}">{{$relProduct->title}}</a></h6>
                                                 <div class="product_price">
                                                     <span class="price">₹ {{$relProduct->price}}</span>
                                                     @if($relProduct->compare_price > 0)
                                                     <del>₹ {{$relProduct->compare_price}}</del>
                                                     @endif
                                                     <div class="on_sale">
-                                                        <span>{{round((($product->compare_price - $product->price) / $product->compare_price ) *100),1}}% Off</span>
+                                                        <span>{{round(($relProduct->price / $relProduct->compare_price ) *100),1}}% Off</span>
                                                     </div>
                                                 </div>
                                                 <div class="rating_wrap">

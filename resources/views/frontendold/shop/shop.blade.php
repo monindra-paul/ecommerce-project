@@ -86,7 +86,7 @@
                                     </div>
                                     <div class="product_info">
                                         <h5 style="color:#FF1C3A; font-size:15px;"><a href="{{route('front.shop',$product->product_category->slug)}}">{{$product->product_category->name}}</a></h5>
-                                        <h6 class="product_title"><a href="{{route('front.product',$product->slug)}}">Apex #{{$product->title}}</a></h6>
+                                        <h6 class="product_title"><a href="{{route('front.product',$product->slug)}}">{{$product->title}}</a></h6>
                                         <a href="{{route('front.product',$product->slug)}}">
                                             <div class="product_price">
 
@@ -96,7 +96,7 @@
                                                 @endif
 
                                                 <div class="on_sale">
-                                                    <span>{{round((($product->compare_price - $product->price) / $product->compare_price ) *100),1}}% Off</span>
+                                                    <span>{{round(($product->price / $product->compare_price ) *100),1}}% Off</span>
                                                 </div>
 
                                             </div>

@@ -18,7 +18,7 @@
                     </form>
                 </div>
                 <ul class="navbar-nav attr-nav align-items-center">
-                    <li><a href="tel:+917001639863" class="nav-link"><i class="linearicons-phone-wave"></i></a></li>
+                    <li><a href="tel:+917001639863" class="nav-link"><i class="linearicons-phone-wave"></i></i></a></li>
                     <li><a href="#" class="nav-link"><i class="linearicons-user"></i></a></li>
                     <li><a href="#" class="nav-link"><i class="linearicons-heart"></i><span class="wishlist_count">0</span></a></li>
                     {{-- <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#" data-bs-toggle="dropdown"><i class="linearicons-bag2"></i><span class="cart_count">2</span><span class="amount"><span class="currency_symbol">$</span>159.00</span></a>
@@ -53,10 +53,10 @@
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-sm-6 col-3">
                     <div class="categories_wrap">
-                        <button type="button" data-bs-toggle="collapse" data-bs-target="#navCatContent" aria-expanded="false" class="categories_btn categories_menu collapsed">
+                        <button type="button" data-bs-toggle="collapse" data-bs-target="#navCatContent" aria-expanded="false" class="categories_btn categories_menu">
                             <span>All Categories </span><i class="linearicons-menu"></i>
                         </button>
-                        <div id="navCatContent" class="navbar nav collapse">
+                        <div id="navCatContent" class="navbar nav">
                             @if(!empty(getCategories()))
                             @foreach (getCategories() as $category)
                                <ul>
@@ -86,7 +86,7 @@
                                        </li>
                                    @else 
 
-                                   <li><a class="dropdown-item nav-link nav_item" href="{{route('front.shop',$category->slug)}}"><i class="linearicons-power"></i><span>{{$category->name}}</span></a></li>
+                                   <li><a class="dropdown-item nav-link nav_item" href="{{route('front.shop',$category->slug)}}"><i class="linearicons-power"></i> <span>{{$category->name}}</span></a></li>
                                    @endif
                                 
                                 
@@ -145,7 +145,8 @@
                                                    <i class="flaticon-headphones"></i> <span> {{$category->name}}</span>
                                                </a>
                                            </li>
-                                       @endif                                         
+                                       @endif
+                                           
                                        
                                            
                                        
@@ -190,12 +191,10 @@
                                 <li><a class="nav-link nav_item" href="{{url('/contact')}}">Contact Us</a></li>
                             </ul>
                         </div>
-                        <a href="tel:+917001639863">
                         <div class="contact_phone contact_support">
                             <i class="linearicons-phone-wave"></i>
                             <span>+91 700 1639 863</span>
                         </div>
-                        </a>
                     </nav>
                 </div>
             </div>

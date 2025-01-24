@@ -190,12 +190,10 @@
                                 <li><a class="nav-link nav_item" href="{{url('/contact')}}">Contact Us</a></li>
                             </ul>
                         </div>
-                        <a href="tel:+917001639863">
                         <div class="contact_phone contact_support">
                             <i class="linearicons-phone-wave"></i>
                             <span>+91 700 1639 863</span>
                         </div>
-                        </a>
                     </nav>
                 </div>
             </div>

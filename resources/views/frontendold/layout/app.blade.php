@@ -15,7 +15,7 @@
     <!-- SITE TITLE -->
     <title>Apex Bags | Best Quality Low Budget School Bags & Luggage</title>
     <!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/apex/favicon.webp')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.png')}}">
     <!-- Animation CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
     <!-- Latest Bootstrap min CSS -->
@@ -88,6 +88,7 @@
     <script src="{{asset('assets/js/jquery.elevatezoom.js')}}"></script>
     <!-- scripts js -->
     <script src="{{asset('assets/js/scripts.js')}}"></script>
+    <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
 
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
